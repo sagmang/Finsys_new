@@ -238,15 +238,15 @@ def main_sign_in():
     #--------------------------------Invoices-----------------------------#
     inv_frame = Frame(tab3_2)
     inv_frame.grid(row=0,column=0,sticky='nsew')
-    canvas=Canvas(inv_frame, bg='#2f516f', width=1325, height=600, scrollregion=(0,0,700,1000))
+    inv_canvas=Canvas(inv_frame, bg='#2f516f', width=1325, height=600, scrollregion=(0,0,700,1000))
 
     vertibar=Scrollbar(inv_frame, orient=VERTICAL)
     vertibar.pack(side=RIGHT,fill=Y)
-    vertibar.config(command=canvas.yview)
-    canvas.config(width=1325,height=559)
+    vertibar.config(command=inv_canvas.yview)
+    inv_canvas.config(width=1325,height=559)
 
-    canvas.config(yscrollcommand=vertibar.set)
-    canvas.pack(expand=True,side=LEFT,fill=BOTH)
+    inv_canvas.config(yscrollcommand=vertibar.set)
+    inv_canvas.pack(expand=True,side=LEFT,fill=BOTH)
 
     def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
             
@@ -271,19 +271,19 @@ def main_sign_in():
                 x1, y1+radius,
                 x1, y1]
     
-        return canvas.create_polygon(points, **kwargs, smooth=True)
+        return inv_canvas.create_polygon(points, **kwargs, smooth=True)
     
     my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-    label_1 = Label(canvas,width=10,height=1,text="INVOICES", font=('arial 25'),background="#1b3857",fg="white") 
-    window_label_1 = canvas.create_window(550, 85, anchor="nw", window=label_1)
-    canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
+    label_1 = Label(inv_canvas,width=10,height=1,text="INVOICES", font=('arial 25'),background="#1b3857",fg="white") 
+    window_label_1 = inv_canvas.create_window(550, 85, anchor="nw", window=label_1)
+    inv_canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
 
     my_rectangle_1 = round_rectangle(20, 250, 1300, 600, radius=20, fill="#1b3857")
 
 
     # s = ttk.Style()
     # s.configure('mystyle_2.Treeview.Heading', background='lime', State='DISABLE')
-    # tree=ttk.Treeview(canvas, column=("c1", "c2","c3", "c4", "c5", "c6", "c7", "c8"), show='headings',height= 0, style='mystyle_2.Treeview')   
+    # tree=ttk.Treeview(inv_canvas, column=("c1", "c2","c3", "c4", "c5", "c6", "c7", "c8"), show='headings',height= 0, style='mystyle_2.Treeview')   
     # tree.column("# 1", anchor=E, stretch=NO, width=150)
     # tree.heading("# 1", text="INVOICE NO")
     # tree.column("# 2", anchor=E, stretch=NO, width=150)
@@ -300,46 +300,46 @@ def main_sign_in():
     # tree.heading("# 7", text="BALANCE DUE")    
     # tree.column("# 8", anchor=E, stretch=NO, width=150)
     # tree.heading("# 8", text="ACTION")    
-    # window = canvas.create_window(60, 350, anchor="nw", window=tree)
-    canvas.create_line(60, 350, 1260, 350, fill='gray',width=1)
-    canvas.create_line(60, 350, 60, 400, fill='gray',width=1)
-    canvas.create_line(210, 350, 210, 400, fill='gray',width=1)
-    canvas.create_line(360, 350, 360, 400, fill='gray',width=1)
-    canvas.create_line(510, 350, 510, 400, fill='gray',width=1)
-    canvas.create_line(660, 350, 660, 400, fill='gray',width=1)
-    canvas.create_line(810, 350, 810, 400, fill='gray',width=1)
-    canvas.create_line(960, 350, 960, 400, fill='gray',width=1)
-    canvas.create_line(1110, 350, 1110, 400, fill='gray',width=1)
-    canvas.create_line(1260, 350, 1260, 400, fill='gray',width=1)
+    # window = inv_canvas.create_window(60, 350, anchor="nw", window=tree)
+    inv_canvas.create_line(60, 350, 1260, 350, fill='gray',width=1)
+    inv_canvas.create_line(60, 350, 60, 400, fill='gray',width=1)
+    inv_canvas.create_line(210, 350, 210, 400, fill='gray',width=1)
+    inv_canvas.create_line(360, 350, 360, 400, fill='gray',width=1)
+    inv_canvas.create_line(510, 350, 510, 400, fill='gray',width=1)
+    inv_canvas.create_line(660, 350, 660, 400, fill='gray',width=1)
+    inv_canvas.create_line(810, 350, 810, 400, fill='gray',width=1)
+    inv_canvas.create_line(960, 350, 960, 400, fill='gray',width=1)
+    inv_canvas.create_line(1110, 350, 1110, 400, fill='gray',width=1)
+    inv_canvas.create_line(1260, 350, 1260, 400, fill='gray',width=1)
 
-    label_2 = Label(canvas,width=10,height=1,text="INVOICE NO", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_2 = canvas.create_window(90, 365, anchor="nw", window=label_2)
-    label_3 = Label(canvas,width=11,height=1,text="INVOICE DATE", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_3 = canvas.create_window(240, 365, anchor="nw", window=label_3)
-    label_4 = Label(canvas,width=11,height=1,text="CUSTOMER", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(390, 365, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=11,height=1,text="EMAIL ID", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(540, 365, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=11,height=1,text="DUE DATE", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(690, 365, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=11,height=1,text="GRAND TOTAL", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(840, 365, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=11,height=1,text="BALANCE DUE", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(990, 365, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=11,height=1,text="ACTION", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(1140, 365, anchor="nw", window=label_4)
+    label_2 = Label(inv_canvas,width=10,height=1,text="INVOICE NO", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_2 = inv_canvas.create_window(90, 365, anchor="nw", window=label_2)
+    label_3 = Label(inv_canvas,width=11,height=1,text="INVOICE DATE", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_3 = inv_canvas.create_window(240, 365, anchor="nw", window=label_3)
+    label_4 = Label(inv_canvas,width=11,height=1,text="CUSTOMER", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = inv_canvas.create_window(390, 365, anchor="nw", window=label_4)
+    label_4 = Label(inv_canvas,width=11,height=1,text="EMAIL ID", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = inv_canvas.create_window(540, 365, anchor="nw", window=label_4)
+    label_4 = Label(inv_canvas,width=11,height=1,text="DUE DATE", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = inv_canvas.create_window(690, 365, anchor="nw", window=label_4)
+    label_4 = Label(inv_canvas,width=11,height=1,text="GRAND TOTAL", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = inv_canvas.create_window(840, 365, anchor="nw", window=label_4)
+    label_4 = Label(inv_canvas,width=11,height=1,text="BALANCE DUE", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = inv_canvas.create_window(990, 365, anchor="nw", window=label_4)
+    label_4 = Label(inv_canvas,width=11,height=1,text="ACTION", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = inv_canvas.create_window(1140, 365, anchor="nw", window=label_4)
 
 
-    canvas.create_line(60, 400, 1260, 400, fill='gray',width=1)
-    canvas.create_line(60, 400, 60, 450, fill='gray',width=1)
-    canvas.create_line(210, 400, 210, 450, fill='gray',width=1)
-    canvas.create_line(360, 400, 360, 450, fill='gray',width=1)
-    canvas.create_line(510, 400, 510, 450, fill='gray',width=1)
-    canvas.create_line(660, 400, 660, 450, fill='gray',width=1)
-    canvas.create_line(810, 400, 810, 450, fill='gray',width=1)
-    canvas.create_line(960, 400, 960, 450, fill='gray',width=1)
-    canvas.create_line(1110, 400, 1110, 450, fill='gray',width=1)
-    canvas.create_line(1260, 400, 1260, 450, fill='gray',width=1)
+    inv_canvas.create_line(60, 400, 1260, 400, fill='gray',width=1)
+    inv_canvas.create_line(60, 400, 60, 450, fill='gray',width=1)
+    inv_canvas.create_line(210, 400, 210, 450, fill='gray',width=1)
+    inv_canvas.create_line(360, 400, 360, 450, fill='gray',width=1)
+    inv_canvas.create_line(510, 400, 510, 450, fill='gray',width=1)
+    inv_canvas.create_line(660, 400, 660, 450, fill='gray',width=1)
+    inv_canvas.create_line(810, 400, 810, 450, fill='gray',width=1)
+    inv_canvas.create_line(960, 400, 960, 450, fill='gray',width=1)
+    inv_canvas.create_line(1110, 400, 1110, 450, fill='gray',width=1)
+    inv_canvas.create_line(1260, 400, 1260, 450, fill='gray',width=1)
 
 
     # Define the style for combobox widget
@@ -347,13 +347,13 @@ def main_sign_in():
     # styl.theme_use('clam')
     # styl.configure("TCombobox", fieldbackground= "#2f516f", background= "#2f516f")
 
-    inv_comb_1 = ttk.Combobox(canvas,font=('arial 10'),foreground="white")
+    inv_comb_1 = ttk.Combobox(inv_canvas,font=('arial 10'),foreground="white")
     inv_comb_1['values'] = ("Actions","Edit","Delete")
     inv_comb_1.current(0)
-    window_inv_comb_1 = canvas.create_window(1135, 410, anchor="nw", width=110,height=30,window=inv_comb_1)
+    window_inv_comb_1 = inv_canvas.create_window(1135, 410, anchor="nw", width=110,height=30,window=inv_comb_1)
 
 
-    canvas.create_line(60, 450, 1260, 450, fill='gray',width=1)
+    inv_canvas.create_line(60, 450, 1260, 450, fill='gray',width=1)
 
 
 
@@ -361,15 +361,15 @@ def main_sign_in():
         inv_frame.grid_forget()
         inv_frame_1 = Frame(tab3_2)
         inv_frame_1.grid(row=0,column=0,sticky='nsew')
-        canvas=Canvas(inv_frame_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1800))
+        inv_canvas_1=Canvas(inv_frame_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1800))
         
         vertibar=Scrollbar(inv_frame_1, orient=VERTICAL)
         vertibar.pack(side=RIGHT,fill=Y)
-        vertibar.config(command=canvas.yview)
+        vertibar.config(command=inv_canvas_1.yview)
 
-        canvas.config(width=1325,height=559)
-        canvas.config(yscrollcommand=vertibar.set)
-        canvas.pack(expand=True,side=LEFT,fill=BOTH)
+        inv_canvas_1.config(width=1325,height=559)
+        inv_canvas_1.config(yscrollcommand=vertibar.set)
+        inv_canvas_1.pack(expand=True,side=LEFT,fill=BOTH)
         def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
             
             points = [x1+radius, y1,
@@ -393,47 +393,47 @@ def main_sign_in():
                     x1, y1+radius,
                     x1, y1]
         
-            return canvas.create_polygon(points, **kwargs, smooth=True)
+            return inv_canvas_1.create_polygon(points, **kwargs, smooth=True)
     
         my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-        label_1 = Label(canvas,width=10,height=1,text="INVOICE", font=('arial 20'),background="#1b3857",fg="white") 
-        window_label_1 = canvas.create_window(550, 85, anchor="nw", window=label_1)
-        canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
+        label_1 = Label(inv_canvas_1,width=10,height=1,text="INVOICE", font=('arial 20'),background="#1b3857",fg="white") 
+        window_label_1 = inv_canvas_1.create_window(550, 85, anchor="nw", window=label_1)
+        inv_canvas_1.create_line(60, 150, 1260, 150, fill='gray',width=1)
 
         my_rectangle = round_rectangle(20, 250, 1300, 1735, radius=20, fill="#1b3857")
-        label_1 = Label(canvas,width=10,height=1,text="Fin sYs", font=('arial 20'),background="#1b3857",fg="white") 
-        window_label_1 = canvas.create_window(550, 275, anchor="nw", window=label_1)
+        label_1 = Label(inv_canvas_1,width=10,height=1,text="Fin sYs", font=('arial 20'),background="#1b3857",fg="white") 
+        window_label_1 = inv_canvas_1.create_window(550, 275, anchor="nw", window=label_1)
 
-        inv_back_btn=Button(canvas,text='Back', width=10,height=1,foreground="white",background="#1b3857",font='arial 12')
-        window_inv_back_btn = canvas.create_window(1050, 275, anchor="nw", window=inv_back_btn)
+        inv_back_btn=Button(inv_canvas_1,text='Back', width=10,height=1,foreground="white",background="#1b3857",font='arial 12')
+        window_inv_back_btn = inv_canvas_1.create_window(1050, 275, anchor="nw", window=inv_back_btn)
 
-        label_2 = Label(canvas,width=15,height=1,text="Company name", font=('arial 16'),background="#1b3857",fg="skyblue") 
-        window_label_2 = canvas.create_window(60, 330, anchor="nw", window=label_2)
-        label_2 = Label(canvas,width=15,height=1,text="Company email-id", font=('arial 16'),background="#1b3857",fg="skyblue") 
-        window_label_2 = canvas.create_window(68, 375, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=15,height=1,text="Company name", font=('arial 16'),background="#1b3857",fg="skyblue") 
+        window_label_2 = inv_canvas_1.create_window(60, 330, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=15,height=1,text="Company email-id", font=('arial 16'),background="#1b3857",fg="skyblue") 
+        window_label_2 = inv_canvas_1.create_window(68, 375, anchor="nw", window=label_2)
 
-        label_2 = Label(canvas,width=15,height=1,text="Select Customer", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(66, 450, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=15,height=1,text="Select Customer", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(66, 450, anchor="nw", window=label_2)
 
-        comb_1 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_1 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_1['values'] = ("Select Customer",)
         comb_1.current(0)
-        window_comb_1 = canvas.create_window(78, 475, anchor="nw", width=200, height=30,window=comb_1)
+        window_comb_1 = inv_canvas_1.create_window(78, 475, anchor="nw", width=200, height=30,window=comb_1)
 
         def add_inv_customer():
             #inv_frame.grid_forget()
             inv_frame_1.grid_forget()
             inv_frame_2 = Frame(tab3_2)
             inv_frame_2.grid(row=0,column=0,sticky='nsew')
-            canvas=Canvas(inv_frame_2, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1600))
+            inv_canvas_2=Canvas(inv_frame_2, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1600))
             
             vertibar=Scrollbar(inv_frame_2, orient=VERTICAL)
             vertibar.pack(side=RIGHT,fill=Y)
-            vertibar.config(command=canvas.yview)
+            vertibar.config(command=inv_canvas_2.yview)
 
-            canvas.config(width=1325,height=559)
-            canvas.config(yscrollcommand=vertibar.set)
-            canvas.pack(expand=True,side=LEFT,fill=BOTH)
+            inv_canvas_2.config(width=1325,height=559)
+            inv_canvas_2.config(yscrollcommand=vertibar.set)
+            inv_canvas_2.pack(expand=True,side=LEFT,fill=BOTH)
             def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
                 
                 points = [x1+radius, y1,
@@ -457,523 +457,571 @@ def main_sign_in():
                         x1, y1+radius,
                         x1, y1]
             
-                return canvas.create_polygon(points, **kwargs, smooth=True)
+                return inv_canvas_2.create_polygon(points, **kwargs, smooth=True)
     
             my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-            label_1 = Label(canvas,width=15,height=1,text="ADD CUSTOMER", font=('arial 20'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(550, 85, anchor="nw", window=label_1)
-            canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
+            label_1 = Label(inv_canvas_2,width=15,height=1,text="ADD CUSTOMER", font=('arial 20'),background="#1b3857",fg="white") 
+            window_label_1 = inv_canvas_2.create_window(550, 85, anchor="nw", window=label_1)
+            inv_canvas_2.create_line(60, 150, 1260, 150, fill='gray',width=1)
 
             my_rectangle = round_rectangle(20, 250, 1300, 1535, radius=20, fill="#1b3857")
-            label_1 = Label(canvas,width=20,height=1,text="Customer Information", font=('arial 20'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(60, 275, anchor="nw", window=label_1)
-            canvas.create_line(60, 330, 1260, 330, fill='gray',width=1)
+            label_1 = Label(inv_canvas_2,width=20,height=1,text="Customer Information", font=('arial 20'),background="#1b3857",fg="white") 
+            window_label_1 = inv_canvas_2.create_window(60, 275, anchor="nw", window=label_1)
+            inv_canvas_2.create_line(60, 330, 1260, 330, fill='gray',width=1)
 
-            label_2 = Label(canvas,width=5,height=1,text="Title", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(62, 365, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=5,height=1,text="Title", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(62, 365, anchor="nw", window=label_2)
 
-            comb_cus_1 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+            comb_cus_1 = ttk.Combobox(inv_canvas_2, font=('arial 10'),foreground="white")
             comb_cus_1['values'] = ("Mr","Mrs","Miss","Ms",)
             comb_cus_1.current(0)
-            window_comb_cus_1 = canvas.create_window(75, 395, anchor="nw", width=245, height=30,window=comb_cus_1)
+            window_comb_cus_1 = inv_canvas_2.create_window(75, 395, anchor="nw", width=245, height=30,window=comb_cus_1)
 
-            label_2 = Label(canvas,width=10,height=1,text="First name", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(400, 365, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="First name", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(400, 365, anchor="nw", window=label_2)
 
-            entry_cus_1=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_1 = canvas.create_window(410, 395, anchor="nw", height=30,window=entry_cus_1)
+            entry_cus_1=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_1 = inv_canvas_2.create_window(410, 395, anchor="nw", height=30,window=entry_cus_1)
 
-            label_2 = Label(canvas,width=10,height=1,text="Last name", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(745, 365, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="Last name", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(745, 365, anchor="nw", window=label_2)
 
-            entry_cus_2=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_2 = canvas.create_window(755, 395, anchor="nw", height=30,window=entry_cus_2)
+            entry_cus_2=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_2 = inv_canvas_2.create_window(755, 395, anchor="nw", height=30,window=entry_cus_2)
 
-            label_2 = Label(canvas,width=10,height=1,text="Company", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(62, 465, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="Company", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(62, 465, anchor="nw", window=label_2)
 
-            entry_cus_3=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_3 = canvas.create_window(75, 495, anchor="nw", height=30,window=entry_cus_3)
+            entry_cus_3=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_3 = inv_canvas_2.create_window(75, 495, anchor="nw", height=30,window=entry_cus_3)
 
-            label_2 = Label(canvas,width=10,height=1,text="Location", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(395, 465, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="Location", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(395, 465, anchor="nw", window=label_2)
 
-            cus_4=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_cus_4 = canvas.create_window(410, 495, anchor="nw", height=30,window=cus_4)
+            cus_4=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_cus_4 = inv_canvas_2.create_window(410, 495, anchor="nw", height=30,window=cus_4)
 
-            label_2 = Label(canvas,width=10,height=1,text="GST type", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(62, 565, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="GST type", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(62, 565, anchor="nw", window=label_2)
 
-            comb_cus_2 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+            comb_cus_2 = ttk.Combobox(inv_canvas_2, font=('arial 10'),foreground="white")
             comb_cus_2['values'] = ("Choose...","GST registered Regular","GST registered-Composition","GST unregistered","Consumer","Overseas","SEZ","Deemed exports-EOU's STP's EHTP's etc",)
             comb_cus_2.current(0)
-            window_comb_cus_2 = canvas.create_window(75, 595, anchor="nw", width=245, height=30,window=comb_cus_2)
+            window_comb_cus_2 = inv_canvas_2.create_window(75, 595, anchor="nw", width=245, height=30,window=comb_cus_2)
 
-            label_2 = Label(canvas,width=10,height=1,text="GSTIN", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(385, 565, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="GSTIN", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(385, 565, anchor="nw", window=label_2)
 
             cus_entry_str_1 = StringVar()
-            entry_cus_5=Entry(canvas,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=cus_entry_str_1)
+            entry_cus_5=Entry(inv_canvas_2,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=cus_entry_str_1)
             cus_entry_str_1.set(' 29APPCK7465F1Z1')
-            window_entry_cus_5 = canvas.create_window(410, 595, anchor="nw", height=30,window=entry_cus_5)
+            window_entry_cus_5 = inv_canvas_2.create_window(410, 595, anchor="nw", height=30,window=entry_cus_5)
 
-            label_2 = Label(canvas,width=10,height=1,text="PAN NO", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(740, 565, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="PAN NO", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(740, 565, anchor="nw", window=label_2)
 
             cus_entry_str_2 = StringVar()
-            entry_cus_6=Entry(canvas,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=cus_entry_str_2)
+            entry_cus_6=Entry(inv_canvas_2,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=cus_entry_str_2)
             cus_entry_str_2.set(' APPCK7465F')
-            window_entry_cus_6 = canvas.create_window(755, 595, anchor="nw", height=30,window=entry_cus_6)
+            window_entry_cus_6 = inv_canvas_2.create_window(755, 595, anchor="nw", height=30,window=entry_cus_6)
 
-            label_2 = Label(canvas,width=5,height=1,text="Email", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(71, 665, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=5,height=1,text="Email", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(71, 665, anchor="nw", window=label_2)
 
-            entry_cus_7=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_7 = canvas.create_window(75, 695, anchor="nw", height=30,window=entry_cus_7)
+            entry_cus_7=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_7 = inv_canvas_2.create_window(75, 695, anchor="nw", height=30,window=entry_cus_7)
 
-            label_2 = Label(canvas,width=10,height=1,text="Website", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(395, 665, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="Website", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(395, 665, anchor="nw", window=label_2)
 
-            entry_cus_8=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_8 = canvas.create_window(410, 695, anchor="nw", height=30,window=entry_cus_8)
+            entry_cus_8=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_8 = inv_canvas_2.create_window(410, 695, anchor="nw", height=30,window=entry_cus_8)
 
-            label_2 = Label(canvas,width=10,height=1,text="Mobile", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(736, 665, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="Mobile", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(736, 665, anchor="nw", window=label_2)
 
-            entry_cus_9=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_9 = canvas.create_window(752, 695, anchor="nw", height=30,window=entry_cus_9)
+            entry_cus_9=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_9 = inv_canvas_2.create_window(752, 695, anchor="nw", height=30,window=entry_cus_9)
 
-            label_1 = Label(canvas,width=20,height=1,text="Billing Address", font=('arial 16'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(23, 775, anchor="nw", window=label_1)
+            label_1 = Label(inv_canvas_2,width=20,height=1,text="Billing Address", font=('arial 16'),background="#1b3857",fg="white") 
+            window_label_1 = inv_canvas_2.create_window(23, 775, anchor="nw", window=label_1)
 
-            label_2 = Label(canvas,width=5,height=1,text="Street", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(71, 825, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=5,height=1,text="Street", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(71, 825, anchor="nw", window=label_2)
 
-            entry_cus_10=Entry(canvas,width=95,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_10 = canvas.create_window(75, 855, anchor="nw", height=60,window=entry_cus_10)
+            entry_cus_10=Entry(inv_canvas_2,width=95,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_10 = inv_canvas_2.create_window(75, 855, anchor="nw", height=60,window=entry_cus_10)
 
-            label_1 = Label(canvas,width=20,height=1,text="Shipping Address", font=('arial 16'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(645, 775, anchor="nw", window=label_1)
+            label_1 = Label(inv_canvas_2,width=20,height=1,text="Shipping Address", font=('arial 16'),background="#1b3857",fg="white") 
+            window_label_1 = inv_canvas_2.create_window(645, 775, anchor="nw", window=label_1)
 
             chk_str = StringVar()
-            chkbtn1 = Checkbutton(canvas, text = "Same As Billing Address", variable = chk_str, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white")
+            chkbtn1 = Checkbutton(inv_canvas_2, text = "Same As Billing Address", variable = chk_str, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white",selectcolor="#2f516f")
             chkbtn1.select()
-            window_chkbtn_1 = canvas.create_window(865, 775, anchor="nw", window=chkbtn1)
+            window_chkbtn_1 = inv_canvas_2.create_window(865, 775, anchor="nw", window=chkbtn1)
 
-            label_2 = Label(canvas,width=5,height=1,text="Street", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(681, 825, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=5,height=1,text="Street", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(681, 825, anchor="nw", window=label_2)
 
-            entry_cus_11=Entry(canvas,width=95,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_11 = canvas.create_window(685, 855, anchor="nw", height=60,window=entry_cus_11)
+            entry_cus_11=Entry(inv_canvas_2,width=95,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_11 = inv_canvas_2.create_window(685, 855, anchor="nw", height=60,window=entry_cus_11)
 
-            label_2 = Label(canvas,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(65, 950, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(65, 950, anchor="nw", window=label_2)
 
-            entry_cus_12=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_12 = canvas.create_window(75, 985, anchor="nw", height=30,window=entry_cus_12)
+            entry_cus_12=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_12 = inv_canvas_2.create_window(75, 985, anchor="nw", height=30,window=entry_cus_12)
             
-            label_2 = Label(canvas,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(395, 950, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(395, 950, anchor="nw", window=label_2)
 
-            entry_cus_13=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_13 = canvas.create_window(400, 985, anchor="nw", height=30,window=entry_cus_13)
+            entry_cus_13=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_13 = inv_canvas_2.create_window(400, 985, anchor="nw", height=30,window=entry_cus_13)
 
-            label_2 = Label(canvas,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(675, 950, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(675, 950, anchor="nw", window=label_2)
 
-            entry_cus_14=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_14 = canvas.create_window(685, 985, anchor="nw", height=30,window=entry_cus_14)
+            entry_cus_14=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_14 = inv_canvas_2.create_window(685, 985, anchor="nw", height=30,window=entry_cus_14)
 
-            label_2 = Label(canvas,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(1001, 950, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(1001, 950, anchor="nw", window=label_2)
 
-            entry_cus_15=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_15 = canvas.create_window(1010, 985, anchor="nw", height=30,window=entry_cus_15)
+            entry_cus_15=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_15 = inv_canvas_2.create_window(1010, 985, anchor="nw", height=30,window=entry_cus_15)
 
-            label_2 = Label(canvas,width=10,height=1,text="Pin Code", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(65, 1050, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="Pin Code", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(65, 1050, anchor="nw", window=label_2)
 
-            entry_cus_12=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_12 = canvas.create_window(75, 1085, anchor="nw", height=30,window=entry_cus_12)
+            entry_cus_12=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_12 = inv_canvas_2.create_window(75, 1085, anchor="nw", height=30,window=entry_cus_12)
             
-            label_2 = Label(canvas,width=8,height=1,text="Country", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(394, 1050, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=8,height=1,text="Country", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(394, 1050, anchor="nw", window=label_2)
 
-            entry_cus_13=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_13 = canvas.create_window(400, 1085, anchor="nw", height=30,window=entry_cus_13)
+            entry_cus_13=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_13 = inv_canvas_2.create_window(400, 1085, anchor="nw", height=30,window=entry_cus_13)
 
-            label_2 = Label(canvas,width=10,height=1,text="Pin Code", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(675, 1050, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=10,height=1,text="Pin Code", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(675, 1050, anchor="nw", window=label_2)
 
-            entry_cus_14=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_14 = canvas.create_window(685, 1085, anchor="nw", height=30,window=entry_cus_14)
+            entry_cus_14=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_14 = inv_canvas_2.create_window(685, 1085, anchor="nw", height=30,window=entry_cus_14)
 
-            label_2 = Label(canvas,width=8,height=1,text="Country", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = canvas.create_window(1001, 1050, anchor="nw", window=label_2)
+            label_2 = Label(inv_canvas_2,width=8,height=1,text="Country", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(1001, 1050, anchor="nw", window=label_2)
 
-            entry_cus_15=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_15 = canvas.create_window(1010, 1085, anchor="nw", height=30,window=entry_cus_15)
+            entry_cus_15=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_cus_15 = inv_canvas_2.create_window(1010, 1085, anchor="nw", height=30,window=entry_cus_15)
 
             chk_str_1 = StringVar()
-            chkbtn2 = Checkbutton(canvas, text = "Agree to terms and conditions", variable = chk_str_1, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white")
+            chkbtn2 = Checkbutton(inv_canvas_2, text = "Agree to terms and conditions", variable = chk_str_1, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white",selectcolor="#2f516f")
             chkbtn2.select()
-            window_chkbtn_2 = canvas.create_window(69, 1150, anchor="nw", window=chkbtn2)
+            window_chkbtn_2 = inv_canvas_2.create_window(69, 1150, anchor="nw", window=chkbtn2)
 
-            cus_btn2=Button(canvas,text='Submit Form', width=25,height=2,foreground="white",background="#1b3857",font='arial 12')
-            window_cus_btn2 = canvas.create_window(550, 1200, anchor="nw", window=cus_btn2)
+            cus_btn2=Button(inv_canvas_2,text='Submit Form', width=25,height=2,foreground="white",background="#1b3857",font='arial 12')
+            window_cus_btn2 = inv_canvas_2.create_window(550, 1200, anchor="nw", window=cus_btn2)
 
 
 
-        btn2=Button(canvas,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=add_inv_customer)
-        window_btn2 = canvas.create_window(285, 475, anchor="nw", window=btn2)
+        btn2=Button(inv_canvas_1,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=add_inv_customer)
+        window_btn2 = inv_canvas_1.create_window(285, 475, anchor="nw", window=btn2)
 
-        label_2 = Label(canvas,width=15,height=1,text="Email", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(400, 450, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=15,height=1,text="Email", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(400, 450, anchor="nw", window=label_2)
 
-        entry_1=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = canvas.create_window(450, 475, anchor="nw", height=30,window=entry_1)
+        entry_1=Entry(inv_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_1 = inv_canvas_1.create_window(450, 475, anchor="nw", height=30,window=entry_1)
 
-        label_2 = Label(canvas,width=15,height=1,text="Invoice Date:", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(57, 550, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=15,height=1,text="Invoice Date:", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(57, 550, anchor="nw", window=label_2)
 
-        entry_1=DateEntry(canvas,width=40,justify=LEFT,foreground='white')
-        window_entry_1 = canvas.create_window(80, 575, anchor="nw", height=30, window=entry_1)
+        entry_1=DateEntry(inv_canvas_1,width=40,justify=LEFT,foreground='white')
+        window_entry_1 = inv_canvas_1.create_window(80, 575, anchor="nw", height=30, window=entry_1)
 
-        label_2 = Label(canvas,width=15,height=1,text="Terms", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(402, 550, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=15,height=1,text="Terms", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(402, 550, anchor="nw", window=label_2)
 
-        entry_1=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = canvas.create_window(450, 575, anchor="nw", height=30, window=entry_1)
+        entry_1=Entry(inv_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_1 = inv_canvas_1.create_window(450, 575, anchor="nw", height=30, window=entry_1)
 
-        label_2 = Label(canvas,width=15,height=1,text="Due Date:", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(770, 550, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=15,height=1,text="Due Date:", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(770, 550, anchor="nw", window=label_2)
 
-        entry_1=DateEntry(canvas,width=40,justify=LEFT,foreground='white')
-        window_entry_1 = canvas.create_window(805, 575, anchor="nw", height=30, window=entry_1)
+        entry_1=DateEntry(inv_canvas_1,width=40,justify=LEFT,foreground='white')
+        window_entry_1 = inv_canvas_1.create_window(805, 575, anchor="nw", height=30, window=entry_1)
 
-        label_2 = Label(canvas,width=15,height=1,text="Bill To:", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(35, 650, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=15,height=1,text="Bill To:", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(35, 650, anchor="nw", window=label_2)
 
-        # text_1=Text(canvas,width=31)
-        # window_text_1 = canvas.create_window(81, 675, anchor="nw", height=150, window=text_1)
-        entry_1=Entry(canvas,width=42,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = canvas.create_window(81, 675, anchor="nw", height=150, window=entry_1)
+        # text_1=Text(inv_canvas_1,width=31)
+        # window_text_1 = inv_canvas_1.create_window(81, 675, anchor="nw", height=150, window=text_1)
+        entry_1=Entry(inv_canvas_1,width=42,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_1 = inv_canvas_1.create_window(81, 675, anchor="nw", height=150, window=entry_1)
 
-        label_2 = Label(canvas,width=15,height=1,text="Place of supply", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(64, 860, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=15,height=1,text="Place of supply", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(64, 860, anchor="nw", window=label_2)
 
-        comb_2 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_2 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_2['values'] = ("Kerala","Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Other Territory",)
         comb_2.current(0)
-        window_comb_2 = canvas.create_window(82, 885, anchor="nw", width=251, height=30,window=comb_2)
+        window_comb_2 = inv_canvas_1.create_window(82, 885, anchor="nw", width=251, height=30,window=comb_2)
 
-        canvas.create_line(80, 950, 1240, 950, fill='gray',width=1)
-        canvas.create_line(80, 1000, 1240, 1000, fill='gray',width=1)
-        canvas.create_line(80, 1075, 1240, 1075, fill='gray',width=1)
-        canvas.create_line(80, 950, 80, 1075, fill='gray',width=1)
-        canvas.create_line(125, 950, 125, 1075, fill='gray',width=1)
-        canvas.create_line(325, 950, 325, 1075, fill='gray',width=1)
-        canvas.create_line(525, 950, 525, 1075, fill='gray',width=1)
-        canvas.create_line(735, 950, 735, 1075, fill='gray',width=1)
-        canvas.create_line(850, 950, 850, 1075, fill='gray',width=1)
-        canvas.create_line(980, 950, 980, 1075, fill='gray',width=1)
-        canvas.create_line(1100, 950, 1100, 1075, fill='gray',width=1)
-        canvas.create_line(1240, 950, 1240, 1075, fill='gray',width=1)
+        inv_canvas_1.create_line(80, 950, 1240, 950, fill='gray',width=1)
+        inv_canvas_1.create_line(80, 1000, 1240, 1000, fill='gray',width=1)
+        inv_canvas_1.create_line(80, 1075, 1240, 1075, fill='gray',width=1)
+        inv_canvas_1.create_line(80, 950, 80, 1075, fill='gray',width=1)
+        inv_canvas_1.create_line(125, 950, 125, 1075, fill='gray',width=1)
+        inv_canvas_1.create_line(325, 950, 325, 1075, fill='gray',width=1)
+        inv_canvas_1.create_line(525, 950, 525, 1075, fill='gray',width=1)
+        inv_canvas_1.create_line(735, 950, 735, 1075, fill='gray',width=1)
+        inv_canvas_1.create_line(850, 950, 850, 1075, fill='gray',width=1)
+        inv_canvas_1.create_line(980, 950, 980, 1075, fill='gray',width=1)
+        inv_canvas_1.create_line(1100, 950, 1100, 1075, fill='gray',width=1)
+        inv_canvas_1.create_line(1240, 950, 1240, 1075, fill='gray',width=1)
 
-        label_2 = Label(canvas,width=2,height=1,text="#", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(90, 970, anchor="nw", window=label_2)
-        label_3 = Label(canvas,width=15,height=1,text="PRODUCT/SERVICE", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_3 = canvas.create_window(155, 970, anchor="nw", window=label_3)
-        label_4 = Label(canvas,width=10,height=1,text="HSN", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = canvas.create_window(380, 970, anchor="nw", window=label_4)
-        label_4 = Label(canvas,width=11,height=1,text="DESCRIPTION", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = canvas.create_window(580, 970, anchor="nw", window=label_4)
-        label_4 = Label(canvas,width=5,height=1,text="QTY", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = canvas.create_window(770, 970, anchor="nw", window=label_4)
-        label_4 = Label(canvas,width=8,height=1,text="PRICE", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = canvas.create_window(880, 970, anchor="nw", window=label_4)
-        label_4 = Label(canvas,width=8,height=1,text="TOTAL", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = canvas.create_window(1005, 970, anchor="nw", window=label_4)
-        label_4 = Label(canvas,width=8,height=1,text="TAX (%)", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = canvas.create_window(1130, 970, anchor="nw", window=label_4)
+        label_2 = Label(inv_canvas_1,width=2,height=1,text="#", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(90, 970, anchor="nw", window=label_2)
+        label_3 = Label(inv_canvas_1,width=15,height=1,text="PRODUCT/SERVICE", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_3 = inv_canvas_1.create_window(155, 970, anchor="nw", window=label_3)
+        label_4 = Label(inv_canvas_1,width=10,height=1,text="HSN", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_4 = inv_canvas_1.create_window(380, 970, anchor="nw", window=label_4)
+        label_4 = Label(inv_canvas_1,width=11,height=1,text="DESCRIPTION", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_4 = inv_canvas_1.create_window(580, 970, anchor="nw", window=label_4)
+        label_4 = Label(inv_canvas_1,width=5,height=1,text="QTY", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_4 = inv_canvas_1.create_window(770, 970, anchor="nw", window=label_4)
+        label_4 = Label(inv_canvas_1,width=8,height=1,text="PRICE", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_4 = inv_canvas_1.create_window(880, 970, anchor="nw", window=label_4)
+        label_4 = Label(inv_canvas_1,width=8,height=1,text="TOTAL", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_4 = inv_canvas_1.create_window(1005, 970, anchor="nw", window=label_4)
+        label_4 = Label(inv_canvas_1,width=8,height=1,text="TAX (%)", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_4 = inv_canvas_1.create_window(1130, 970, anchor="nw", window=label_4)
 
-        label_2 = Label(canvas,width=2,height=1,text="1", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(90, 1020, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=2,height=1,text="1", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(90, 1020, anchor="nw", window=label_2)
 
-        comb_3 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_3 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_3['values'] = ("Select Product",)
         comb_3.current(0)
-        window_comb_3 = canvas.create_window(135, 1015, anchor="nw", width=180, height=30,window=comb_3)
+        window_comb_3 = inv_canvas_1.create_window(135, 1015, anchor="nw", width=180, height=30,window=comb_3)
 
-        entry_1=Entry(canvas,width=30,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = canvas.create_window(335, 1015, anchor="nw", height=30, window=entry_1)
+        entry_1=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_1 = inv_canvas_1.create_window(335, 1015, anchor="nw", height=30, window=entry_1)
 
-        entry_1=Entry(canvas,width=31,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = canvas.create_window(535, 1015, anchor="nw", height=30, window=entry_1)
+        entry_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_1 = inv_canvas_1.create_window(535, 1015, anchor="nw", height=30, window=entry_1)
 
-        entry_1=Entry(canvas,width=15,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = canvas.create_window(745, 1015, anchor="nw", height=30, window=entry_1)
+        entry_1=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_1 = inv_canvas_1.create_window(745, 1015, anchor="nw", height=30, window=entry_1)
 
-        entry_1=Entry(canvas,width=18,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = canvas.create_window(860, 1015, anchor="nw", height=30, window=entry_1)
+        entry_1=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_1 = inv_canvas_1.create_window(860, 1015, anchor="nw", height=30, window=entry_1)
 
-        entry_1=Entry(canvas,width=16,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = canvas.create_window(990, 1015, anchor="nw", height=30, window=entry_1)
+        entry_1=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_1 = inv_canvas_1.create_window(990, 1015, anchor="nw", height=30, window=entry_1)
 
-        comb_4 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_4 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_4['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
         comb_4.current(0)
-        window_comb_4 = canvas.create_window(1110, 1015, anchor="nw", width=120, height=30,window=comb_4)
+        window_comb_4 = inv_canvas_1.create_window(1110, 1015, anchor="nw", width=120, height=30,window=comb_4)
 
-        canvas.create_line(80, 1150, 1240, 1150, fill='gray',width=1)
-        canvas.create_line(80, 1225, 1240, 1225, fill='gray',width=1)
-        canvas.create_line(80, 1300, 1240, 1300, fill='gray',width=1)
-        canvas.create_line(80, 1075, 80, 1300, fill='gray',width=1)
-        canvas.create_line(1240, 1075, 1240, 1300, fill='gray',width=1)
-        canvas.create_line(125, 1075, 125, 1300, fill='gray',width=1)
-        canvas.create_line(325, 1075, 325, 1300, fill='gray',width=1)
-        canvas.create_line(525, 1075, 525, 1300, fill='gray',width=1)
-        canvas.create_line(735, 1075, 735, 1300, fill='gray',width=1)
-        canvas.create_line(850, 1075, 850, 1300, fill='gray',width=1)
-        canvas.create_line(980, 1075, 980, 1300, fill='gray',width=1)
-        canvas.create_line(1100, 1075, 1100, 1300, fill='gray',width=1)
+        inv_canvas_1.create_line(80, 1150, 1240, 1150, fill='gray',width=1)
+        inv_canvas_1.create_line(80, 1225, 1240, 1225, fill='gray',width=1)
+        inv_canvas_1.create_line(80, 1300, 1240, 1300, fill='gray',width=1)
+        inv_canvas_1.create_line(80, 1075, 80, 1300, fill='gray',width=1)
+        inv_canvas_1.create_line(1240, 1075, 1240, 1300, fill='gray',width=1)
+        inv_canvas_1.create_line(125, 1075, 125, 1300, fill='gray',width=1)
+        inv_canvas_1.create_line(325, 1075, 325, 1300, fill='gray',width=1)
+        inv_canvas_1.create_line(525, 1075, 525, 1300, fill='gray',width=1)
+        inv_canvas_1.create_line(735, 1075, 735, 1300, fill='gray',width=1)
+        inv_canvas_1.create_line(850, 1075, 850, 1300, fill='gray',width=1)
+        inv_canvas_1.create_line(980, 1075, 980, 1300, fill='gray',width=1)
+        inv_canvas_1.create_line(1100, 1075, 1100, 1300, fill='gray',width=1)
 
-        label_2 = Label(canvas,width=2,height=1,text="2", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(90, 1100, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=2,height=1,text="2", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(90, 1100, anchor="nw", window=label_2)
 
-        comb_4 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_4 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_4['values'] = ("Select Product",)
         comb_4.current(0)
-        window_comb_4 = canvas.create_window(135, 1095, anchor="nw", width=180, height=30,window=comb_4)
+        window_comb_4 = inv_canvas_1.create_window(135, 1095, anchor="nw", width=180, height=30,window=comb_4)
 
-        entry_2=Entry(canvas,width=30,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_2 = canvas.create_window(335, 1095, anchor="nw", height=30, window=entry_2)
+        entry_2=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_2 = inv_canvas_1.create_window(335, 1095, anchor="nw", height=30, window=entry_2)
 
-        entry_2_1=Entry(canvas,width=31,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_2_1 = canvas.create_window(535, 1095, anchor="nw", height=30, window=entry_2_1)
+        entry_2_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_2_1 = inv_canvas_1.create_window(535, 1095, anchor="nw", height=30, window=entry_2_1)
 
-        entry_2_2=Entry(canvas,width=15,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_2_2 = canvas.create_window(745, 1095, anchor="nw", height=30, window=entry_2_2)
+        entry_2_2=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_2_2 = inv_canvas_1.create_window(745, 1095, anchor="nw", height=30, window=entry_2_2)
 
-        entry_2_3=Entry(canvas,width=18,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_2_3 = canvas.create_window(860, 1095, anchor="nw", height=30, window=entry_2_3)
+        entry_2_3=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_2_3 = inv_canvas_1.create_window(860, 1095, anchor="nw", height=30, window=entry_2_3)
 
-        entry_2_4=Entry(canvas,width=16,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_2_4 = canvas.create_window(990, 1095, anchor="nw", height=30, window=entry_2_4)
+        entry_2_4=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_2_4 = inv_canvas_1.create_window(990, 1095, anchor="nw", height=30, window=entry_2_4)
 
-        comb_2_5 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_2_5 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_2_5['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
         comb_2_5.current(0)
-        window_comb_2_5 = canvas.create_window(1110, 1095, anchor="nw", width=120, height=30,window=comb_2_5)
+        window_comb_2_5 = inv_canvas_1.create_window(1110, 1095, anchor="nw", width=120, height=30,window=comb_2_5)
 
 
-        label_2 = Label(canvas,width=2,height=1,text="3", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(90, 1170, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=2,height=1,text="3", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(90, 1170, anchor="nw", window=label_2)
 
-        comb_5 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_5 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_5['values'] = ("Select Product",)
         comb_5.current(0)
-        window_comb_5 = canvas.create_window(135, 1165, anchor="nw", width=180, height=30,window=comb_5)
+        window_comb_5 = inv_canvas_1.create_window(135, 1165, anchor="nw", width=180, height=30,window=comb_5)
 
-        entry_3=Entry(canvas,width=30,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_3 = canvas.create_window(335, 1165, anchor="nw", height=30, window=entry_3)
+        entry_3=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_3 = inv_canvas_1.create_window(335, 1165, anchor="nw", height=30, window=entry_3)
 
-        entry_3_1=Entry(canvas,width=31,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_3_1 = canvas.create_window(535, 1165, anchor="nw", height=30, window=entry_3_1)
+        entry_3_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_3_1 = inv_canvas_1.create_window(535, 1165, anchor="nw", height=30, window=entry_3_1)
 
-        entry_3_2=Entry(canvas,width=15,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_3_2 = canvas.create_window(745, 1165, anchor="nw", height=30, window=entry_3_2)
+        entry_3_2=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_3_2 = inv_canvas_1.create_window(745, 1165, anchor="nw", height=30, window=entry_3_2)
 
-        entry_3_3=Entry(canvas,width=18,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_3_3 = canvas.create_window(860, 1165, anchor="nw", height=30, window=entry_3_3)
+        entry_3_3=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_3_3 = inv_canvas_1.create_window(860, 1165, anchor="nw", height=30, window=entry_3_3)
 
-        entry_3_4=Entry(canvas,width=16,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_3_4 = canvas.create_window(990, 1165, anchor="nw", height=30, window=entry_3_4)
+        entry_3_4=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_3_4 = inv_canvas_1.create_window(990, 1165, anchor="nw", height=30, window=entry_3_4)
 
-        comb_3_5 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_3_5 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_3_5['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
         comb_3_5.current(0)
-        window_comb_3_5 = canvas.create_window(1110, 1165, anchor="nw", width=120, height=30,window=comb_3_5)
+        window_comb_3_5 = inv_canvas_1.create_window(1110, 1165, anchor="nw", width=120, height=30,window=comb_3_5)
 
-        label_2 = Label(canvas,width=2,height=1,text="4", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(90, 1245, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=2,height=1,text="4", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(90, 1245, anchor="nw", window=label_2)
 
-        comb_6 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_6 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_6['values'] = ("Select Product",)
         comb_6.current(0)
-        window_comb_6 = canvas.create_window(135, 1240, anchor="nw", width=180, height=30,window=comb_6)
+        window_comb_6 = inv_canvas_1.create_window(135, 1240, anchor="nw", width=180, height=30,window=comb_6)
 
-        entry_4=Entry(canvas,width=30,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_4 = canvas.create_window(335, 1240, anchor="nw", height=30, window=entry_4)
+        entry_4=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_4 = inv_canvas_1.create_window(335, 1240, anchor="nw", height=30, window=entry_4)
 
-        entry_4_1=Entry(canvas,width=31,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_4_1 = canvas.create_window(535, 1240, anchor="nw", height=30, window=entry_4_1)
+        entry_4_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_4_1 = inv_canvas_1.create_window(535, 1240, anchor="nw", height=30, window=entry_4_1)
 
-        entry_4_2=Entry(canvas,width=15,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_4_2 = canvas.create_window(745, 1240, anchor="nw", height=30, window=entry_4_2)
+        entry_4_2=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_4_2 = inv_canvas_1.create_window(745, 1240, anchor="nw", height=30, window=entry_4_2)
 
-        entry_4_3=Entry(canvas,width=18,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_4_3 = canvas.create_window(860, 1240, anchor="nw", height=30, window=entry_4_3)
+        entry_4_3=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_4_3 = inv_canvas_1.create_window(860, 1240, anchor="nw", height=30, window=entry_4_3)
 
-        entry_4_4=Entry(canvas,width=16,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_4_4 = canvas.create_window(990, 1240, anchor="nw", height=30, window=entry_4_4)
+        entry_4_4=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_4_4 = inv_canvas_1.create_window(990, 1240, anchor="nw", height=30, window=entry_4_4)
 
-        comb_4_5 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_4_5 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_4_5['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
         comb_4_5.current(0)
-        window_comb_4_5 = canvas.create_window(1110, 1240, anchor="nw", width=120, height=30,window=comb_4_5)
+        window_comb_4_5 = inv_canvas_1.create_window(1110, 1240, anchor="nw", width=120, height=30,window=comb_4_5)
 
-        canvas.create_line(850, 1350, 1240, 1350, fill='gray',width=1)
-        canvas.create_line(850, 1400, 1240, 1400, fill='gray',width=1)
-        canvas.create_line(850, 1450, 1240, 1450, fill='gray',width=1)
-        canvas.create_line(850, 1500, 1240, 1500, fill='gray',width=1)
-        canvas.create_line(850, 1550, 1240, 1550, fill='gray',width=1)
-        canvas.create_line(850, 1600, 1240, 1600, fill='gray',width=1)
-        canvas.create_line(850, 1350, 850, 1600, fill='gray',width=1)
-        canvas.create_line(1000, 1350, 1000, 1600, fill='gray',width=1)
-        canvas.create_line(1240, 1350, 1240, 1600, fill='gray',width=1)
+        inv_canvas_1.create_line(850, 1350, 1240, 1350, fill='gray',width=1)
+        inv_canvas_1.create_line(850, 1400, 1240, 1400, fill='gray',width=1)
+        inv_canvas_1.create_line(850, 1450, 1240, 1450, fill='gray',width=1)
+        inv_canvas_1.create_line(850, 1500, 1240, 1500, fill='gray',width=1)
+        inv_canvas_1.create_line(850, 1550, 1240, 1550, fill='gray',width=1)
+        inv_canvas_1.create_line(850, 1600, 1240, 1600, fill='gray',width=1)
+        inv_canvas_1.create_line(850, 1350, 850, 1600, fill='gray',width=1)
+        inv_canvas_1.create_line(1000, 1350, 1000, 1600, fill='gray',width=1)
+        inv_canvas_1.create_line(1240, 1350, 1240, 1600, fill='gray',width=1)
 
-        label_5 = Label(canvas,width=12,height=1,text="Sub Total", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_5 = canvas.create_window(870, 1365, anchor="nw", window=label_5)
-        label_5 = Label(canvas,width=12,height=1,text="Tax Amount", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_5 = canvas.create_window(870, 1415, anchor="nw", window=label_5)
-        label_5 = Label(canvas,width=12,height=1,text="Grand Total", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_5 = canvas.create_window(870, 1465, anchor="nw", window=label_5)
-        label_5 = Label(canvas,width=12,height=1,text="Amount Received", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_5 = canvas.create_window(870, 1515, anchor="nw", window=label_5)
-        label_5 = Label(canvas,width=12,height=1,text="Balance Due", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_5 = canvas.create_window(870, 1565, anchor="nw", window=label_5)
+        label_5 = Label(inv_canvas_1,width=12,height=1,text="Sub Total", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_5 = inv_canvas_1.create_window(870, 1365, anchor="nw", window=label_5)
+        label_5 = Label(inv_canvas_1,width=12,height=1,text="Tax Amount", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_5 = inv_canvas_1.create_window(870, 1415, anchor="nw", window=label_5)
+        label_5 = Label(inv_canvas_1,width=12,height=1,text="Grand Total", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_5 = inv_canvas_1.create_window(870, 1465, anchor="nw", window=label_5)
+        label_5 = Label(inv_canvas_1,width=12,height=1,text="Amount Received", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_5 = inv_canvas_1.create_window(870, 1515, anchor="nw", window=label_5)
+        label_5 = Label(inv_canvas_1,width=12,height=1,text="Balance Due", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_5 = inv_canvas_1.create_window(870, 1565, anchor="nw", window=label_5)
 
-        sub_entry_1=Entry(canvas,width=36,justify=LEFT,background='#2f516f',foreground="white")
-        window_sub_entry_1 = canvas.create_window(1010, 1360, anchor="nw", height=30, window=sub_entry_1)
+        sub_entry_1=Entry(inv_canvas_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
+        window_sub_entry_1 = inv_canvas_1.create_window(1010, 1360, anchor="nw", height=30, window=sub_entry_1)
 
-        tax_entry_1=Entry(canvas,width=36,justify=LEFT,background='#2f516f',foreground="white")
-        window_tax_entry_1 = canvas.create_window(1010, 1410, anchor="nw", height=30, window=tax_entry_1)
+        tax_entry_1=Entry(inv_canvas_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
+        window_tax_entry_1 = inv_canvas_1.create_window(1010, 1410, anchor="nw", height=30, window=tax_entry_1)
 
-        grand_entry_1=Entry(canvas,width=36,justify=LEFT,background='#2f516f',foreground="white")
-        window_grand_entry_1 = canvas.create_window(1010, 1460, anchor="nw", height=30, window=grand_entry_1)
+        grand_entry_1=Entry(inv_canvas_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
+        window_grand_entry_1 = inv_canvas_1.create_window(1010, 1460, anchor="nw", height=30, window=grand_entry_1)
 
-        amount_entry_1=Entry(canvas,width=36,justify=LEFT,background='#2f516f',foreground="white")
-        window_amount_entry_1 = canvas.create_window(1010, 1510, anchor="nw", height=30, window=amount_entry_1)
+        amount_entry_1=Entry(inv_canvas_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
+        window_amount_entry_1 = inv_canvas_1.create_window(1010, 1510, anchor="nw", height=30, window=amount_entry_1)
 
-        bal_entry_1=Entry(canvas,width=36,justify=LEFT,background='#2f516f',foreground="white")
-        window_bal_entry_1 = canvas.create_window(1010, 1560, anchor="nw", height=30, window=bal_entry_1)
+        bal_entry_1=Entry(inv_canvas_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
+        window_bal_entry_1 = inv_canvas_1.create_window(1010, 1560, anchor="nw", height=30, window=bal_entry_1)
 
 
-        btn1=Button(canvas,text='Save', width=15,height=2,foreground="white",background="#1b3857",font='arial 12')
-        window_btn1 = canvas.create_window(1050, 1625, anchor="nw", window=btn1)
+        btn1=Button(inv_canvas_1,text='Save', width=15,height=2,foreground="white",background="#1b3857",font='arial 12')
+        window_btn1 = inv_canvas_1.create_window(1050, 1625, anchor="nw", window=btn1)
         
 
-    btn1=Button(canvas,text='Add Invoices', width=20,height=2,foreground="white",background="#1b3857",font='arial 12',command=add_invoice)
-    window_btn1 = canvas.create_window(1050, 275, anchor="nw", window=btn1)
+    btn1=Button(inv_canvas,text='Add Invoices', width=20,height=2,foreground="white",background="#1b3857",font='arial 12',command=add_invoice)
+    window_btn1 = inv_canvas.create_window(1050, 275, anchor="nw", window=btn1)
 
     #-------------------------------Customers-----------------------------#
+    tab3_3.grid_columnconfigure(0,weight=1)
+    tab3_3.grid_rowconfigure(0,weight=1)
+
     cus_frame = Frame(tab3_3)
     cus_frame.grid(row=0,column=0,sticky='nsew')
-    canvas=Canvas(cus_frame, bg='#2f516f', width=1325, height=600, scrollregion=(0,0,700,1000))
+
+    def cus_responsive_widgets(event):
+        dwidth = event.width
+        dheight = event.height
+        dcanvas = event.widget
+
+        r1 = 25
+        x1 = dwidth/63
+        x2 = dwidth/1.021
+        y1 = dheight/14 
+        y2 = dheight/3.505
+
+        dcanvas.coords("cpoly1",x1 + r1,y1,
+        x1 + r1,y1,
+        x2 - r1,y1,
+        x2 - r1,y1,     
+        x2,y1,     
+        #--------------------
+        x2,y1 + r1,     
+        x2,y1 + r1,     
+        x2,y2 - r1,     
+        x2,y2 - r1,     
+        x2,y2,
+        #--------------------
+        x2 - r1,y2,     
+        x2 - r1,y2,     
+        x1 + r1,y2,
+        x1 + r1,y2,
+        x1,y2,
+        #--------------------
+        x1,y2 - r1,
+        x1,y2 - r1,
+        x1,y1 + r1,
+        x1,y1 + r1,
+        x1,y1,
+        )
+
+        dcanvas.coords("clabel1",dwidth/2.5,dheight/8.00)
+
+    cus_canvas=Canvas(cus_frame, bg='#2f516f', width=1325, height=600, scrollregion=(0,0,700,1000))
+
+    cus_frame.grid_rowconfigure(0,weight=1)
+    cus_frame.grid_columnconfigure(0,weight=1)
 
     vertibar=Scrollbar(cus_frame, orient=VERTICAL)
-    vertibar.pack(side=RIGHT,fill=Y)
-    vertibar.config(command=canvas.yview)
-    canvas.config(width=1325,height=559)
+    vertibar.grid(row=0,column=1,sticky='ns')
+    vertibar.config(command=cus_canvas.yview)
+    cus_canvas.bind("<Configure>", cus_responsive_widgets)
+    cus_canvas.config(yscrollcommand=vertibar.set)
+    cus_canvas.grid(row=0,column=0,sticky='nsew')
 
-    canvas.config(yscrollcommand=vertibar.set)
-    canvas.pack(expand=True,side=LEFT,fill=BOTH)
-
-    def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
+    # def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
             
-        points = [x1+radius, y1,
-                x1+radius, y1,
-                x2-radius, y1,
-                x2-radius, y1,
-                x2, y1,
-                x2, y1+radius,
-                x2, y1+radius,
-                x2, y2-radius,
-                x2, y2-radius,
-                x2, y2,
-                x2-radius, y2,
-                x2-radius, y2,
-                x1+radius, y2,
-                x1+radius, y2,
-                x1, y2,
-                x1, y2-radius,
-                x1, y2-radius,
-                x1, y1+radius,
-                x1, y1+radius,
-                x1, y1]
+    #     points = [x1+radius, y1,
+    #             x1+radius, y1,
+    #             x2-radius, y1,
+    #             x2-radius, y1,
+    #             x2, y1,
+    #             x2, y1+radius,
+    #             x2, y1+radius,
+    #             x2, y2-radius,
+    #             x2, y2-radius,
+    #             x2, y2,
+    #             x2-radius, y2,
+    #             x2-radius, y2,
+    #             x1+radius, y2,
+    #             x1+radius, y2,
+    #             x1, y2,
+    #             x1, y2-radius,
+    #             x1, y2-radius,
+    #             x1, y1+radius,
+    #             x1, y1+radius,
+    #             x1, y1]
     
-        return canvas.create_polygon(points, **kwargs, smooth=True)
+    #     return cus_canvas.create_polygon(points, **kwargs, smooth=True)
+
     
-    my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-    label_1 = Label(canvas,width=12,height=1,text="CUSTOMERS", font=('arial 25'),background="#1b3857",fg="white") 
-    window_label_1 = canvas.create_window(550, 85, anchor="nw", window=label_1)
-    canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
+    #my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
+    cus_canvas.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("cpoly1"))
+
+    label_1 = Label(cus_canvas,width=12,height=1,text="CUSTOMERS", font=('arial 25'),background="#1b3857",fg="white") 
+    window_label_1 = cus_canvas.create_window(0, 0, anchor="nw", window=label_1, tags=("clabel1"))
+
+    cus_canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
 
     my_rectangle_1 = round_rectangle(20, 250, 1300, 700, radius=20, fill="#1b3857")
 
 
-    canvas.create_line(60, 350, 1260, 350, fill='gray',width=1)
-    canvas.create_line(60, 350, 60, 400, fill='gray',width=1)
-    canvas.create_line(210, 350, 210, 400, fill='gray',width=1)
-    canvas.create_line(490, 350, 490, 400, fill='gray',width=1)
-    canvas.create_line(640, 350, 640, 400, fill='gray',width=1)
-    canvas.create_line(800, 350, 800, 400, fill='gray',width=1)
-    canvas.create_line(970, 350, 970, 400, fill='gray',width=1)
-    canvas.create_line(1120, 350, 1120, 400, fill='gray',width=1)
-    canvas.create_line(1260, 350, 1260, 400, fill='gray',width=1)
+    cus_canvas.create_line(60, 350, 1260, 350, fill='gray',width=1)
+    cus_canvas.create_line(60, 350, 60, 400, fill='gray',width=1)
+    cus_canvas.create_line(210, 350, 210, 400, fill='gray',width=1)
+    cus_canvas.create_line(490, 350, 490, 400, fill='gray',width=1)
+    cus_canvas.create_line(640, 350, 640, 400, fill='gray',width=1)
+    cus_canvas.create_line(800, 350, 800, 400, fill='gray',width=1)
+    cus_canvas.create_line(970, 350, 970, 400, fill='gray',width=1)
+    cus_canvas.create_line(1120, 350, 1120, 400, fill='gray',width=1)
+    cus_canvas.create_line(1260, 350, 1260, 400, fill='gray',width=1)
 
-    label_2 = Label(canvas,width=10,height=1,text="CUSTOMER", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_2 = canvas.create_window(90, 365, anchor="nw", window=label_2)
-    label_3 = Label(canvas,width=11,height=1,text="GST TYPE", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_3 = canvas.create_window(300, 365, anchor="nw", window=label_3)
-    label_4 = Label(canvas,width=11,height=1,text="GSTIN", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(520, 365, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=8,height=1,text="PAN NO", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(680, 365, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=8,height=1,text="EMAIL ID", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(850, 365, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=11,height=1,text="MOBILE NO", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(1000, 365, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=11,height=1,text="ACTION", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(1140, 365, anchor="nw", window=label_4)
+    label_2 = Label(cus_canvas,width=10,height=1,text="CUSTOMER", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_2 = cus_canvas.create_window(90, 365, anchor="nw", window=label_2)
+    label_3 = Label(cus_canvas,width=11,height=1,text="GST TYPE", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_3 = cus_canvas.create_window(300, 365, anchor="nw", window=label_3)
+    label_4 = Label(cus_canvas,width=11,height=1,text="GSTIN", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = cus_canvas.create_window(520, 365, anchor="nw", window=label_4)
+    label_4 = Label(cus_canvas,width=8,height=1,text="PAN NO", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = cus_canvas.create_window(680, 365, anchor="nw", window=label_4)
+    label_4 = Label(cus_canvas,width=8,height=1,text="EMAIL ID", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = cus_canvas.create_window(850, 365, anchor="nw", window=label_4)
+    label_4 = Label(cus_canvas,width=11,height=1,text="MOBILE NO", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = cus_canvas.create_window(1000, 365, anchor="nw", window=label_4)
+    label_4 = Label(cus_canvas,width=11,height=1,text="ACTION", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = cus_canvas.create_window(1140, 365, anchor="nw", window=label_4)
 
-    canvas.create_line(60, 400, 1260, 400, fill='gray',width=1)
-    canvas.create_line(60, 400, 60, 450, fill='gray',width=1)
-    canvas.create_line(210, 400, 210, 450, fill='gray',width=1)
-    canvas.create_line(490, 400, 490, 450, fill='gray',width=1)
-    canvas.create_line(640, 400, 640, 450, fill='gray',width=1)
-    canvas.create_line(800, 400, 800, 450, fill='gray',width=1)
-    canvas.create_line(970, 400, 970, 450, fill='gray',width=1)
-    canvas.create_line(1120, 400, 1120, 450, fill='gray',width=1)
-    canvas.create_line(1260, 400, 1260, 450, fill='gray',width=1)
+    cus_canvas.create_line(60, 400, 1260, 400, fill='gray',width=1)
+    cus_canvas.create_line(60, 400, 60, 450, fill='gray',width=1)
+    cus_canvas.create_line(210, 400, 210, 450, fill='gray',width=1)
+    cus_canvas.create_line(490, 400, 490, 450, fill='gray',width=1)
+    cus_canvas.create_line(640, 400, 640, 450, fill='gray',width=1)
+    cus_canvas.create_line(800, 400, 800, 450, fill='gray',width=1)
+    cus_canvas.create_line(970, 400, 970, 450, fill='gray',width=1)
+    cus_canvas.create_line(1120, 400, 1120, 450, fill='gray',width=1)
+    cus_canvas.create_line(1260, 400, 1260, 450, fill='gray',width=1)
 
     # Define the style for combobox widget
     # style= ttk.Style()
     # style.theme_use('clam')
     # style.configure("TCombobox", fieldbackground= "#2f516f", background= "#2f516f")
 
-    cus_comb_1 = ttk.Combobox(canvas,font=('arial 10'),foreground="white")
+    cus_comb_1 = ttk.Combobox(cus_canvas,font=('arial 10'),foreground="white")
     cus_comb_1['values'] = ("Actions","Edit","Delete")
     cus_comb_1.current(0)
-    window_cus_comb_1 = canvas.create_window(1135, 410, anchor="nw", width=110,height=30,window=cus_comb_1)
+    window_cus_comb_1 = cus_canvas.create_window(1135, 410, anchor="nw", width=110,height=30,window=cus_comb_1)
 
 
-    canvas.create_line(60, 450, 1260, 450, fill='gray',width=1)
+    cus_canvas.create_line(60, 450, 1260, 450, fill='gray',width=1)
 
     def add_customer():
         cus_frame.grid_forget()
         cus_frame_1 = Frame(tab3_3)
         cus_frame_1.grid(row=0,column=0,sticky='nsew')
-        canvas=Canvas(cus_frame_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1600))
+        cus_canvas_1=Canvas(cus_frame_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1600))
         
         vertibar=Scrollbar(cus_frame_1, orient=VERTICAL)
         vertibar.pack(side=RIGHT,fill=Y)
-        vertibar.config(command=canvas.yview)
+        vertibar.config(command=cus_canvas_1.yview)
 
-        canvas.config(width=1325,height=559)
-        canvas.config(yscrollcommand=vertibar.set)
-        canvas.pack(expand=True,side=LEFT,fill=BOTH)
+        cus_canvas_1.config(width=1325,height=559)
+        cus_canvas_1.config(yscrollcommand=vertibar.set)
+        cus_canvas_1.pack(expand=True,side=LEFT,fill=BOTH)
         def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
             
             points = [x1+radius, y1,
@@ -997,173 +1045,173 @@ def main_sign_in():
                     x1, y1+radius,
                     x1, y1]
         
-            return canvas.create_polygon(points, **kwargs, smooth=True)
+            return cus_canvas_1.create_polygon(points, **kwargs, smooth=True)
 
         my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-        label_1 = Label(canvas,width=15,height=1,text="ADD CUSTOMER", font=('arial 20'),background="#1b3857",fg="white") 
-        window_label_1 = canvas.create_window(550, 85, anchor="nw", window=label_1)
-        canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
+        label_1 = Label(cus_canvas_1,width=15,height=1,text="ADD CUSTOMER", font=('arial 20'),background="#1b3857",fg="white") 
+        window_label_1 = cus_canvas_1.create_window(550, 85, anchor="nw", window=label_1)
+        cus_canvas_1.create_line(60, 150, 1260, 150, fill='gray',width=1)
 
         my_rectangle = round_rectangle(20, 250, 1300, 1535, radius=20, fill="#1b3857")
-        label_1 = Label(canvas,width=20,height=1,text="Customer Information", font=('arial 20'),background="#1b3857",fg="white") 
-        window_label_1 = canvas.create_window(60, 275, anchor="nw", window=label_1)
-        canvas.create_line(60, 330, 1260, 330, fill='gray',width=1)
+        label_1 = Label(cus_canvas_1,width=20,height=1,text="Customer Information", font=('arial 20'),background="#1b3857",fg="white") 
+        window_label_1 = cus_canvas_1.create_window(60, 275, anchor="nw", window=label_1)
+        cus_canvas_1.create_line(60, 330, 1260, 330, fill='gray',width=1)
 
-        label_2 = Label(canvas,width=5,height=1,text="Title", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(62, 365, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=5,height=1,text="Title", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(62, 365, anchor="nw", window=label_2)
 
-        comb_cus_1 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_cus_1 = ttk.Combobox(cus_canvas_1, font=('arial 10'),foreground="white")
         comb_cus_1['values'] = ("Mr","Mrs","Miss","Ms",)
         comb_cus_1.current(0)
-        window_comb_cus_1 = canvas.create_window(75, 395, anchor="nw", width=245, height=30,window=comb_cus_1)
+        window_comb_cus_1 = cus_canvas_1.create_window(75, 395, anchor="nw", width=245, height=30,window=comb_cus_1)
 
-        label_2 = Label(canvas,width=10,height=1,text="First name", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(400, 365, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="First name", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(400, 365, anchor="nw", window=label_2)
 
-        entry_cus_1=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_1 = canvas.create_window(410, 395, anchor="nw", height=30,window=entry_cus_1)
+        entry_cus_1=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_1 = cus_canvas_1.create_window(410, 395, anchor="nw", height=30,window=entry_cus_1)
 
-        label_2 = Label(canvas,width=10,height=1,text="Last name", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(745, 365, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="Last name", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(745, 365, anchor="nw", window=label_2)
 
-        entry_cus_2=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_2 = canvas.create_window(755, 395, anchor="nw", height=30,window=entry_cus_2)
+        entry_cus_2=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_2 = cus_canvas_1.create_window(755, 395, anchor="nw", height=30,window=entry_cus_2)
 
-        label_2 = Label(canvas,width=10,height=1,text="Company", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(62, 465, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="Company", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(62, 465, anchor="nw", window=label_2)
 
-        entry_cus_3=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_3 = canvas.create_window(75, 495, anchor="nw", height=30,window=entry_cus_3)
+        entry_cus_3=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_3 = cus_canvas_1.create_window(75, 495, anchor="nw", height=30,window=entry_cus_3)
 
-        label_2 = Label(canvas,width=10,height=1,text="Location", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(395, 465, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="Location", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(395, 465, anchor="nw", window=label_2)
 
-        cus_4=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_cus_4 = canvas.create_window(410, 495, anchor="nw", height=30,window=cus_4)
+        cus_4=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_cus_4 = cus_canvas_1.create_window(410, 495, anchor="nw", height=30,window=cus_4)
 
-        label_2 = Label(canvas,width=10,height=1,text="GST type", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(62, 565, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="GST type", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(62, 565, anchor="nw", window=label_2)
 
-        comb_cus_2 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+        comb_cus_2 = ttk.Combobox(cus_canvas_1, font=('arial 10'),foreground="white")
         comb_cus_2['values'] = ("Choose...","GST registered Regular","GST registered-Composition","GST unregistered","Consumer","Overseas","SEZ","Deemed exports-EOU's STP's EHTP's etc",)
         comb_cus_2.current(0)
-        window_comb_cus_2 = canvas.create_window(75, 595, anchor="nw", width=245, height=30,window=comb_cus_2)
+        window_comb_cus_2 = cus_canvas_1.create_window(75, 595, anchor="nw", width=245, height=30,window=comb_cus_2)
 
-        label_2 = Label(canvas,width=10,height=1,text="GSTIN", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(385, 565, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="GSTIN", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(385, 565, anchor="nw", window=label_2)
 
         cus_entry_str_1 = StringVar()
-        entry_cus_5=Entry(canvas,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=cus_entry_str_1)
+        entry_cus_5=Entry(cus_canvas_1,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=cus_entry_str_1)
         cus_entry_str_1.set(' 29APPCK7465F1Z1')
-        window_entry_cus_5 = canvas.create_window(410, 595, anchor="nw", height=30,window=entry_cus_5)
+        window_entry_cus_5 = cus_canvas_1.create_window(410, 595, anchor="nw", height=30,window=entry_cus_5)
 
-        label_2 = Label(canvas,width=10,height=1,text="PAN NO", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(740, 565, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="PAN NO", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(740, 565, anchor="nw", window=label_2)
 
         cus_entry_str_2 = StringVar()
-        entry_cus_6=Entry(canvas,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=cus_entry_str_2)
+        entry_cus_6=Entry(cus_canvas_1,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=cus_entry_str_2)
         cus_entry_str_2.set(' APPCK7465F')
-        window_entry_cus_6 = canvas.create_window(755, 595, anchor="nw", height=30,window=entry_cus_6)
+        window_entry_cus_6 = cus_canvas_1.create_window(755, 595, anchor="nw", height=30,window=entry_cus_6)
 
-        label_2 = Label(canvas,width=5,height=1,text="Email", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(71, 665, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=5,height=1,text="Email", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(71, 665, anchor="nw", window=label_2)
 
-        entry_cus_7=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_7 = canvas.create_window(75, 695, anchor="nw", height=30,window=entry_cus_7)
+        entry_cus_7=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_7 = cus_canvas_1.create_window(75, 695, anchor="nw", height=30,window=entry_cus_7)
 
-        label_2 = Label(canvas,width=10,height=1,text="Website", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(395, 665, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="Website", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(395, 665, anchor="nw", window=label_2)
 
-        entry_cus_8=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_8 = canvas.create_window(410, 695, anchor="nw", height=30,window=entry_cus_8)
+        entry_cus_8=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_8 = cus_canvas_1.create_window(410, 695, anchor="nw", height=30,window=entry_cus_8)
 
-        label_2 = Label(canvas,width=10,height=1,text="Mobile", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(736, 665, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="Mobile", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(736, 665, anchor="nw", window=label_2)
 
-        entry_cus_9=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_9 = canvas.create_window(752, 695, anchor="nw", height=30,window=entry_cus_9)
+        entry_cus_9=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_9 = cus_canvas_1.create_window(752, 695, anchor="nw", height=30,window=entry_cus_9)
 
-        label_1 = Label(canvas,width=20,height=1,text="Billing Address", font=('arial 16'),background="#1b3857",fg="white") 
-        window_label_1 = canvas.create_window(23, 775, anchor="nw", window=label_1)
+        label_1 = Label(cus_canvas_1,width=20,height=1,text="Billing Address", font=('arial 16'),background="#1b3857",fg="white") 
+        window_label_1 = cus_canvas_1.create_window(23, 775, anchor="nw", window=label_1)
 
-        label_2 = Label(canvas,width=5,height=1,text="Street", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(71, 825, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=5,height=1,text="Street", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(71, 825, anchor="nw", window=label_2)
 
-        entry_cus_10=Entry(canvas,width=95,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_10 = canvas.create_window(75, 855, anchor="nw", height=60,window=entry_cus_10)
+        entry_cus_10=Entry(cus_canvas_1,width=95,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_10 = cus_canvas_1.create_window(75, 855, anchor="nw", height=60,window=entry_cus_10)
 
-        label_1 = Label(canvas,width=20,height=1,text="Shipping Address", font=('arial 16'),background="#1b3857",fg="white") 
-        window_label_1 = canvas.create_window(645, 775, anchor="nw", window=label_1)
+        label_1 = Label(cus_canvas_1,width=20,height=1,text="Shipping Address", font=('arial 16'),background="#1b3857",fg="white") 
+        window_label_1 = cus_canvas_1.create_window(645, 775, anchor="nw", window=label_1)
 
         chk_str = StringVar()
-        chkbtn1 = Checkbutton(canvas, text = "Same As Billing Address", variable = chk_str, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white",selectcolor="#2f516f")
+        chkbtn1 = Checkbutton(cus_canvas_1, text = "Same As Billing Address", variable = chk_str, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white",selectcolor="#2f516f")
         chkbtn1.select()
-        window_chkbtn_1 = canvas.create_window(865, 775, anchor="nw", window=chkbtn1)
+        window_chkbtn_1 = cus_canvas_1.create_window(865, 775, anchor="nw", window=chkbtn1)
 
-        label_2 = Label(canvas,width=5,height=1,text="Street", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(681, 825, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=5,height=1,text="Street", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(681, 825, anchor="nw", window=label_2)
 
-        entry_cus_11=Entry(canvas,width=95,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_11 = canvas.create_window(685, 855, anchor="nw", height=60,window=entry_cus_11)
+        entry_cus_11=Entry(cus_canvas_1,width=95,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_11 = cus_canvas_1.create_window(685, 855, anchor="nw", height=60,window=entry_cus_11)
 
-        label_2 = Label(canvas,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(65, 950, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(65, 950, anchor="nw", window=label_2)
 
-        entry_cus_12=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_12 = canvas.create_window(75, 985, anchor="nw", height=30,window=entry_cus_12)
+        entry_cus_12=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_12 = cus_canvas_1.create_window(75, 985, anchor="nw", height=30,window=entry_cus_12)
         
-        label_2 = Label(canvas,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(395, 950, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(395, 950, anchor="nw", window=label_2)
 
-        entry_cus_13=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_13 = canvas.create_window(400, 985, anchor="nw", height=30,window=entry_cus_13)
+        entry_cus_13=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_13 = cus_canvas_1.create_window(400, 985, anchor="nw", height=30,window=entry_cus_13)
 
-        label_2 = Label(canvas,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(675, 950, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(675, 950, anchor="nw", window=label_2)
 
-        entry_cus_14=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_14 = canvas.create_window(685, 985, anchor="nw", height=30,window=entry_cus_14)
+        entry_cus_14=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_14 = cus_canvas_1.create_window(685, 985, anchor="nw", height=30,window=entry_cus_14)
 
-        label_2 = Label(canvas,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(1001, 950, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(1001, 950, anchor="nw", window=label_2)
 
-        entry_cus_15=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_15 = canvas.create_window(1010, 985, anchor="nw", height=30,window=entry_cus_15)
+        entry_cus_15=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_15 = cus_canvas_1.create_window(1010, 985, anchor="nw", height=30,window=entry_cus_15)
 
-        label_2 = Label(canvas,width=10,height=1,text="Pin Code", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(65, 1050, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="Pin Code", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(65, 1050, anchor="nw", window=label_2)
 
-        entry_cus_12=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_12 = canvas.create_window(75, 1085, anchor="nw", height=30,window=entry_cus_12)
+        entry_cus_12=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_12 = cus_canvas_1.create_window(75, 1085, anchor="nw", height=30,window=entry_cus_12)
         
-        label_2 = Label(canvas,width=8,height=1,text="Country", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(394, 1050, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=8,height=1,text="Country", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(394, 1050, anchor="nw", window=label_2)
 
-        entry_cus_13=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_13 = canvas.create_window(400, 1085, anchor="nw", height=30,window=entry_cus_13)
+        entry_cus_13=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_13 = cus_canvas_1.create_window(400, 1085, anchor="nw", height=30,window=entry_cus_13)
 
-        label_2 = Label(canvas,width=10,height=1,text="Pin Code", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(675, 1050, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=10,height=1,text="Pin Code", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(675, 1050, anchor="nw", window=label_2)
 
-        entry_cus_14=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_14 = canvas.create_window(685, 1085, anchor="nw", height=30,window=entry_cus_14)
+        entry_cus_14=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_14 = cus_canvas_1.create_window(685, 1085, anchor="nw", height=30,window=entry_cus_14)
 
-        label_2 = Label(canvas,width=8,height=1,text="Country", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = canvas.create_window(1001, 1050, anchor="nw", window=label_2)
+        label_2 = Label(cus_canvas_1,width=8,height=1,text="Country", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = cus_canvas_1.create_window(1001, 1050, anchor="nw", window=label_2)
 
-        entry_cus_15=Entry(canvas,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_cus_15 = canvas.create_window(1010, 1085, anchor="nw", height=30,window=entry_cus_15)
+        entry_cus_15=Entry(cus_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_entry_cus_15 = cus_canvas_1.create_window(1010, 1085, anchor="nw", height=30,window=entry_cus_15)
 
         chk_str_1 = StringVar()
-        chkbtn2 = Checkbutton(canvas, text = "Agree to terms and conditions", variable = chk_str_1, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white")
+        chkbtn2 = Checkbutton(cus_canvas_1, text = "Agree to terms and conditions", variable = chk_str_1, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white",selectcolor="#2f516f")
         chkbtn2.select()
-        window_chkbtn_2 = canvas.create_window(69, 1150, anchor="nw", window=chkbtn2)
+        window_chkbtn_2 = cus_canvas_1.create_window(69, 1150, anchor="nw", window=chkbtn2)
 
-        cus_btn2=Button(canvas,text='Submit Form', width=25,height=2,foreground="white",background="#1b3857",font='arial 12')
-        window_cus_btn2 = canvas.create_window(550, 1200, anchor="nw", window=cus_btn2)
+        cus_btn2=Button(cus_canvas_1,text='Submit Form', width=25,height=2,foreground="white",background="#1b3857",font='arial 12')
+        window_cus_btn2 = cus_canvas_1.create_window(550, 1200, anchor="nw", window=cus_btn2)
 
-    btn1=Button(canvas,text='Add Customer', width=20,height=2,foreground="white",background="#1b3857",font='arial 12',command=add_customer)
-    window_btn1 = canvas.create_window(1050, 275, anchor="nw", window=btn1)
+    btn1=Button(cus_canvas,text='Add Customer', width=20,height=2,foreground="white",background="#1b3857",font='arial 12',command=add_customer)
+    window_btn1 = cus_canvas.create_window(1050, 275, anchor="nw", window=btn1)
 
     #---------------------------Product & Services------------------------#
     pro_frame = Frame(tab3_4)
@@ -1520,12 +1568,12 @@ def main_sign_in():
                 window_inv_text_1 = canvas.create_window(55, 500, anchor="nw",window=inv_text_1)
 
                 chk_str_inv_1_1 = StringVar()
-                chkbtn_inv_1_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_inv_1_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+                chkbtn_inv_1_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_inv_1_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
                 chkbtn_inv_1_1.select()
                 window_chkbtn_inv_1_1 = canvas.create_window(709, 500, anchor="nw", window=chkbtn_inv_1_1)
 
                 comb_inv_1_3 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_inv_1_3['values'] = ("Choose...",)
+                comb_inv_1_3['values'] = ("Deferred CGST","Deferred GST Input Credit","Deferred IGST","Deferred Krishi Kalyan Cess Input Credit","Deferred Service Tax Input Credit","Deferred SGST","Deferred VAT Input Credit","GST Refund","Inventory Asset","Paid Insurance","Service Tax Refund","TDS Receivable","Uncategorised Asset","Accumulated Depreciation","Building and Improvements","Furniture and Equipment","Land","Leasehold Improvements","CGST Payable","CST Payable","CST Suspense","GST Payable","GST Suspense","IGST Payable","Input CGST","Input CGST Tax RCM","Input IGST","Input IGST Tax RCM","Input Krishi Kalyan Cess","Input Krishi Kalyan Cess RCM","Input Service Tax","Input Service Tax RCM","Input SGST","Input SGST Tax RCM","Input VAT 14%","Input VAT 4%","Input VAT 5%","Krishi Kalyan Cess Payable","Krishi Kalyan Cess Suspense","Output CGST","Output CGST Tax RCM","Output CST 2%","Output IGST","Output IGST Tax RCM","Output Krishi Kalyan Cess","Output Krishi Kalyan Cess RCM","Output Service Tax","Output Sevice Tax RCM","Output SGST","Output SGST Tax RCM","Output VAT 14%","Output VAT 4%","Output VAT 5%","Service Tax Payable","service Tax Suspense","SGST Payable","SGST Suspense","Swachh Barath Cess Payable" ,"Swachh Barath Cess Suspense" ,"TDS Payable" ,"VAT Payable","VAT Suspense","Opening Balance","Equity",)
                 comb_inv_1_3.current(0)
                 window_comb_inv_1_3 = canvas.create_window(710, 530, anchor="nw", width=540, height=30,window=comb_inv_1_3)
 
@@ -1533,7 +1581,7 @@ def main_sign_in():
                 window_label_1 = canvas.create_window(705, 600, anchor="nw", window=label_1)
 
                 comb_inv_1_4 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_inv_1_4['values'] = ("Choose...",)
+                comb_inv_1_4['values'] = ("18.0% IGST","14.00% ST","0% IGST","Out of Scope","0% GST","14.5% ST","14.0% VAT","6.0% IGST","28.0% IGST","15.0% ST","28.0% GST","12.0% GST","18.0% GST","3.0% GST","0.2% IGST","5.0% GST","6.0% GST","0.2% GST","Exempt IGST","3.0% IGST","4.0% VAT","5.0% IGST","12.36% ST","5.0% VAT","Exempt GST","12.0% IGST","2.0% CST",)
                 comb_inv_1_4.current(0)
                 window_comb_inv_1_4 = canvas.create_window(710, 630, anchor="nw", width=540, height=30,window=comb_inv_1_4)
 
@@ -1561,7 +1609,7 @@ def main_sign_in():
             window_entry_entry_inv_item_8 = canvas.create_window(55, 1170, anchor="nw", height=30,window=entry_inv_item_8)
 
             chk_str_inv_item = StringVar()
-            chkbtn_inv_item_1 = Checkbutton(canvas, text = "Inclusive of tax", variable = chk_str_inv_item, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+            chkbtn_inv_item_1 = Checkbutton(canvas, text = "Inclusive of tax", variable = chk_str_inv_item, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             chkbtn_inv_item_1.select()
             window_chkbtn_inv_item_1 = canvas.create_window(55, 1205, anchor="nw", window=chkbtn_inv_item_1)
 
@@ -1659,12 +1707,12 @@ def main_sign_in():
                 window_inv_text_2 = canvas.create_window(55, 500, anchor="nw",window=inv_text_2)
 
                 chk_str_inv_2_1 = StringVar()
-                chkbtn_inv_2_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_inv_2_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+                chkbtn_inv_2_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_inv_2_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
                 chkbtn_inv_2_1.select()
                 window_chkbtn_inv_2_1 = canvas.create_window(709, 500, anchor="nw", window=chkbtn_inv_2_1)
 
                 comb_inv_2_3 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_inv_2_3['values'] = ("Choose...",)
+                comb_inv_2_3['values'] = ("Deferred CGST","Deferred GST Input Credit","Deferred IGST","Deferred Krishi Kalyan Cess Input Credit","Deferred Service Tax Input Credit","Deferred SGST","Deferred VAT Input Credit","GST Refund","Inventory Asset","Paid Insurance","Service Tax Refund","TDS Receivable","Uncategorised Asset","Accumulated Depreciation","Building and Improvements","Furniture and Equipment","Land","Leasehold Improvements","CGST Payable","CST Payable","CST Suspense","GST Payable","GST Suspense","IGST Payable","Input CGST","Input CGST Tax RCM","Input IGST","Input IGST Tax RCM","Input Krishi Kalyan Cess","Input Krishi Kalyan Cess RCM","Input Service Tax","Input Service Tax RCM","Input SGST","Input SGST Tax RCM","Input VAT 14%","Input VAT 4%","Input VAT 5%","Krishi Kalyan Cess Payable","Krishi Kalyan Cess Suspense","Output CGST","Output CGST Tax RCM","Output CST 2%","Output IGST","Output IGST Tax RCM","Output Krishi Kalyan Cess","Output Krishi Kalyan Cess RCM","Output Service Tax","Output Sevice Tax RCM","Output SGST","Output SGST Tax RCM","Output VAT 14%","Output VAT 4%","Output VAT 5%","Service Tax Payable","service Tax Suspense","SGST Payable","SGST Suspense","Swachh Barath Cess Payable" ,"Swachh Barath Cess Suspense" ,"TDS Payable" ,"VAT Payable","VAT Suspense","Opening Balance","Equity",)
                 comb_inv_2_3.current(0)
                 window_comb_inv_2_3 = canvas.create_window(710, 530, anchor="nw", width=540, height=30,window=comb_inv_2_3)
 
@@ -1672,7 +1720,7 @@ def main_sign_in():
                 window_label_1 = canvas.create_window(705, 600, anchor="nw", window=label_1)
 
                 comb_inv_2_4 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_inv_2_4['values'] = ("Choose...",)
+                comb_inv_2_4['values'] = ("18.0% IGST","14.00% ST","0% IGST","Out of Scope","0% GST","14.5% ST","14.0% VAT","6.0% IGST","28.0% IGST","15.0% ST","28.0% GST","12.0% GST","18.0% GST","3.0% GST","0.2% IGST","5.0% GST","6.0% GST","0.2% GST","Exempt IGST","3.0% IGST","4.0% VAT","5.0% IGST","12.36% ST","5.0% VAT","Exempt GST","12.0% IGST","2.0% CST",)
                 comb_inv_2_4.current(0)
                 window_comb_inv_2_4 = canvas.create_window(710, 630, anchor="nw", width=540, height=30,window=comb_inv_2_4)
 
@@ -1701,7 +1749,7 @@ def main_sign_in():
             window_entry_entry_inv_item_10 = canvas.create_window(55, 1560, anchor="nw", height=30,window=entry_inv_item_10)
 
             chk_str_inv_item_1 = StringVar()
-            chkbtn_inv_item_2 = Checkbutton(canvas, text = "Inclusive of purchase tax", variable = chk_str_inv_item_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+            chkbtn_inv_item_2 = Checkbutton(canvas, text = "Inclusive of purchase tax", variable = chk_str_inv_item_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             chkbtn_inv_item_2.select()
             window_chkbtn_inv_item_2 = canvas.create_window(55, 1600, anchor="nw", window=chkbtn_inv_item_2)
 
@@ -1799,12 +1847,12 @@ def main_sign_in():
                 window_inv_text_3 = canvas.create_window(55, 500, anchor="nw",window=inv_text_3)
 
                 chk_str_inv_3_1 = StringVar()
-                chkbtn_inv_3_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_inv_3_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+                chkbtn_inv_3_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_inv_3_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
                 chkbtn_inv_3_1.select()
                 window_chkbtn_inv_3_1 = canvas.create_window(709, 500, anchor="nw", window=chkbtn_inv_3_1)
 
                 comb_inv_3_3 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_inv_3_3['values'] = ("Choose...",)
+                comb_inv_3_3['values'] = ("Deferred CGST","Deferred GST Input Credit","Deferred IGST","Deferred Krishi Kalyan Cess Input Credit","Deferred Service Tax Input Credit","Deferred SGST","Deferred VAT Input Credit","GST Refund","Inventory Asset","Paid Insurance","Service Tax Refund","TDS Receivable","Uncategorised Asset","Accumulated Depreciation","Building and Improvements","Furniture and Equipment","Land","Leasehold Improvements","CGST Payable","CST Payable","CST Suspense","GST Payable","GST Suspense","IGST Payable","Input CGST","Input CGST Tax RCM","Input IGST","Input IGST Tax RCM","Input Krishi Kalyan Cess","Input Krishi Kalyan Cess RCM","Input Service Tax","Input Service Tax RCM","Input SGST","Input SGST Tax RCM","Input VAT 14%","Input VAT 4%","Input VAT 5%","Krishi Kalyan Cess Payable","Krishi Kalyan Cess Suspense","Output CGST","Output CGST Tax RCM","Output CST 2%","Output IGST","Output IGST Tax RCM","Output Krishi Kalyan Cess","Output Krishi Kalyan Cess RCM","Output Service Tax","Output Sevice Tax RCM","Output SGST","Output SGST Tax RCM","Output VAT 14%","Output VAT 4%","Output VAT 5%","Service Tax Payable","service Tax Suspense","SGST Payable","SGST Suspense","Swachh Barath Cess Payable" ,"Swachh Barath Cess Suspense" ,"TDS Payable" ,"VAT Payable","VAT Suspense","Opening Balance","Equity",)
                 comb_inv_3_3.current(0)
                 window_comb_inv_3_3 = canvas.create_window(710, 530, anchor="nw", width=540, height=30,window=comb_inv_3_3)
 
@@ -1812,7 +1860,7 @@ def main_sign_in():
                 window_label_1 = canvas.create_window(705, 600, anchor="nw", window=label_1)
 
                 comb_inv_3_4 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_inv_3_4['values'] = ("Choose...",)
+                comb_inv_3_4['values'] = ("18.0% IGST","14.00% ST","0% IGST","Out of Scope","0% GST","14.5% ST","14.0% VAT","6.0% IGST","28.0% IGST","15.0% ST","28.0% GST","12.0% GST","18.0% GST","3.0% GST","0.2% IGST","5.0% GST","6.0% GST","0.2% GST","Exempt IGST","3.0% IGST","4.0% VAT","5.0% IGST","12.36% ST","5.0% VAT","Exempt GST","12.0% IGST","2.0% CST",)
                 comb_inv_3_4.current(0)
                 window_comb_inv_3_4 = canvas.create_window(710, 630, anchor="nw", width=540, height=30,window=comb_inv_3_4)
 
@@ -1953,7 +2001,7 @@ def main_sign_in():
             window_label_1 = canvas.create_window(51, 840, anchor="nw", window=label_1)
 
             chk_str_non_item = StringVar()
-            chkbtn_non_item = Checkbutton(canvas, text = "I sell this product/service to my customers.", variable = chk_str_non_item, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+            chkbtn_non_item = Checkbutton(canvas, text = "I sell this product/service to my customers.", variable = chk_str_non_item, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             window_chkbtn_non_item = canvas.create_window(55, 870, anchor="nw", window=chkbtn_non_item)
 
             label_1 = Label(canvas,width=10,height=1,text="Description", font=('arial 12'),background="#1b3857",fg="white") 
@@ -1969,7 +2017,7 @@ def main_sign_in():
             window_entry_non_item_8 = canvas.create_window(55, 1100, anchor="nw", height=30,window=entry_non_item_8)
 
             chk_str_non_item_1 = StringVar()
-            chkbtn_non_item_1 = Checkbutton(canvas, text = "Inclusive of tax", variable = chk_str_non_item_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+            chkbtn_non_item_1 = Checkbutton(canvas, text = "Inclusive of tax", variable = chk_str_non_item_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             chkbtn_non_item_1.select()
             window_chkbtn_non_item_1 = canvas.create_window(55, 1135, anchor="nw", window=chkbtn_non_item_1)
 
@@ -2052,7 +2100,7 @@ def main_sign_in():
                 window_label_1 = canvas.create_window(54, 400, anchor="nw", window=label_1)
 
                 comb_non_2_2 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_non_2_2['values'] = ("Discounts/Refunds Given",)
+                comb_non_2_2['values'] = ("Discounts/Refunds Given","Non-Profit Income","Other Primary Income","Revenue-General","Sales-Retail","Sales-Wholesale","Sales of Product Income","Service/Fee Income","Unapplied Cash Payment Inncome",)
                 comb_non_2_2.current(0)
                 window_comb_non_2_2 = canvas.create_window(55, 430, anchor="nw", width=540, height=30,window=comb_non_2_2)
 
@@ -2067,12 +2115,12 @@ def main_sign_in():
                 window_non_text_2 = canvas.create_window(55, 500, anchor="nw",window=non_text_2)
 
                 chk_str_non_2_1 = StringVar()
-                chkbtn_non_2_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_non_2_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+                chkbtn_non_2_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_non_2_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
                 chkbtn_non_2_1.select()
                 window_chkbtn_non_2_1 = canvas.create_window(709, 500, anchor="nw", window=chkbtn_non_2_1)
 
                 comb_non_2_3 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_non_2_3['values'] = ("Choose...",)
+                comb_non_2_3['values'] = ("Deferred CGST","Deferred GST Input Credit","Deferred IGST","Deferred Krishi Kalyan Cess Input Credit","Deferred Service Tax Input Credit","Deferred SGST","Deferred VAT Input Credit","GST Refund","Inventory Asset","Paid Insurance","Service Tax Refund","TDS Receivable","Uncategorised Asset","Accumulated Depreciation","Building and Improvements","Furniture and Equipment","Land","Leasehold Improvements","CGST Payable","CST Payable","CST Suspense","GST Payable","GST Suspense","IGST Payable","Input CGST","Input CGST Tax RCM","Input IGST","Input IGST Tax RCM","Input Krishi Kalyan Cess","Input Krishi Kalyan Cess RCM","Input Service Tax","Input Service Tax RCM","Input SGST","Input SGST Tax RCM","Input VAT 14%","Input VAT 4%","Input VAT 5%","Krishi Kalyan Cess Payable","Krishi Kalyan Cess Suspense","Output CGST","Output CGST Tax RCM","Output CST 2%","Output IGST","Output IGST Tax RCM","Output Krishi Kalyan Cess","Output Krishi Kalyan Cess RCM","Output Service Tax","Output Sevice Tax RCM","Output SGST","Output SGST Tax RCM","Output VAT 14%","Output VAT 4%","Output VAT 5%","Service Tax Payable","service Tax Suspense","SGST Payable","SGST Suspense","Swachh Barath Cess Payable" ,"Swachh Barath Cess Suspense" ,"TDS Payable" ,"VAT Payable","VAT Suspense","Opening Balance","Equity",)
                 comb_non_2_3.current(0)
                 window_comb_non_2_3 = canvas.create_window(710, 530, anchor="nw", width=540, height=30,window=comb_non_2_3)
 
@@ -2080,7 +2128,7 @@ def main_sign_in():
                 window_label_1 = canvas.create_window(705, 600, anchor="nw", window=label_1)
 
                 comb_non_2_4 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_non_2_4['values'] = ("Choose...",)
+                comb_non_2_4['values'] = ("18.0% IGST","14.00% ST","0% IGST","Out of Scope","0% GST","14.5% ST","14.0% VAT","6.0% IGST","28.0% IGST","15.0% ST","28.0% GST","12.0% GST","18.0% GST","3.0% GST","0.2% IGST","5.0% GST","6.0% GST","0.2% GST","Exempt IGST","3.0% IGST","4.0% VAT","5.0% IGST","12.36% ST","5.0% VAT","Exempt GST","12.0% IGST","2.0% CST",)
                 comb_non_2_4.current(0)
                 window_comb_non_2_4 = canvas.create_window(710, 630, anchor="nw", width=540, height=30,window=comb_non_2_4)
 
@@ -2099,7 +2147,7 @@ def main_sign_in():
             window_label_1 = canvas.create_window(26, 1300, anchor="nw", window=label_1)
 
             chk_str_non_pitem = StringVar()
-            chkbtn_non_pitem = Checkbutton(canvas, text = "I Purchase this product/service from Supplier.", variable = chk_str_non_pitem, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+            chkbtn_non_pitem = Checkbutton(canvas, text = "I Purchase this product/service from Supplier.", variable = chk_str_non_pitem, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             window_chkbtn_non_pitem = canvas.create_window(55, 1330, anchor="nw", window=chkbtn_non_pitem)
 
 
@@ -2116,7 +2164,7 @@ def main_sign_in():
             window_entry_non_item_10 = canvas.create_window(55, 1560, anchor="nw", height=30,window=entry_non_item_10)
 
             chk_str_non_item_2 = StringVar()
-            chkbtn_non_item_2 = Checkbutton(canvas, text = "Inclusive of purchase tax", variable = chk_str_non_item_2, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+            chkbtn_non_item_2 = Checkbutton(canvas, text = "Inclusive of purchase tax", variable = chk_str_non_item_2, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             chkbtn_non_item_2.select()
             window_chkbtn_non_item_2 = canvas.create_window(55, 1600, anchor="nw", window=chkbtn_non_item_2)
 
@@ -2199,7 +2247,7 @@ def main_sign_in():
                 window_label_1 = canvas.create_window(54, 400, anchor="nw", window=label_1)
 
                 comb_non_3_2 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_non_3_2['values'] = ("Advertising/Promotional",)
+                comb_non_3_2['values'] = ("Advertising/Promotional","Amortisation Expense","Auto","Bad Debts","Bank Charges","Borrowing Cost","Charitable Contributions","Commision and Fees","Cost of Labour","Dues and Subscriptions","Equipment Rental","Finance Costs","Income Tax Expense","Insurance","Interest Paid","Legal and Professional Fees","Loss on Discontinued Operations, Net of Tax","Management Compensation","Meals and Entertainment","Office/General Administrative Expenses","Other Miscellaneous Service Cost","Other Selling Expenses","Payroll Expenses","Rent or Lease of Building","Repair and Maintanance","Shipping and Delivery Expense","Shipping, Freight and Delivery","Supplies and Materials","Taxes Paid","Travel Expenses-Gereral and Admin Expenses","Travel Expenses-Selling Expense","Unapplied Cash Bill Payment Expense","Utilities",)
                 comb_non_3_2.current(0)
                 window_comb_non_3_2 = canvas.create_window(55, 430, anchor="nw", width=540, height=30,window=comb_non_3_2)
 
@@ -2214,12 +2262,12 @@ def main_sign_in():
                 window_non_text_3 = canvas.create_window(55, 500, anchor="nw",window=non_text_3)
 
                 chk_str_non_3_1 = StringVar()
-                chkbtn_non_3_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_non_3_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+                chkbtn_non_3_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_non_3_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
                 chkbtn_non_3_1.select()
                 window_chkbtn_non_3_1 = canvas.create_window(709, 500, anchor="nw", window=chkbtn_non_3_1)
 
                 comb_non_3_3 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_non_3_3['values'] = ("Choose...",)
+                comb_non_3_3['values'] = ("Deferred CGST","Deferred GST Input Credit","Deferred IGST","Deferred Krishi Kalyan Cess Input Credit","Deferred Service Tax Input Credit","Deferred SGST","Deferred VAT Input Credit","GST Refund","Inventory Asset","Paid Insurance","Service Tax Refund","TDS Receivable","Uncategorised Asset","Accumulated Depreciation","Building and Improvements","Furniture and Equipment","Land","Leasehold Improvements","CGST Payable","CST Payable","CST Suspense","GST Payable","GST Suspense","IGST Payable","Input CGST","Input CGST Tax RCM","Input IGST","Input IGST Tax RCM","Input Krishi Kalyan Cess","Input Krishi Kalyan Cess RCM","Input Service Tax","Input Service Tax RCM","Input SGST","Input SGST Tax RCM","Input VAT 14%","Input VAT 4%","Input VAT 5%","Krishi Kalyan Cess Payable","Krishi Kalyan Cess Suspense","Output CGST","Output CGST Tax RCM","Output CST 2%","Output IGST","Output IGST Tax RCM","Output Krishi Kalyan Cess","Output Krishi Kalyan Cess RCM","Output Service Tax","Output Sevice Tax RCM","Output SGST","Output SGST Tax RCM","Output VAT 14%","Output VAT 4%","Output VAT 5%","Service Tax Payable","service Tax Suspense","SGST Payable","SGST Suspense","Swachh Barath Cess Payable" ,"Swachh Barath Cess Suspense" ,"TDS Payable" ,"VAT Payable","VAT Suspense","Opening Balance","Equity",)
                 comb_non_3_3.current(0)
                 window_comb_non_3_3 = canvas.create_window(710, 530, anchor="nw", width=540, height=30,window=comb_non_3_3)
 
@@ -2227,7 +2275,7 @@ def main_sign_in():
                 window_label_1 = canvas.create_window(705, 600, anchor="nw", window=label_1)
 
                 comb_non_3_4 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-                comb_non_3_4['values'] = ("Choose...",)
+                comb_non_3_4['values'] = ("18.0% IGST","14.00% ST","0% IGST","Out of Scope","0% GST","14.5% ST","14.0% VAT","6.0% IGST","28.0% IGST","15.0% ST","28.0% GST","12.0% GST","18.0% GST","3.0% GST","0.2% IGST","5.0% GST","6.0% GST","0.2% GST","Exempt IGST","3.0% IGST","4.0% VAT","5.0% IGST","12.36% ST","5.0% VAT","Exempt GST","12.0% IGST","2.0% CST",)
                 comb_non_3_4.current(0)
                 window_comb_non_3_4 = canvas.create_window(710, 630, anchor="nw", width=540, height=30,window=comb_non_3_4)
 
@@ -2365,7 +2413,7 @@ def main_sign_in():
             window_label_1 = canvas.create_window(51, 840, anchor="nw", window=label_1)
 
             chk_str_ser_item = StringVar()
-            chkbtn_ser_item = Checkbutton(canvas, text = "I sell this product/service to my customers.", variable = chk_str_ser_item, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+            chkbtn_ser_item = Checkbutton(canvas, text = "I sell this product/service to my customers.", variable = chk_str_ser_item, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             window_chkbtn_ser_item = canvas.create_window(55, 870, anchor="nw", window=chkbtn_ser_item)
 
             label_1 = Label(canvas,width=10,height=1,text="Description", font=('arial 12'),background="#1b3857",fg="white") 
@@ -2381,7 +2429,7 @@ def main_sign_in():
             window_entry_non_item_8 = canvas.create_window(55, 1100, anchor="nw", height=30,window=entry_non_item_8)
 
             chk_str_ser_item_1 = StringVar()
-            chkbtn_ser_item_1 = Checkbutton(canvas, text = "Inclusive of tax", variable = chk_str_ser_item_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+            chkbtn_ser_item_1 = Checkbutton(canvas, text = "Inclusive of tax", variable = chk_str_ser_item_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             chkbtn_ser_item_1.select()
             window_chkbtn_ser_item_1 = canvas.create_window(55, 1135, anchor="nw", window=chkbtn_ser_item_1)
 
@@ -2402,7 +2450,108 @@ def main_sign_in():
             comb_ser_item_6.current(0)
             window_comb_ser_item_6 = canvas.create_window(55, 1210, anchor="nw", width=330, height=30,window=comb_ser_item_6)
 
-            income_ser_btn=Button(canvas,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12')
+            def ser_inc_acc_1():
+                pro_frame_4.grid_forget()
+                pro_frame_4_1 = Frame(tab3_4)
+                pro_frame_4_1.grid(row=0,column=0,sticky='nsew')
+                canvas=Canvas(pro_frame_4_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,2050))
+                
+                vertibar=Scrollbar(pro_frame_4_1, orient=VERTICAL)
+                vertibar.pack(side=RIGHT,fill=Y)
+                vertibar.config(command=canvas.yview)
+
+                canvas.config(width=1325,height=559)
+                canvas.config(yscrollcommand=vertibar.set)
+                canvas.pack(expand=True,side=LEFT,fill=BOTH)
+                def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
+                    
+                    points = [x1+radius, y1,
+                            x1+radius, y1,
+                            x2-radius, y1,
+                            x2-radius, y1,
+                            x2, y1,
+                            x2, y1+radius,
+                            x2, y1+radius,
+                            x2, y2-radius,
+                            x2, y2-radius,
+                            x2, y2,
+                            x2-radius, y2,
+                            x2-radius, y2,
+                            x1+radius, y2,
+                            x1+radius, y2,
+                            x1, y2,
+                            x1, y2-radius,
+                            x1, y2-radius,
+                            x1, y1+radius,
+                            x1, y1+radius,
+                            x1, y1]
+                
+                    return canvas.create_polygon(points, **kwargs, smooth=True)
+
+                my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
+                label_1 = Label(canvas,width=30,height=1,text="ACCOUNT CREATE", font=('arial 20'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(465, 85, anchor="nw", window=label_1)
+                canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
+
+                my_rectangle = round_rectangle(20, 250, 1300, 950, radius=20, fill="#1b3857")
+
+                label_1 = Label(canvas,width=10,height=1,text="Account Type", font=('arial 12'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(56, 300, anchor="nw", window=label_1)
+
+                comb_ser_2_1 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+                comb_ser_2_1['values'] = ("Account Receivable(Debtors)","Current Assets","Bank","Fixed Assets","Non-Current Assets","Accounts Payable(Creditors)","Credit Card","Current Liabilities","Non-Current Liabilities","Equity","Income","Other Income","Cost of Goods Sold","Expenses","Other Expenses",)
+                comb_ser_2_1.current(0)
+                window_comb_ser_2_1 = canvas.create_window(55, 330, anchor="nw", width=540, height=30,window=comb_ser_2_1)
+
+                label_1 = Label(canvas,width=5,height=1,text="*Name", font=('arial 12'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(710, 300, anchor="nw", window=label_1)
+
+                entry_ser_2_2=Entry(canvas,width=90,justify=LEFT,background='#2f516f',foreground="white")
+                window_entry_ser_2_2 = canvas.create_window(710, 330, anchor="nw", height=30,window=entry_ser_2_2)
+
+                label_1 = Label(canvas,width=10,height=1,text="*Detail Type", font=('arial 12'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(54, 400, anchor="nw", window=label_1)
+
+                comb_ser_2_2 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+                comb_ser_2_2['values'] = ("Account Receivable(Debtors)",)
+                comb_ser_2_2.current(0)
+                window_comb_ser_2_2 = canvas.create_window(55, 430, anchor="nw", width=540, height=30,window=comb_ser_2_2)
+
+                label_1 = Label(canvas,width=10,height=1,text="Description", font=('arial 12'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(705, 400, anchor="nw", window=label_1)
+
+                entry_ser_2_4=Entry(canvas,width=90,justify=LEFT,background='#2f516f',foreground="white")
+                window_entry_ser_2_4 = canvas.create_window(710, 430, anchor="nw", height=30,window=entry_ser_2_4)
+
+                ser_text_2 = Text(canvas,width=67, height=14, background='black',foreground='white')
+                ser_text_2.insert(END, 'Use Cash and Cash Equivalents to track cash or assets that can be converted into cash immediately. For example, marketable securities and Treasury bills.')
+                window_ser_text_2 = canvas.create_window(55, 500, anchor="nw",window=ser_text_2)
+
+                chk_str_ser_2_1 = StringVar()
+                chkbtn_ser_2_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_ser_2_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
+                chkbtn_ser_2_1.select()
+                window_chkbtn_ser_2_1 = canvas.create_window(709, 500, anchor="nw", window=chkbtn_ser_2_1)
+
+                comb_ser_2_3 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+                comb_ser_2_3['values'] = ("Deferred CGST","Deferred GST Input Credit","Deferred IGST","Deferred Krishi Kalyan Cess Input Credit","Deferred Service Tax Input Credit","Deferred SGST","Deferred VAT Input Credit","GST Refund","Inventory Asset","Paid Insurance","Service Tax Refund","TDS Receivable","Uncategorised Asset","Accumulated Depreciation","Building and Improvements","Furniture and Equipment","Land","Leasehold Improvements","CGST Payable","CST Payable","CST Suspense","GST Payable","GST Suspense","IGST Payable","Input CGST","Input CGST Tax RCM","Input IGST","Input IGST Tax RCM","Input Krishi Kalyan Cess","Input Krishi Kalyan Cess RCM","Input Service Tax","Input Service Tax RCM","Input SGST","Input SGST Tax RCM","Input VAT 14%","Input VAT 4%","Input VAT 5%","Krishi Kalyan Cess Payable","Krishi Kalyan Cess Suspense","Output CGST","Output CGST Tax RCM","Output CST 2%","Output IGST","Output IGST Tax RCM","Output Krishi Kalyan Cess","Output Krishi Kalyan Cess RCM","Output Service Tax","Output Sevice Tax RCM","Output SGST","Output SGST Tax RCM","Output VAT 14%","Output VAT 4%","Output VAT 5%","Service Tax Payable","service Tax Suspense","SGST Payable","SGST Suspense","Swachh Barath Cess Payable" ,"Swachh Barath Cess Suspense" ,"TDS Payable" ,"VAT Payable","VAT Suspense","Opening Balance","Equity",)
+                comb_ser_2_3.current(0)
+                window_comb_ser_2_3 = canvas.create_window(710, 530, anchor="nw", width=540, height=30,window=comb_ser_2_3)
+
+                label_1 = Label(canvas,width=15,height=1,text="Default Tax Code", font=('arial 12'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(705, 600, anchor="nw", window=label_1)
+
+                comb_ser_2_4 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+                comb_ser_2_4['values'] = ("18.0% IGST","14.00% ST","0% IGST","Out of Scope","0% GST","14.5% ST","14.0% VAT","6.0% IGST","28.0% IGST","15.0% ST","28.0% GST","12.0% GST","18.0% GST","3.0% GST","0.2% IGST","5.0% GST","6.0% GST","0.2% GST","Exempt IGST","3.0% IGST","4.0% VAT","5.0% IGST","12.36% ST","5.0% VAT","Exempt GST","12.0% IGST","2.0% CST",)
+                comb_ser_2_4.current(0)
+                window_comb_ser_2_4 = canvas.create_window(710, 630, anchor="nw", width=540, height=30,window=comb_ser_2_4)
+
+                ser_bac_btn_2_1=Button(canvas,text='Back', width=20,height=2,foreground="white",background="#1b3857",font='arial 12',command=ser_add_item)
+                window_ser_bac_btn_2_1 = canvas.create_window(450, 800, anchor="nw", window=ser_bac_btn_2_1)
+
+                ser_sub_btn_2_1=Button(canvas,text='Create', width=20,height=2,foreground="white",background="#1b3857",font='arial 12')
+                window_ser_sub_btn_2_1 = canvas.create_window(685, 800, anchor="nw", window=ser_sub_btn_2_1)
+
+            income_ser_btn=Button(canvas,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=ser_inc_acc_1)
             window_income_ser_btn = canvas.create_window(395, 1210, anchor="nw", window=income_ser_btn)
 
             label_1 = Label(canvas,width=10,height=1,text="Abatement %", font=('arial 12'),background="#1b3857",fg="white") 
@@ -2417,7 +2566,7 @@ def main_sign_in():
             window_label_1 = canvas.create_window(877, 1180, anchor="nw", window=label_1)
 
             comb_ser_iitem_7 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
-            comb_ser_iitem_7['values'] = ("Choose...","Stock Broking","Genral Insurance","Courier","Advertsing Agency","Consulting Engineer","Custom House Agent","Steamer Agent","Clearing and Forwarding","Man power Recruiting","Air Travel Agent","Tour operator","Rent a Cab","Architect","Interior Director","Management Consultment","Chartered Accountant","Cost Accountant","Company Scretary","Real Estate Agent","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",)
+            comb_ser_iitem_7['values'] = ("Choose...","Stock Broking","Genral Insurance","Courier","Advertsing Agency","Consulting Engineer","Custom House Agent","Steamer Agent","Clearing and Forwarding","Man power Recruiting","Air Travel Agent","Tour operator","Rent a Cab","Architect","Interior Director","Management Consultment","Chartered Accountant","Cost Accountant","Company Scretary","Real Estate Agent","Security Agency","Credit Rating Agency","Market Research Agency","Underwriter","Beauty Parlor","Cargo Handling","Cable Operators","Dry Cleaning","Event Management","Fashion Designer","Life Insurance","Scientific and Technical Consultancy","Photography","Convention Services","Video Tape Production","Sound Recording","Broadcating","Insurance Auxilary Service","banking and Other Financial","Port Services","Authorised Service Station","Health Club and Fitness Centres","Rail Travel Agent","Storage and Warehousing","Business Auxilary","Commercial Coaching","Erection or Installation","Franchise Service","Internet Cafe","Maintanance or Repair","Technical Testing","Technical Inspection","Foreign Exchange Broking","Port","Airport Services","Air Transport","Business Exhibition","Goods Transport","Construction of Commerce Complex","Intellectual Property Service","Opinion Poll Service","Outdoor Catering","Television and Radio Program Production","Survey and Exploration of Minerals","Pandal and Shamiana","Travel Agent","Forward Contract Brokerage","Transport Through Pipeline","Site Preparation","Dredging","Survey and Map Making","Cleaning Service","Clubs and Association Service","Packaging Service","Mailing List Compilation","Residential Complex Construction","Share Transfer Agent","ATM Maintanance","Recovery Agent","Sale of Space for Advertisement","Sponsorship","International Air Travel","Containerised Rail Transport","Business Support Service","Action Service","Public Relation Management","Ship Management","Internet Telephony","Cruise Ship Tour","Credit Card","Telecommunication Service","Mining of Minerals, Oil or Gas","Recting Immovable Property","Works Contract","Development of Consent","Asset Management","Design Services","Information Technology Services","ULIP Management","Stock Exchange Service","Service for Transaction in Goods","Clearing House Services","Supply of Tangiable","Online Inforamtion Retrieval","Mandap keeper",)
             comb_ser_iitem_7.current(0)
             window_comb_ser_iitem_7 = canvas.create_window(900, 1210, anchor="nw", width=345, height=30,window=comb_ser_iitem_7)
 
@@ -2427,7 +2576,7 @@ def main_sign_in():
             window_label_1 = canvas.create_window(26, 1300, anchor="nw", window=label_1)
 
             chk_str_ser_pitem = StringVar()
-            chkbtn_ser_pitem = Checkbutton(canvas, text = "I Purchase this product/service from Supplier.", variable = chk_str_ser_pitem, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+            chkbtn_ser_pitem = Checkbutton(canvas, text = "I Purchase this product/service from Supplier.", variable = chk_str_ser_pitem, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             window_chkbtn_ser_pitem = canvas.create_window(55, 1330, anchor="nw", window=chkbtn_ser_pitem)
 
 
@@ -2444,7 +2593,7 @@ def main_sign_in():
             window_entry_ser_item_10 = canvas.create_window(55, 1560, anchor="nw", height=30,window=entry_ser_item_10)
 
             chk_str_sser_item_2 = StringVar()
-            chkbtn_sser_item_2 = Checkbutton(canvas, text = "Inclusive of Tax", variable = chk_str_sser_item_2, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white")
+            chkbtn_sser_item_2 = Checkbutton(canvas, text = "Inclusive of Tax", variable = chk_str_sser_item_2, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             chkbtn_sser_item_2.select()
             window_chkbtn_sser_item_2 = canvas.create_window(55, 1600, anchor="nw", window=chkbtn_sser_item_2)
 
@@ -2464,7 +2613,108 @@ def main_sign_in():
             comb_ser_item_6.current(0)
             window_comb_ser_item_6 = canvas.create_window(55, 1690, anchor="nw", width=330, height=30,window=comb_ser_item_6)
 
-            expense_ser_btn=Button(canvas,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12')
+            def ser_exp_acc_1():
+                pro_frame_4.grid_forget()
+                pro_frame_4_2 = Frame(tab3_4)
+                pro_frame_4_2.grid(row=0,column=0,sticky='nsew')
+                canvas=Canvas(pro_frame_4_2, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,2050))
+                
+                vertibar=Scrollbar(pro_frame_4_2, orient=VERTICAL)
+                vertibar.pack(side=RIGHT,fill=Y)
+                vertibar.config(command=canvas.yview)
+
+                canvas.config(width=1325,height=559)
+                canvas.config(yscrollcommand=vertibar.set)
+                canvas.pack(expand=True,side=LEFT,fill=BOTH)
+                def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
+                    
+                    points = [x1+radius, y1,
+                            x1+radius, y1,
+                            x2-radius, y1,
+                            x2-radius, y1,
+                            x2, y1,
+                            x2, y1+radius,
+                            x2, y1+radius,
+                            x2, y2-radius,
+                            x2, y2-radius,
+                            x2, y2,
+                            x2-radius, y2,
+                            x2-radius, y2,
+                            x1+radius, y2,
+                            x1+radius, y2,
+                            x1, y2,
+                            x1, y2-radius,
+                            x1, y2-radius,
+                            x1, y1+radius,
+                            x1, y1+radius,
+                            x1, y1]
+                
+                    return canvas.create_polygon(points, **kwargs, smooth=True)
+
+                my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
+                label_1 = Label(canvas,width=30,height=1,text="ACCOUNT CREATE", font=('arial 20'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(465, 85, anchor="nw", window=label_1)
+                canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
+
+                my_rectangle = round_rectangle(20, 250, 1300, 950, radius=20, fill="#1b3857")
+
+                label_1 = Label(canvas,width=10,height=1,text="Account Type", font=('arial 12'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(56, 300, anchor="nw", window=label_1)
+
+                comb_ser_3_1 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+                comb_ser_3_1['values'] = ("Account Receivable(Debtors)","Current Assets","Bank","Fixed Assets","Non-Current Assets","Accounts Payable(Creditors)","Credit Card","Current Liabilities","Non-Current Liabilities","Equity","Income","Other Income","Cost of Goods Sold","Expenses","Other Expenses",)
+                comb_ser_3_1.current(0)
+                window_comb_ser_3_1 = canvas.create_window(55, 330, anchor="nw", width=540, height=30,window=comb_ser_3_1)
+
+                label_1 = Label(canvas,width=5,height=1,text="*Name", font=('arial 12'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(710, 300, anchor="nw", window=label_1)
+
+                entry_ser_3_2=Entry(canvas,width=90,justify=LEFT,background='#2f516f',foreground="white")
+                window_entry_ser_3_2 = canvas.create_window(710, 330, anchor="nw", height=30,window=entry_ser_3_2)
+
+                label_1 = Label(canvas,width=10,height=1,text="*Detail Type", font=('arial 12'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(54, 400, anchor="nw", window=label_1)
+
+                comb_ser_3_2 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+                comb_ser_3_2['values'] = ("Account Receivable(Debtors)",)
+                comb_ser_3_2.current(0)
+                window_comb_ser_3_2 = canvas.create_window(55, 430, anchor="nw", width=540, height=30,window=comb_ser_3_2)
+
+                label_1 = Label(canvas,width=10,height=1,text="Description", font=('arial 12'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(705, 400, anchor="nw", window=label_1)
+
+                entry_ser_3_4=Entry(canvas,width=90,justify=LEFT,background='#2f516f',foreground="white")
+                window_entry_ser_3_4 = canvas.create_window(710, 430, anchor="nw", height=30,window=entry_ser_3_4)
+
+                ser_text_3 = Text(canvas,width=67, height=14, background='black',foreground='white')
+                ser_text_3.insert(END, 'Use Cash and Cash Equivalents to track cash or assets that can be converted into cash immediately. For example, marketable securities and Treasury bills.')
+                window_ser_text_3 = canvas.create_window(55, 500, anchor="nw",window=ser_text_3)
+
+                chk_str_ser_3_1 = StringVar()
+                chkbtn_ser_3_1 = Checkbutton(canvas, text = "Is sub-account", variable = chk_str_ser_3_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
+                chkbtn_ser_3_1.select()
+                window_chkbtn_ser_3_1 = canvas.create_window(709, 500, anchor="nw", window=chkbtn_ser_3_1)
+
+                comb_ser_3_3 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+                comb_ser_3_3['values'] = ("Deferred CGST","Deferred GST Input Credit","Deferred IGST","Deferred Krishi Kalyan Cess Input Credit","Deferred Service Tax Input Credit","Deferred SGST","Deferred VAT Input Credit","GST Refund","Inventory Asset","Paid Insurance","Service Tax Refund","TDS Receivable","Uncategorised Asset","Accumulated Depreciation","Building and Improvements","Furniture and Equipment","Land","Leasehold Improvements","CGST Payable","CST Payable","CST Suspense","GST Payable","GST Suspense","IGST Payable","Input CGST","Input CGST Tax RCM","Input IGST","Input IGST Tax RCM","Input Krishi Kalyan Cess","Input Krishi Kalyan Cess RCM","Input Service Tax","Input Service Tax RCM","Input SGST","Input SGST Tax RCM","Input VAT 14%","Input VAT 4%","Input VAT 5%","Krishi Kalyan Cess Payable","Krishi Kalyan Cess Suspense","Output CGST","Output CGST Tax RCM","Output CST 2%","Output IGST","Output IGST Tax RCM","Output Krishi Kalyan Cess","Output Krishi Kalyan Cess RCM","Output Service Tax","Output Sevice Tax RCM","Output SGST","Output SGST Tax RCM","Output VAT 14%","Output VAT 4%","Output VAT 5%","Service Tax Payable","service Tax Suspense","SGST Payable","SGST Suspense","Swachh Barath Cess Payable" ,"Swachh Barath Cess Suspense" ,"TDS Payable" ,"VAT Payable","VAT Suspense","Opening Balance","Equity",)
+                comb_ser_3_3.current(0)
+                window_comb_ser_3_3 = canvas.create_window(710, 530, anchor="nw", width=540, height=30,window=comb_ser_3_3)
+
+                label_1 = Label(canvas,width=15,height=1,text="Default Tax Code", font=('arial 12'),background="#1b3857",fg="white") 
+                window_label_1 = canvas.create_window(705, 600, anchor="nw", window=label_1)
+
+                comb_ser_3_4 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+                comb_ser_3_4['values'] = ("18.0% IGST","14.00% ST","0% IGST","Out of Scope","0% GST","14.5% ST","14.0% VAT","6.0% IGST","28.0% IGST","15.0% ST","28.0% GST","12.0% GST","18.0% GST","3.0% GST","0.2% IGST","5.0% GST","6.0% GST","0.2% GST","Exempt IGST","3.0% IGST","4.0% VAT","5.0% IGST","12.36% ST","5.0% VAT","Exempt GST","12.0% IGST","2.0% CST",)
+                comb_ser_3_4.current(0)
+                window_comb_ser_3_4 = canvas.create_window(710, 630, anchor="nw", width=540, height=30,window=comb_ser_3_4)
+
+                ser_bac_btn_3_1=Button(canvas,text='Back', width=20,height=2,foreground="white",background="#1b3857",font='arial 12',command=ser_add_item)
+                window_ser_bac_btn_3_1 = canvas.create_window(450, 800, anchor="nw", window=ser_bac_btn_3_1)
+
+                ser_sub_btn_3_1=Button(canvas,text='Create', width=20,height=2,foreground="white",background="#1b3857",font='arial 12')
+                window_ser_sub_btn_3_1 = canvas.create_window(685, 800, anchor="nw", window=ser_sub_btn_3_1)
+
+            expense_ser_btn=Button(canvas,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=ser_exp_acc_1)
             window_expense_ser_btn = canvas.create_window(395, 1690, anchor="nw", window=expense_ser_btn)
 
             label_1 = Label(canvas,width=15,height=1,text="Reverse Charge %", font=('arial 12'),background="#1b3857",fg="white") 
