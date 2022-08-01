@@ -412,810 +412,1294 @@ def main_sign_in():
         inv_frame.grid_forget()
         inv_frame_1 = Frame(tab3_2)
         inv_frame_1.grid(row=0,column=0,sticky='nsew')
+
+        def inv_responsive_widgets2(event):
+            try:
+                dwidth = event.width
+                dheight = event.height
+                dcanvas = event.widget
+                
+                r1 = 25
+                x1 = dwidth/63
+                x2 = dwidth/1.021
+                y1 = dheight/14 
+                y2 = dheight/3.505
+
+                dcanvas.coords("aipoly1",x1 + r1,y1,
+                x1 + r1,y1,
+                x2 - r1,y1,
+                x2 - r1,y1,     
+                x2,y1,     
+                #--------------------
+                x2,y1 + r1,     
+                x2,y1 + r1,     
+                x2,y2 - r1,     
+                x2,y2 - r1,     
+                x2,y2,
+                #--------------------
+                x2 - r1,y2,     
+                x2 - r1,y2,     
+                x1 + r1,y2,
+                x1 + r1,y2,
+                x1,y2,
+                #--------------------
+                x1,y2 - r1,
+                x1,y2 - r1,
+                x1,y1 + r1,
+                x1,y1 + r1,
+                x1,y1,
+                )
+
+                dcanvas.coords("ailabel1",dwidth/2.45,dheight/8.24)
+                dcanvas.coords("aihline",dwidth/21,dheight/4.67,dwidth/1.055,dheight/4.67)
+
+                r2 = 25
+                x11 = dwidth/63
+                x21 = dwidth/1.021
+                y11 = dheight/2.8
+                y21 = dheight/0.36
+
+
+                dcanvas.coords("aipoly2",x11 + r2,y11,
+                x11 + r2,y11,
+                x21 - r2,y11,
+                x21 - r2,y11,     
+                x21,y11,     
+                #--------------------
+                x21,y11 + r2,     
+                x21,y11 + r2,     
+                x21,y21 - r2,     
+                x21,y21 - r2,     
+                x21,y21,
+                #--------------------
+                x21 - r2,y21,     
+                x21 - r2,y21,     
+                x11 + r2,y21,
+                x11 + r2,y21,
+                x11,y21,
+                #--------------------
+                x11,y21 - r2,
+                x11,y21 - r2,
+                x11,y11 + r2,
+                x11,y11 + r2,
+                x11,y11,
+                )
+
+                dcanvas.coords("ailabel2",dwidth/2.45,dheight/2.34)
+                dcanvas.coords("ailabel3",dwidth/22.80,dheight/1.90)
+                dcanvas.coords("ailabel4",dwidth/20.00,dheight/1.65)
+                dcanvas.coords("ailabel5",dwidth/20.00,dheight/1.37)
+                dcanvas.coords("ailabel6",dwidth/3.34,dheight/1.37)
+                dcanvas.coords("ailabel7",dwidth/21.66 ,dheight/1.12)
+                dcanvas.coords("ailabel8",dwidth/3.34,dheight/1.12)
+                dcanvas.coords("ailabel9",dwidth/19.10,dheight/0.947)
+                dcanvas.coords("ailabel10",dwidth/19.40,dheight/0.717)
+                dcanvas.coords("ailabel11",dwidth/16.50,dheight/0.638)
+                dcanvas.coords("ailabel12",dwidth/8.40,dheight/0.638)
+                dcanvas.coords("ailabel13",dwidth/3.34,dheight/0.638)
+                dcanvas.coords("ailabel14",dwidth/2.28,dheight/0.638)
+                dcanvas.coords("ailabel15",dwidth/1.73,dheight/0.638)
+                dcanvas.coords("ailabel16",dwidth/1.52,dheight/0.638)
+                dcanvas.coords("ailabel17",dwidth/1.325,dheight/0.638)
+                dcanvas.coords("ailabel18",dwidth/1.165,dheight/0.638)
+                dcanvas.coords("ailabel19",dwidth/16.50,dheight/0.604)
+                dcanvas.coords("ailabel20",dwidth/16.50,dheight/0.562)
+                dcanvas.coords("ailabel21",dwidth/16.50,dheight/0.526)
+                dcanvas.coords("ailabel22",dwidth/16.50,dheight/0.496)
+                dcanvas.coords("ailabel23",dwidth/1.53,dheight/0.45)
+                dcanvas.coords("ailabel24",dwidth/1.54,dheight/0.435)
+                dcanvas.coords("ailabel25",dwidth/1.54,dheight/0.42)
+                dcanvas.coords("ailabel26",dwidth/1.54,dheight/0.406)
+                dcanvas.coords("ailabel27",dwidth/1.54,dheight/0.392)
+                dcanvas.coords("ailabel28",dwidth/1.72,dheight/1.12)
+
+                dcanvas.coords("aientry1",dwidth/3.0,dheight/1.295)
+                dcanvas.coords("aientry2",dwidth/18.00,dheight/0.91)
+                dcanvas.coords("aientry3",dwidth/4.00,dheight/0.604)
+                dcanvas.coords("aientry4",dwidth/2.51,dheight/0.604)
+                dcanvas.coords("aientry5",dwidth/1.8,dheight/0.604)
+                dcanvas.coords("aientry6",dwidth/1.565,dheight/0.604)
+                dcanvas.coords("aientry7",dwidth/1.357,dheight/0.604)
+                dcanvas.coords("aientry8",dwidth/4.00,dheight/0.562)
+                dcanvas.coords("aientry9",dwidth/4.00,dheight/0.526)
+                dcanvas.coords("aientry10",dwidth/4.00,dheight/0.496)
+                dcanvas.coords("aientry11",dwidth/2.51,dheight/0.562)
+                dcanvas.coords("aientry12",dwidth/2.51,dheight/0.526)
+                dcanvas.coords("aientry13",dwidth/2.51,dheight/0.496)
+                dcanvas.coords("aientry14",dwidth/1.8,dheight/0.562)
+                dcanvas.coords("aientry15",dwidth/1.8,dheight/0.526)
+                dcanvas.coords("aientry16",dwidth/1.8,dheight/0.496)
+                dcanvas.coords("aientry17",dwidth/1.565,dheight/0.562)
+                dcanvas.coords("aientry18",dwidth/1.565,dheight/0.526)
+                dcanvas.coords("aientry19",dwidth/1.565,dheight/0.496)
+                dcanvas.coords("aientry20",dwidth/1.357,dheight/0.562)
+                dcanvas.coords("aientry21",dwidth/1.357,dheight/0.526)
+                dcanvas.coords("aientry22",dwidth/1.357,dheight/0.496)
+                dcanvas.coords("aientry23",dwidth/1.33,dheight/0.452)
+                dcanvas.coords("aientry24",dwidth/1.33,dheight/0.4365)
+                dcanvas.coords("aientry25",dwidth/1.33,dheight/0.4215)
+                dcanvas.coords("aientry26",dwidth/1.33,dheight/0.407)
+                dcanvas.coords("aientry27",dwidth/1.33,dheight/0.393)
+
+                dcanvas.coords("aicombo1",dwidth/18.00,dheight/1.295)
+                dcanvas.coords("aicombo2",dwidth/3.00,dheight/1.074)
+                dcanvas.coords("aicombo3",dwidth/18.00,dheight/0.695)
+                dcanvas.coords("aicombo4",dwidth/10.10,dheight/0.604)
+                dcanvas.coords("aicombo5",dwidth/1.21,dheight/0.604)
+                dcanvas.coords("aicombo6",dwidth/10.10,dheight/0.562)
+                dcanvas.coords("aicombo7",dwidth/10.10,dheight/0.526)
+                dcanvas.coords("aicombo8",dwidth/10.10,dheight/0.496)
+                dcanvas.coords("aicombo9",dwidth/1.21,dheight/0.562)
+                dcanvas.coords("aicombo10",dwidth/1.21,dheight/0.526)
+                dcanvas.coords("aicombo11",dwidth/1.21,dheight/0.496)
+
+                dcanvas.coords("aibutton1",dwidth/4.74,dheight/1.295)
+                dcanvas.coords("aibutton2",dwidth/1.28,dheight/0.377)
+                dcanvas.coords("aibutton3",dwidth/23,dheight/3.415)
+
+                #-------------------------------H Lines-----------------------------------#
+                dcanvas.coords("ailine1",dwidth/21,dheight/0.645,dwidth/1.055,dheight/0.645)
+                dcanvas.coords("ailine2",dwidth/21,dheight/0.617,dwidth/1.055,dheight/0.617)
+                dcanvas.coords("ailine3",dwidth/21,dheight/0.576,dwidth/1.055,dheight/0.576)
+                dcanvas.coords("ailine4",dwidth/21,dheight/0.536,dwidth/1.055,dheight/0.536)
+                dcanvas.coords("ailine5",dwidth/21,dheight/0.506,dwidth/1.055,dheight/0.506)
+                dcanvas.coords("ailine6",dwidth/21,dheight/0.476,dwidth/1.055,dheight/0.476)
+                #-------------------------------V Lines-----------------------------------#
+                dcanvas.coords("ailine7",dwidth/21,dheight/0.645,dwidth/21,dheight/0.476)
+                dcanvas.coords("ailine8",dwidth/1.055,dheight/0.645,dwidth/1.055,dheight/0.476)
+                dcanvas.coords("ailine9",dwidth/11,dheight/0.645,dwidth/11,dheight/0.476)
+                dcanvas.coords("ailine10",dwidth/4.15,dheight/0.645,dwidth/4.15,dheight/0.476)
+                dcanvas.coords("ailine11",dwidth/2.55,dheight/0.645,dwidth/2.55,dheight/0.476)
+                dcanvas.coords("ailine12",dwidth/1.83,dheight/0.645,dwidth/1.83,dheight/0.476)
+                dcanvas.coords("ailine13",dwidth/1.58,dheight/0.645,dwidth/1.58,dheight/0.476)
+                dcanvas.coords("ailine14",dwidth/1.37,dheight/0.645,dwidth/1.37,dheight/0.476)
+                dcanvas.coords("ailine15",dwidth/1.22,dheight/0.645,dwidth/1.22,dheight/0.476)
+
+                #-------------------------------V Lines-----------------------------------#
+                dcanvas.coords("ailine16",dwidth/1.58,dheight/0.455,dwidth/1.58,dheight/0.383)
+                dcanvas.coords("ailine17",dwidth/1.348,dheight/0.455,dwidth/1.348,dheight/0.383)
+                dcanvas.coords("ailine18",dwidth/1.084,dheight/0.455,dwidth/1.084,dheight/0.383)
+                #-------------------------------H Lines-----------------------------------#
+                dcanvas.coords("ailine19",dwidth/1.58,dheight/0.455,dwidth/1.084,dheight/0.455)
+                dcanvas.coords("ailine20",dwidth/1.58,dheight/0.383,dwidth/1.084,dheight/0.383)
+                dcanvas.coords("ailine21",dwidth/1.58,dheight/0.439,dwidth/1.084,dheight/0.439)
+                dcanvas.coords("ailine22",dwidth/1.58,dheight/0.424,dwidth/1.084,dheight/0.424)
+                dcanvas.coords("ailine23",dwidth/1.58,dheight/0.41,dwidth/1.084,dheight/0.41)
+                dcanvas.coords("ailine24",dwidth/1.58,dheight/0.396,dwidth/1.084,dheight/0.396)
+            except:
+                pass
+
+            try:
+                dcanvas.coords("aidate1",dwidth/17.8,dheight/1.074)
+                dcanvas.coords("aidate2",dwidth/1.65,dheight/1.074)
+            except:
+                pass
+
+
+
         inv_canvas_1=Canvas(inv_frame_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1800))
+
+        inv_frame_1.grid_columnconfigure(0,weight=1)
+        inv_frame_1.grid_rowconfigure(0,weight=1)
         
         vertibar=Scrollbar(inv_frame_1, orient=VERTICAL)
-        vertibar.pack(side=RIGHT,fill=Y)
+        vertibar.grid(row=0,column=1,sticky='ns')
         vertibar.config(command=inv_canvas_1.yview)
 
-        inv_canvas_1.config(width=1325,height=559)
+        inv_canvas_1.bind("<Configure>", inv_responsive_widgets2)
         inv_canvas_1.config(yscrollcommand=vertibar.set)
-        inv_canvas_1.pack(expand=True,side=LEFT,fill=BOTH)
-        def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
-            
-            points = [x1+radius, y1,
-                    x1+radius, y1,
-                    x2-radius, y1,
-                    x2-radius, y1,
-                    x2, y1,
-                    x2, y1+radius,
-                    x2, y1+radius,
-                    x2, y2-radius,
-                    x2, y2-radius,
-                    x2, y2,
-                    x2-radius, y2,
-                    x2-radius, y2,
-                    x1+radius, y2,
-                    x1+radius, y2,
-                    x1, y2,
-                    x1, y2-radius,
-                    x1, y2-radius,
-                    x1, y1+radius,
-                    x1, y1+radius,
-                    x1, y1]
-        
-            return inv_canvas_1.create_polygon(points, **kwargs, smooth=True)
-    
-        my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-        label_1 = Label(inv_canvas_1,width=10,height=1,text="INVOICE", font=('arial 20'),background="#1b3857",fg="white") 
-        window_label_1 = inv_canvas_1.create_window(550, 85, anchor="nw", window=label_1)
-        inv_canvas_1.create_line(60, 150, 1260, 150, fill='gray',width=1)
+        inv_canvas_1.grid(row=0,column=0,sticky='nsew')
 
-        my_rectangle = round_rectangle(20, 250, 1300, 1735, radius=20, fill="#1b3857")
+        inv_canvas_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("aipoly1"))
+
+        
+        label_1 = Label(inv_canvas_1,width=10,height=1,text="INVOICE", font=('arial 20'),background="#1b3857",fg="white") 
+        window_label_1 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_1, tags=("ailabel1"))
+
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=("aihline"))
+
+        inv_canvas_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("aipoly2"))
+
         label_1 = Label(inv_canvas_1,width=10,height=1,text="Fin sYs", font=('arial 20'),background="#1b3857",fg="white") 
-        window_label_1 = inv_canvas_1.create_window(550, 275, anchor="nw", window=label_1)
+        window_label_1 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_1, tags=("ailabel2"))
 
         label_2 = Label(inv_canvas_1,width=15,height=1,text="Company name", font=('arial 16'),background="#1b3857",fg="skyblue") 
-        window_label_2 = inv_canvas_1.create_window(60, 330, anchor="nw", window=label_2)
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2, tags=("ailabel3"))
+
         label_2 = Label(inv_canvas_1,width=15,height=1,text="Company email-id", font=('arial 16'),background="#1b3857",fg="skyblue") 
-        window_label_2 = inv_canvas_1.create_window(68, 375, anchor="nw", window=label_2)
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2, tags=("ailabel4"))
 
         label_2 = Label(inv_canvas_1,width=15,height=1,text="Select Customer", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(66, 450, anchor="nw", window=label_2)
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2, tags=("ailabel5"))
 
-        comb_1 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
-        comb_1['values'] = ("Select Customer",)
-        comb_1.current(0)
-        window_comb_1 = inv_canvas_1.create_window(78, 475, anchor="nw", width=200, height=30,window=comb_1)
+        aicomb_1 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
+        aicomb_1['values'] = ("Select Customer",)
+        aicomb_1.current(0)
+        window_aicomb_1 = inv_canvas_1.create_window(0, 0, anchor="nw", width=200, height=30,window=aicomb_1, tags=("aicombo1"))
 
         def add_inv_customer():
             #inv_frame.grid_forget()
             inv_frame_1.grid_forget()
             inv_frame_2 = Frame(tab3_2)
             inv_frame_2.grid(row=0,column=0,sticky='nsew')
+
+            def inc_responsive_widgets2(event):
+                dwidth = event.width
+                dheight = event.height
+                dcanvas = event.widget
+            
+                r1 = 25
+                x1 = dwidth/63
+                x2 = dwidth/1.021
+                y1 = dheight/14 
+                y2 = dheight/3.505
+
+                dcanvas.coords("acpoly1",x1 + r1,y1,
+                x1 + r1,y1,
+                x2 - r1,y1,
+                x2 - r1,y1,     
+                x2,y1,     
+                #--------------------
+                x2,y1 + r1,     
+                x2,y1 + r1,     
+                x2,y2 - r1,     
+                x2,y2 - r1,     
+                x2,y2,
+                #--------------------
+                x2 - r1,y2,     
+                x2 - r1,y2,     
+                x1 + r1,y2,
+                x1 + r1,y2,
+                x1,y2,
+                #--------------------
+                x1,y2 - r1,
+                x1,y2 - r1,
+                x1,y1 + r1,
+                x1,y1 + r1,
+                x1,y1,
+                )
+
+                dcanvas.coords("aclabel1",dwidth/2.5,dheight/8.24)
+                dcanvas.coords("achline",dwidth/21,dheight/4.67,dwidth/1.055,dheight/4.67)
+
+                r2 = 25
+                x11 = dwidth/63
+                x21 = dwidth/1.021
+                y11 = dheight/2.8
+                y21 = dheight/0.45
+
+
+                dcanvas.coords("acpoly2",x11 + r2,y11,
+                x11 + r2,y11,
+                x21 - r2,y11,
+                x21 - r2,y11,     
+                x21,y11,     
+                #--------------------
+                x21,y11 + r2,     
+                x21,y11 + r2,     
+                x21,y21 - r2,     
+                x21,y21 - r2,     
+                x21,y21,
+                #--------------------
+                x21 - r2,y21,     
+                x21 - r2,y21,     
+                x11 + r2,y21,
+                x11 + r2,y21,
+                x11,y21,
+                #--------------------
+                x11,y21 - r2,
+                x11,y21 - r2,
+                x11,y11 + r2,
+                x11,y11 + r2,
+                x11,y11,
+                )
+
+                dcanvas.coords("aclabel2",dwidth/17.0,dheight/2.35)
+                dcanvas.coords("achline1",dwidth/21,dheight/1.95,dwidth/1.055,dheight/1.95)
+                dcanvas.coords("aclabel3",dwidth/20.2,dheight/1.69)
+                dcanvas.coords("aclabel4",dwidth/3.35,dheight/1.69)
+                dcanvas.coords("aclabel5",dwidth/1.8,dheight/1.69)
+                dcanvas.coords("aclabel6",dwidth/20.2,dheight/1.32)
+                dcanvas.coords("aclabel7",dwidth/3.375,dheight/1.32)
+                dcanvas.coords("aclabel8",dwidth/20.2,dheight/1.088)
+                dcanvas.coords("aclabel9",dwidth/3.48,dheight/1.088)
+                dcanvas.coords("aclabel10",dwidth/1.82,dheight/1.088)
+                dcanvas.coords("aclabel11",dwidth/18.7,dheight/0.92)
+                dcanvas.coords("aclabel12",dwidth/3.40,dheight/0.92)
+                dcanvas.coords("aclabel13",dwidth/1.83,dheight/0.92)
+                dcanvas.coords("aclabel14",dwidth/55.5,dheight/0.79)
+                dcanvas.coords("aclabel15",dwidth/2.09,dheight/0.79)
+                dcanvas.coords("aclabel16",dwidth/19.5,dheight/0.74)
+                dcanvas.coords("aclabel17",dwidth/1.97,dheight/0.74)
+                dcanvas.coords("aclabel18",dwidth/19.49,dheight/0.645)
+                dcanvas.coords("aclabel19",dwidth/3.40,dheight/0.645)
+                dcanvas.coords("aclabel20",dwidth/2.0,dheight/0.645)
+                dcanvas.coords("aclabel21",dwidth/1.33,dheight/0.645)
+                dcanvas.coords("aclabel22",dwidth/21.0,dheight/0.58)
+                dcanvas.coords("aclabel23",dwidth/3.42,dheight/0.58)
+                dcanvas.coords("aclabel24",dwidth/2.0,dheight/0.58)
+                dcanvas.coords("aclabel25",dwidth/1.34,dheight/0.58)
+
+                dcanvas.coords("accombo1",dwidth/18.5,dheight/1.55)
+                dcanvas.coords("accombo2",dwidth/18.5,dheight/1.027)
+
+                dcanvas.coords("acentry1",dwidth/3.30,dheight/1.55)
+                dcanvas.coords("acentry2",dwidth/1.785,dheight/1.55)
+                dcanvas.coords("acentry3",dwidth/18.5,dheight/1.24)
+                dcanvas.coords("acentry4",dwidth/3.30,dheight/1.24)
+                dcanvas.coords("acentry5",dwidth/3.30,dheight/1.027)
+                dcanvas.coords("acentry6",dwidth/1.785,dheight/1.027)
+                dcanvas.coords("acentry7",dwidth/18.5,dheight/0.88)
+                dcanvas.coords("acentry8",dwidth/3.30,dheight/0.88)
+                dcanvas.coords("acentry9",dwidth/1.785,dheight/0.88)
+                dcanvas.coords("acentry10",dwidth/18.5,dheight/0.715)
+                dcanvas.coords("acentry11",dwidth/1.97,dheight/0.715)
+                dcanvas.coords("acentry12",dwidth/18.5,dheight/0.625)
+                dcanvas.coords("acentry13",dwidth/3.40,dheight/0.625)
+                dcanvas.coords("acentry14",dwidth/1.98,dheight/0.625)
+                dcanvas.coords("acentry15",dwidth/1.33,dheight/0.625)
+                dcanvas.coords("acentry16",dwidth/19.51,dheight/0.565)
+                dcanvas.coords("acentry17",dwidth/3.40,dheight/0.565)
+                dcanvas.coords("acentry18",dwidth/1.98,dheight/0.565)
+                dcanvas.coords("acentry19",dwidth/1.33,dheight/0.565)
+
+                dcanvas.coords("accheck1",dwidth/1.55,dheight/0.79)
+                dcanvas.coords("accheck2",dwidth/19.0,dheight/0.546)
+
+                dcanvas.coords("acbutton1",dwidth/2.5,dheight/0.5)
+                dcanvas.coords("acbutton2",dwidth/23,dheight/3.415)
+
+
             inv_canvas_2=Canvas(inv_frame_2, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1600))
+
+            inv_frame_2.grid_columnconfigure(0,weight=1)
+            inv_frame_2.grid_rowconfigure(0,weight=1)
+
             
             vertibar=Scrollbar(inv_frame_2, orient=VERTICAL)
-            vertibar.pack(side=RIGHT,fill=Y)
+            vertibar.grid(row=0,column=1,sticky='ns')
             vertibar.config(command=inv_canvas_2.yview)
 
-            inv_canvas_2.config(width=1325,height=559)
+            inv_canvas_2.bind("<Configure>", inc_responsive_widgets2)
             inv_canvas_2.config(yscrollcommand=vertibar.set)
-            inv_canvas_2.pack(expand=True,side=LEFT,fill=BOTH)
-            def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
-                
-                points = [x1+radius, y1,
-                        x1+radius, y1,
-                        x2-radius, y1,
-                        x2-radius, y1,
-                        x2, y1,
-                        x2, y1+radius,
-                        x2, y1+radius,
-                        x2, y2-radius,
-                        x2, y2-radius,
-                        x2, y2,
-                        x2-radius, y2,
-                        x2-radius, y2,
-                        x1+radius, y2,
-                        x1+radius, y2,
-                        x1, y2,
-                        x1, y2-radius,
-                        x1, y2-radius,
-                        x1, y1+radius,
-                        x1, y1+radius,
-                        x1, y1]
+            inv_canvas_2.grid(row=0,column=0,sticky='nsew')
             
-                return inv_canvas_2.create_polygon(points, **kwargs, smooth=True)
-    
-            my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-            label_1 = Label(inv_canvas_2,width=15,height=1,text="ADD CUSTOMER", font=('arial 20'),background="#1b3857",fg="white") 
-            window_label_1 = inv_canvas_2.create_window(550, 85, anchor="nw", window=label_1)
-            inv_canvas_2.create_line(60, 150, 1260, 150, fill='gray',width=1)
 
-            my_rectangle = round_rectangle(20, 250, 1300, 1535, radius=20, fill="#1b3857")
+            inv_canvas_2.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("acpoly1"))
+
+            label_1 = Label(inv_canvas_2,width=15,height=1,text="ADD CUSTOMER", font=('arial 20'),background="#1b3857",fg="white") 
+            window_label_1 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=("aclabel1"))
+
+            inv_canvas_2.create_line(0, 0, 0, 0, fill='gray',width=1, tags=("achline"))
+
+            inv_canvas_2.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("acpoly2"))
+
             label_1 = Label(inv_canvas_2,width=20,height=1,text="Customer Information", font=('arial 20'),background="#1b3857",fg="white") 
-            window_label_1 = inv_canvas_2.create_window(60, 275, anchor="nw", window=label_1)
-            inv_canvas_2.create_line(60, 330, 1260, 330, fill='gray',width=1)
+            window_label_1 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=("aclabel2"))
+
+            inv_canvas_2.create_line(0, 0, 0, 0, fill='gray',width=1, tags=("achline1"))
 
             label_2 = Label(inv_canvas_2,width=5,height=1,text="Title", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(62, 365, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel3"))
 
-            comb_cus_1 = ttk.Combobox(inv_canvas_2, font=('arial 10'),foreground="white")
-            comb_cus_1['values'] = ("Mr","Mrs","Miss","Ms",)
-            comb_cus_1.current(0)
-            window_comb_cus_1 = inv_canvas_2.create_window(75, 395, anchor="nw", width=245, height=30,window=comb_cus_1)
+            ic_comb_cus_1 = ttk.Combobox(inv_canvas_2, font=('arial 10'),foreground="white")
+            ic_comb_cus_1['values'] = ("Mr","Mrs","Miss","Ms",)
+            ic_comb_cus_1.current(0)
+            window_ic_comb_cus_1 = inv_canvas_2.create_window(0, 0, anchor="nw", width=245, height=30,window=ic_comb_cus_1, tags=("accombo1"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="First name", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(400, 365, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel4"))
 
-            entry_cus_1=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_1 = inv_canvas_2.create_window(410, 395, anchor="nw", height=30,window=entry_cus_1)
+            ic_entry_cus_1=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_1 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_1, tags=("acentry1"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="Last name", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(745, 365, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel5"))
 
-            entry_cus_2=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_2 = inv_canvas_2.create_window(755, 395, anchor="nw", height=30,window=entry_cus_2)
+            ic_entry_cus_2=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_2 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_2, tags=("acentry2"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="Company", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(62, 465, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel6"))
 
-            entry_cus_3=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_3 = inv_canvas_2.create_window(75, 495, anchor="nw", height=30,window=entry_cus_3)
+            ic_entry_cus_3=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_3 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_3, tags=("acentry3"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="Location", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(395, 465, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel7"))
 
-            cus_4=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_cus_4 = inv_canvas_2.create_window(410, 495, anchor="nw", height=30,window=cus_4)
+            ic_cus_4=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_cus_4 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_cus_4, tags=("acentry4"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="GST type", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(62, 565, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel8"))
 
-            comb_cus_2 = ttk.Combobox(inv_canvas_2, font=('arial 10'),foreground="white")
-            comb_cus_2['values'] = ("Choose...","GST registered Regular","GST registered-Composition","GST unregistered","Consumer","Overseas","SEZ","Deemed exports-EOU's STP's EHTP's etc",)
-            comb_cus_2.current(0)
-            window_comb_cus_2 = inv_canvas_2.create_window(75, 595, anchor="nw", width=245, height=30,window=comb_cus_2)
+            ic_comb_cus_2 = ttk.Combobox(inv_canvas_2, font=('arial 10'),foreground="white")
+            ic_comb_cus_2['values'] = ("Choose...","GST registered Regular","GST registered-Composition","GST unregistered","Consumer","Overseas","SEZ","Deemed exports-EOU's STP's EHTP's etc",)
+            ic_comb_cus_2.current(0)
+            window_ic_comb_cus_2 = inv_canvas_2.create_window(0, 0, anchor="nw", width=245, height=30,window=ic_comb_cus_2, tags=("accombo2"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="GSTIN", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(385, 565, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel9"))
 
-            cus_entry_str_1 = StringVar()
-            entry_cus_5=Entry(inv_canvas_2,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=cus_entry_str_1)
-            cus_entry_str_1.set(' 29APPCK7465F1Z1')
-            window_entry_cus_5 = inv_canvas_2.create_window(410, 595, anchor="nw", height=30,window=entry_cus_5)
+            ic_cus_entry_str_1 = StringVar()
+            ic_entry_cus_5=Entry(inv_canvas_2,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=ic_cus_entry_str_1)
+            ic_cus_entry_str_1.set(' 29APPCK7465F1Z1')
+            window_ic_entry_cus_5 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_5, tags=("acentry5"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="PAN NO", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(740, 565, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel10"))
 
-            cus_entry_str_2 = StringVar()
-            entry_cus_6=Entry(inv_canvas_2,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=cus_entry_str_2)
-            cus_entry_str_2.set(' APPCK7465F')
-            window_entry_cus_6 = inv_canvas_2.create_window(755, 595, anchor="nw", height=30,window=entry_cus_6)
+            ic_cus_entry_str_2 = StringVar()
+            ic_entry_cus_6=Entry(inv_canvas_2,width=34,justify=LEFT,background='#2f516f',foreground="white",font=('arial 10'),textvariable=ic_cus_entry_str_2)
+            ic_cus_entry_str_2.set(' APPCK7465F')
+            window_ic_entry_cus_6 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_6, tags=("acentry6"))
 
             label_2 = Label(inv_canvas_2,width=5,height=1,text="Email", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(71, 665, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel11"))
 
-            entry_cus_7=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_7 = inv_canvas_2.create_window(75, 695, anchor="nw", height=30,window=entry_cus_7)
+            ic_entry_cus_7=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_7 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_7, tags=("acentry7"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="Website", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(395, 665, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel12"))
 
-            entry_cus_8=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_8 = inv_canvas_2.create_window(410, 695, anchor="nw", height=30,window=entry_cus_8)
+            ic_entry_cus_8=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_8 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_8, tags=("acentry8"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="Mobile", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(736, 665, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel13"))
 
-            entry_cus_9=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_9 = inv_canvas_2.create_window(752, 695, anchor="nw", height=30,window=entry_cus_9)
+            ic_entry_cus_9=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_9 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_9, tags=("acentry9"))
 
             label_1 = Label(inv_canvas_2,width=20,height=1,text="Billing Address", font=('arial 16'),background="#1b3857",fg="white") 
-            window_label_1 = inv_canvas_2.create_window(23, 775, anchor="nw", window=label_1)
+            window_label_1 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=("aclabel14"))
 
             label_2 = Label(inv_canvas_2,width=5,height=1,text="Street", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(71, 825, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel16"))
 
-            entry_cus_10=Entry(inv_canvas_2,width=95,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_10 = inv_canvas_2.create_window(75, 855, anchor="nw", height=60,window=entry_cus_10)
+            ic_entry_cus_10=Entry(inv_canvas_2,width=95,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_10 = inv_canvas_2.create_window(0, 0, anchor="nw", height=60,window=ic_entry_cus_10, tags=("acentry10"))
 
             label_1 = Label(inv_canvas_2,width=20,height=1,text="Shipping Address", font=('arial 16'),background="#1b3857",fg="white") 
-            window_label_1 = inv_canvas_2.create_window(645, 775, anchor="nw", window=label_1)
+            window_label_1 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=("aclabel15"))
 
-            chk_str = StringVar()
-            chkbtn1 = Checkbutton(inv_canvas_2, text = "Same As Billing Address", variable = chk_str, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white",selectcolor="#2f516f")
-            chkbtn1.select()
-            window_chkbtn_1 = inv_canvas_2.create_window(865, 775, anchor="nw", window=chkbtn1)
+            ic_chk_str = StringVar()
+            ic_chkbtn1 = Checkbutton(inv_canvas_2, text = "Same As Billing Address", variable = ic_chk_str, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white",selectcolor="#2f516f")
+            ic_chkbtn1.select()
+            window_ic_chkbtn_1 = inv_canvas_2.create_window(0, 0, anchor="nw", window=ic_chkbtn1, tags=("accheck1"))
 
             label_2 = Label(inv_canvas_2,width=5,height=1,text="Street", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(681, 825, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel17"))
 
-            entry_cus_11=Entry(inv_canvas_2,width=95,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_11 = inv_canvas_2.create_window(685, 855, anchor="nw", height=60,window=entry_cus_11)
-
-            label_2 = Label(inv_canvas_2,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(65, 950, anchor="nw", window=label_2)
-
-            entry_cus_12=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_12 = inv_canvas_2.create_window(75, 985, anchor="nw", height=30,window=entry_cus_12)
-            
-            label_2 = Label(inv_canvas_2,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(395, 950, anchor="nw", window=label_2)
-
-            entry_cus_13=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_13 = inv_canvas_2.create_window(400, 985, anchor="nw", height=30,window=entry_cus_13)
+            ic_entry_cus_11=Entry(inv_canvas_2,width=95,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_11 = inv_canvas_2.create_window(0, 0, anchor="nw", height=60,window=ic_entry_cus_11, tags=("acentry11"))
 
             label_2 = Label(inv_canvas_2,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(675, 950, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel18"))
 
-            entry_cus_14=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_14 = inv_canvas_2.create_window(685, 985, anchor="nw", height=30,window=entry_cus_14)
+            ic_entry_cus_12=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_12 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_12, tags=("acentry12"))
+            
+            label_2 = Label(inv_canvas_2,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel19"))
+
+            ic_entry_cus_13=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_13 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_13, tags=("acentry13"))
+
+            label_2 = Label(inv_canvas_2,width=5,height=1,text="City", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2,tags=("aclabel20"))
+
+            ic_entry_cus_14=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_14 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_14, tags=("acentry14"))
 
             label_2 = Label(inv_canvas_2,width=5,height=1,text="State", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(1001, 950, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2,tags=("aclabel21"))
 
-            entry_cus_15=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_15 = inv_canvas_2.create_window(1010, 985, anchor="nw", height=30,window=entry_cus_15)
+            ic_entry_cus_15=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_15 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_15, tags=("acentry15"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="Pin Code", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(65, 1050, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel22"))
 
-            entry_cus_12=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_12 = inv_canvas_2.create_window(75, 1085, anchor="nw", height=30,window=entry_cus_12)
+            ic_entry_cus_12=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_12 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_12, tags=("acentry16"))
             
             label_2 = Label(inv_canvas_2,width=8,height=1,text="Country", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(394, 1050, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel23"))
 
-            entry_cus_13=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_13 = inv_canvas_2.create_window(400, 1085, anchor="nw", height=30,window=entry_cus_13)
+            ic_entry_cus_13=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_13 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_13, tags=("acentry17"))
 
             label_2 = Label(inv_canvas_2,width=10,height=1,text="Pin Code", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(675, 1050, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel24"))
 
-            entry_cus_14=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_14 = inv_canvas_2.create_window(685, 1085, anchor="nw", height=30,window=entry_cus_14)
+            ic_entry_cus_14=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_14 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_14, tags=("acentry18"))
 
             label_2 = Label(inv_canvas_2,width=8,height=1,text="Country", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_2.create_window(1001, 1050, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=label_2, tags=("aclabel25"))
 
-            entry_cus_15=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus_15 = inv_canvas_2.create_window(1010, 1085, anchor="nw", height=30,window=entry_cus_15)
+            ic_entry_cus_15=Entry(inv_canvas_2,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_ic_entry_cus_15 = inv_canvas_2.create_window(0, 0, anchor="nw", height=30,window=ic_entry_cus_15, tags=("acentry19"))
 
-            chk_str_1 = StringVar()
-            chkbtn2 = Checkbutton(inv_canvas_2, text = "Agree to terms and conditions", variable = chk_str_1, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white",selectcolor="#2f516f")
-            chkbtn2.select()
-            window_chkbtn_2 = inv_canvas_2.create_window(69, 1150, anchor="nw", window=chkbtn2)
+            ic_chk_str_1 = StringVar()
+            ic_chkbtn2 = Checkbutton(inv_canvas_2, text = "Agree to terms and conditions", variable = ic_chk_str_1, onvalue = 1, offvalue = 0, font=("arial", 10),background="#1b3857",foreground="white",selectcolor="#2f516f")
+            ic_chkbtn2.select()
+            window_ic_chkbtn_2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=ic_chkbtn2,tags=("accheck2"))
 
-            cus_btn2=Button(inv_canvas_2,text='Submit Form', width=25,height=2,foreground="white",background="#1b3857",font='arial 12')
-            window_cus_btn2 = inv_canvas_2.create_window(550, 1200, anchor="nw", window=cus_btn2)
+            ic_cus_btn2=Button(inv_canvas_2,text='Submit Form', width=25,height=2,foreground="white",background="#1b3857",font='arial 12')
+            window_ic_cus_btn2 = inv_canvas_2.create_window(0, 0, anchor="nw", window=ic_cus_btn2,tags=("acbutton1"))
+
+            def inv_back_1_():
+                inv_frame_2.grid_forget()
+                inv_frame_1.grid(row=0,column=0,sticky='nsew')
+
+            bck_btn1=Button(inv_canvas_2,text='← Back', bd=0, foreground="white",background="#2f516f",font='arial 10 bold',activebackground="#1b3857",command=inv_back_1_)
+            window_bck_btn1 = inv_canvas_2.create_window(0, 0, anchor="nw", window=bck_btn1,tags=('acbutton2'))
+            
 
 
-
-        btn2=Button(inv_canvas_1,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=add_inv_customer)
-        window_btn2 = inv_canvas_1.create_window(285, 475, anchor="nw", window=btn2)
+        aibtn2=Button(inv_canvas_1,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=add_inv_customer)
+        window_aibtn2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=aibtn2, tags=('aibutton1'))
 
         label_2 = Label(inv_canvas_1,width=15,height=1,text="Email", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(400, 450, anchor="nw", window=label_2)
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel6'))
 
-        entry_1=Entry(inv_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = inv_canvas_1.create_window(450, 475, anchor="nw", height=30,window=entry_1)
+        aientry_1=Entry(inv_canvas_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+        window_aientry_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30,window=aientry_1,tags=('aientry1'))
 
-        label_2 = Label(inv_canvas_1,width=15,height=1,text="Invoice Date:", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(57, 550, anchor="nw", window=label_2)
-
-        entry_1=DateEntry(inv_canvas_1,width=40,justify=LEFT,foreground='white')
-        window_entry_1 = inv_canvas_1.create_window(80, 575, anchor="nw", height=30, window=entry_1)
 
         label_2 = Label(inv_canvas_1,width=15,height=1,text="Terms", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(402, 550, anchor="nw", window=label_2)
-
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel8'))
 
         comb_t_2 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
         comb_t_2['values'] = ("Due on Receipt","NET 15","NET 30","NET 60","Add New Term",)
         comb_t_2.current(0)
-        window_comb_t_2 = inv_canvas_1.create_window(450, 575, anchor="nw", width=251, height=30,window=comb_t_2)
+        window_comb_t_2 = inv_canvas_1.create_window(0, 0, anchor="nw", width=251, height=30,window=comb_t_2,tags=('aicombo2'))
 
-        label_2 = Label(inv_canvas_1,width=15,height=1,text="Due Date:", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(770, 550, anchor="nw", window=label_2)
 
-        entry_1=DateEntry(inv_canvas_1,width=40,justify=LEFT,foreground='white')
-        window_entry_1 = inv_canvas_1.create_window(805, 575, anchor="nw", height=30, window=entry_1)
-
-        label_2 = Label(inv_canvas_1,width=15,height=1,text="Bill To:", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(35, 650, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=6,height=1,text="Bill To:", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel9'))
 
         # text_1=Text(inv_canvas_1,width=31)
         # window_text_1 = inv_canvas_1.create_window(81, 675, anchor="nw", height=150, window=text_1)
-        entry_1=Entry(inv_canvas_1,width=42,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = inv_canvas_1.create_window(81, 675, anchor="nw", height=150, window=entry_1)
+        ai_b_entry_1=Entry(inv_canvas_1,width=42,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_b_entry_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=150, window=ai_b_entry_1,tags=('aientry2'))
 
-        label_2 = Label(inv_canvas_1,width=15,height=1,text="Place of supply", font=('arial 12'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(64, 860, anchor="nw", window=label_2)
+        label_2 = Label(inv_canvas_1,width=12,height=1,text="Place of supply", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel10'))
 
-        comb_2 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
-        comb_2['values'] = ("Kerala","Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Other Territory",)
-        comb_2.current(0)
-        window_comb_2 = inv_canvas_1.create_window(82, 885, anchor="nw", width=251, height=30,window=comb_2)
+        ai_p_comb_2 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
+        ai_p_comb_2['values'] = ("Kerala","Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Other Territory",)
+        ai_p_comb_2.current(0)
+        window_ai_p_comb_2 = inv_canvas_1.create_window(0, 0, anchor="nw", width=251, height=30,window=ai_p_comb_2,tags=('aicombo3'))
 
-        inv_canvas_1.create_line(80, 950, 1240, 950, fill='gray',width=1)
-        inv_canvas_1.create_line(80, 1000, 1240, 1000, fill='gray',width=1)
-        inv_canvas_1.create_line(80, 1075, 1240, 1075, fill='gray',width=1)
-        inv_canvas_1.create_line(80, 950, 80, 1075, fill='gray',width=1)
-        inv_canvas_1.create_line(125, 950, 125, 1075, fill='gray',width=1)
-        inv_canvas_1.create_line(325, 950, 325, 1075, fill='gray',width=1)
-        inv_canvas_1.create_line(525, 950, 525, 1075, fill='gray',width=1)
-        inv_canvas_1.create_line(735, 950, 735, 1075, fill='gray',width=1)
-        inv_canvas_1.create_line(850, 950, 850, 1075, fill='gray',width=1)
-        inv_canvas_1.create_line(980, 950, 980, 1075, fill='gray',width=1)
-        inv_canvas_1.create_line(1100, 950, 1100, 1075, fill='gray',width=1)
-        inv_canvas_1.create_line(1240, 950, 1240, 1075, fill='gray',width=1)
+
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine1'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine2'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine3'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine4'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine5'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine6'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine7'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine8'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine9'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine10'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine11'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine12'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine13'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine14'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine15'))
+
 
         label_2 = Label(inv_canvas_1,width=2,height=1,text="#", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(90, 970, anchor="nw", window=label_2)
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel11'))
+
         label_3 = Label(inv_canvas_1,width=15,height=1,text="PRODUCT/SERVICE", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_3 = inv_canvas_1.create_window(155, 970, anchor="nw", window=label_3)
-        label_4 = Label(inv_canvas_1,width=10,height=1,text="HSN", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = inv_canvas_1.create_window(380, 970, anchor="nw", window=label_4)
+        window_label_3 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_3,tags=('ailabel12'))
+
+        label_4 = Label(inv_canvas_1,width=4,height=1,text="HSN", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_4 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel13'))
+
         label_4 = Label(inv_canvas_1,width=11,height=1,text="DESCRIPTION", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = inv_canvas_1.create_window(580, 970, anchor="nw", window=label_4)
-        label_4 = Label(inv_canvas_1,width=5,height=1,text="QTY", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = inv_canvas_1.create_window(770, 970, anchor="nw", window=label_4)
+        window_label_4 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel14'))
+
+        label_4 = Label(inv_canvas_1,width=4,height=1,text="QTY", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_4 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel15'))
+
         label_4 = Label(inv_canvas_1,width=8,height=1,text="PRICE", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = inv_canvas_1.create_window(880, 970, anchor="nw", window=label_4)
-        label_4 = Label(inv_canvas_1,width=8,height=1,text="TOTAL", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = inv_canvas_1.create_window(1005, 970, anchor="nw", window=label_4)
-        label_4 = Label(inv_canvas_1,width=8,height=1,text="TAX (%)", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_4 = inv_canvas_1.create_window(1130, 970, anchor="nw", window=label_4)
+        window_label_4 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel16'))
+
+        label_4 = Label(inv_canvas_1,width=6,height=1,text="TOTAL", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_4 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel17'))
+
+        label_4 = Label(inv_canvas_1,width=7,height=1,text="TAX (%)", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_4 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel18'))
 
         label_2 = Label(inv_canvas_1,width=2,height=1,text="1", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(90, 1020, anchor="nw", window=label_2)
+        window_label_2 = inv_canvas_1.create_window(90, 1020, anchor="nw", window=label_2,tags=('ailabel19'))
 
-        comb_3 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
-        comb_3['values'] = ("Select Product",)
-        comb_3.current(0)
-        window_comb_3 = inv_canvas_1.create_window(135, 1015, anchor="nw", width=180, height=30,window=comb_3)
+        ai_comb_p_1 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
+        ai_comb_p_1['values'] = ("Select Product",)
+        ai_comb_p_1.current(0)
+        window_ai_comb_p_1 = inv_canvas_1.create_window(0, 0, anchor="nw", width=180, height=30,window=ai_comb_p_1,tags=('aicombo4'))
 
-        entry_1=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = inv_canvas_1.create_window(335, 1015, anchor="nw", height=30, window=entry_1)
+        ai_entry_p_1=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_p_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_p_1,tags=('aientry3'))
 
-        entry_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = inv_canvas_1.create_window(535, 1015, anchor="nw", height=30, window=entry_1)
+        ai_entry_p_1_2=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_p_1_2 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_p_1_2,tags=('aientry4'))
 
-        entry_1=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = inv_canvas_1.create_window(745, 1015, anchor="nw", height=30, window=entry_1)
+        ai_entry_p_1_3=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_p_1_3 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_p_1_3,tags=('aientry5'))
 
-        entry_1=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = inv_canvas_1.create_window(860, 1015, anchor="nw", height=30, window=entry_1)
+        ai_entry_p_1_4=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_p_1_4 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_p_1_4,tags=('aientry6'))
 
-        entry_1=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_1 = inv_canvas_1.create_window(990, 1015, anchor="nw", height=30, window=entry_1)
+        ai_entry_p_1_5=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_p_1_5 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_p_1_5,tags=('aientry7'))
 
-        comb_4 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
-        comb_4['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
-        comb_4.current(0)
-        window_comb_4 = inv_canvas_1.create_window(1110, 1015, anchor="nw", width=120, height=30,window=comb_4)
+        ai_comb_p_1_2 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
+        ai_comb_p_1_2['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
+        ai_comb_p_1_2.current(0)
+        window_ai_comb_p_1_2 = inv_canvas_1.create_window(0, 0, anchor="nw", width=150, height=30,window=ai_comb_p_1_2,tags=('aicombo5'))
 
-        inv_canvas_1.create_line(80, 1150, 1240, 1150, fill='gray',width=1)
-        inv_canvas_1.create_line(80, 1225, 1240, 1225, fill='gray',width=1)
-        inv_canvas_1.create_line(80, 1300, 1240, 1300, fill='gray',width=1)
-        inv_canvas_1.create_line(80, 1075, 80, 1300, fill='gray',width=1)
-        inv_canvas_1.create_line(1240, 1075, 1240, 1300, fill='gray',width=1)
-        inv_canvas_1.create_line(125, 1075, 125, 1300, fill='gray',width=1)
-        inv_canvas_1.create_line(325, 1075, 325, 1300, fill='gray',width=1)
-        inv_canvas_1.create_line(525, 1075, 525, 1300, fill='gray',width=1)
-        inv_canvas_1.create_line(735, 1075, 735, 1300, fill='gray',width=1)
-        inv_canvas_1.create_line(850, 1075, 850, 1300, fill='gray',width=1)
-        inv_canvas_1.create_line(980, 1075, 980, 1300, fill='gray',width=1)
-        inv_canvas_1.create_line(1100, 1075, 1100, 1300, fill='gray',width=1)
 
         label_2 = Label(inv_canvas_1,width=2,height=1,text="2", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(90, 1100, anchor="nw", window=label_2)
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel20'))
 
-        comb_4 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
-        comb_4['values'] = ("Select Product",)
-        comb_4.current(0)
-        window_comb_4 = inv_canvas_1.create_window(135, 1095, anchor="nw", width=180, height=30,window=comb_4)
+        ai_comb_P_2 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
+        ai_comb_P_2['values'] = ("Select Product",)
+        ai_comb_P_2.current(0)
+        window_ai_comb_P_2 = inv_canvas_1.create_window(0, 0, anchor="nw", width=180, height=30,window=ai_comb_P_2,tags=('aicombo6'))
 
-        entry_2=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_2 = inv_canvas_1.create_window(335, 1095, anchor="nw", height=30, window=entry_2)
+        ai_entry_p_2=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_p_2 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_p_2,tags=('aientry8'))
 
-        entry_2_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_2_1 = inv_canvas_1.create_window(535, 1095, anchor="nw", height=30, window=entry_2_1)
+        ai_entry_p_2_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_p_2_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_p_2_1,tags=('aientry11'))
 
-        entry_2_2=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_2_2 = inv_canvas_1.create_window(745, 1095, anchor="nw", height=30, window=entry_2_2)
+        ai_entry_2_2=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_2_2 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_2_2,tags=('aientry14'))
 
-        entry_2_3=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_2_3 = inv_canvas_1.create_window(860, 1095, anchor="nw", height=30, window=entry_2_3)
+        ai_entry_2_3=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_2_3 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_2_3,tags=('aientry17'))
 
-        entry_2_4=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_2_4 = inv_canvas_1.create_window(990, 1095, anchor="nw", height=30, window=entry_2_4)
+        ai_entry_2_4=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_2_4 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_2_4,tags=('aientry20'))
 
-        comb_2_5 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
-        comb_2_5['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
-        comb_2_5.current(0)
-        window_comb_2_5 = inv_canvas_1.create_window(1110, 1095, anchor="nw", width=120, height=30,window=comb_2_5)
+        ai_comb_P_2_2 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
+        ai_comb_P_2_2['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
+        ai_comb_P_2_2.current(0)
+        window_ai_comb_P_2_2 = inv_canvas_1.create_window(0, 0, anchor="nw", width=150, height=30,window=ai_comb_P_2_2,tags=('aicombo9'))
 
 
         label_2 = Label(inv_canvas_1,width=2,height=1,text="3", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(90, 1170, anchor="nw", window=label_2)
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel21'))
 
-        comb_5 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
-        comb_5['values'] = ("Select Product",)
-        comb_5.current(0)
-        window_comb_5 = inv_canvas_1.create_window(135, 1165, anchor="nw", width=180, height=30,window=comb_5)
+        ai_comb_p_3 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
+        ai_comb_p_3['values'] = ("Select Product",)
+        ai_comb_p_3.current(0)
+        window_ai_comb_p_3 = inv_canvas_1.create_window(0, 0, anchor="nw", width=180, height=30,window=ai_comb_p_3,tags=('aicombo7'))
 
-        entry_3=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_3 = inv_canvas_1.create_window(335, 1165, anchor="nw", height=30, window=entry_3)
+        ai_entry_3=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_3 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_3,tags=('aientry9'))
 
-        entry_3_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_3_1 = inv_canvas_1.create_window(535, 1165, anchor="nw", height=30, window=entry_3_1)
+        ai_entry_3_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_3_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_3_1,tags=('aientry12'))
 
-        entry_3_2=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_3_2 = inv_canvas_1.create_window(745, 1165, anchor="nw", height=30, window=entry_3_2)
+        ai_entry_3_2=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_3_2 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_3_2,tags=('aientry15'))
 
-        entry_3_3=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_3_3 = inv_canvas_1.create_window(860, 1165, anchor="nw", height=30, window=entry_3_3)
+        ai_entry_3_3=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_3_3 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_3_3,tags=('aientry18'))
 
-        entry_3_4=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_3_4 = inv_canvas_1.create_window(990, 1165, anchor="nw", height=30, window=entry_3_4)
+        ai_entry_3_4=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_3_4 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_3_4,tags=('aientry21'))
 
-        comb_3_5 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
-        comb_3_5['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
-        comb_3_5.current(0)
-        window_comb_3_5 = inv_canvas_1.create_window(1110, 1165, anchor="nw", width=120, height=30,window=comb_3_5)
+        ai_comb_P_3_2 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
+        ai_comb_P_3_2['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
+        ai_comb_P_3_2.current(0)
+        window_ai_comb_P_3_2 = inv_canvas_1.create_window(0, 0, anchor="nw", width=150, height=30,window=ai_comb_P_3_2,tags=('aicombo10'))
 
         label_2 = Label(inv_canvas_1,width=2,height=1,text="4", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_2 = inv_canvas_1.create_window(90, 1245, anchor="nw", window=label_2)
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel22'))
 
-        comb_6 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
-        comb_6['values'] = ("Select Product",)
-        comb_6.current(0)
-        window_comb_6 = inv_canvas_1.create_window(135, 1240, anchor="nw", width=180, height=30,window=comb_6)
+        ai_comb_p_4 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
+        ai_comb_p_4['values'] = ("Select Product",)
+        ai_comb_p_4.current(0)
+        window_ai_comb_p_4 = inv_canvas_1.create_window(0, 0, anchor="nw", width=180, height=30,window=ai_comb_p_4,tags=('aicombo8'))
 
-        entry_4=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_4 = inv_canvas_1.create_window(335, 1240, anchor="nw", height=30, window=entry_4)
+        ai_entry_4=Entry(inv_canvas_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_4 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_4,tags=('aientry10'))
 
-        entry_4_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_4_1 = inv_canvas_1.create_window(535, 1240, anchor="nw", height=30, window=entry_4_1)
+        ai_entry_4_1=Entry(inv_canvas_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_4_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_4_1,tags=('aientry13'))
 
-        entry_4_2=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_4_2 = inv_canvas_1.create_window(745, 1240, anchor="nw", height=30, window=entry_4_2)
+        ai_entry_4_2=Entry(inv_canvas_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_4_2 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_4_2,tags=('aientry16'))
 
-        entry_4_3=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_4_3 = inv_canvas_1.create_window(860, 1240, anchor="nw", height=30, window=entry_4_3)
+        ai_entry_4_3=Entry(inv_canvas_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_4_3 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_4_3,tags=('aientry19'))
 
-        entry_4_4=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
-        window_entry_4_4 = inv_canvas_1.create_window(990, 1240, anchor="nw", height=30, window=entry_4_4)
+        ai_entry_4_4=Entry(inv_canvas_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+        window_ai_entry_4_4 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=ai_entry_4_4,tags=('aientry22'))
 
-        comb_4_5 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
-        comb_4_5['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
-        comb_4_5.current(0)
-        window_comb_4_5 = inv_canvas_1.create_window(1110, 1240, anchor="nw", width=120, height=30,window=comb_4_5)
+        ai_comb_P_4_2 = ttk.Combobox(inv_canvas_1, font=('arial 10'),foreground="white")
+        ai_comb_P_4_2['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
+        ai_comb_P_4_2.current(0)
+        window_ai_comb_P_4_2 = inv_canvas_1.create_window(0, 0, anchor="nw", width=150, height=30,window=ai_comb_P_4_2,tags=('aicombo11'))
 
-        inv_canvas_1.create_line(850, 1350, 1240, 1350, fill='gray',width=1)
-        inv_canvas_1.create_line(850, 1400, 1240, 1400, fill='gray',width=1)
-        inv_canvas_1.create_line(850, 1450, 1240, 1450, fill='gray',width=1)
-        inv_canvas_1.create_line(850, 1500, 1240, 1500, fill='gray',width=1)
-        inv_canvas_1.create_line(850, 1550, 1240, 1550, fill='gray',width=1)
-        inv_canvas_1.create_line(850, 1600, 1240, 1600, fill='gray',width=1)
-        inv_canvas_1.create_line(850, 1350, 850, 1600, fill='gray',width=1)
-        inv_canvas_1.create_line(1000, 1350, 1000, 1600, fill='gray',width=1)
-        inv_canvas_1.create_line(1240, 1350, 1240, 1600, fill='gray',width=1)
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine16'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine17'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine18'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine19'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine20'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine21'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine22'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine23'))
+        inv_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine24'))
+        
 
-        label_5 = Label(inv_canvas_1,width=12,height=1,text="Sub Total", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_5 = inv_canvas_1.create_window(870, 1365, anchor="nw", window=label_5)
+        label_5 = Label(inv_canvas_1,width=10,height=1,text="Sub Total", font=('arial 10'),background="#1b3857",fg="white") 
+        window_label_5 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_5,tags=('ailabel23'))
+
         label_5 = Label(inv_canvas_1,width=12,height=1,text="Tax Amount", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_5 = inv_canvas_1.create_window(870, 1415, anchor="nw", window=label_5)
+        window_label_5 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_5,tags=('ailabel24'))
+
         label_5 = Label(inv_canvas_1,width=12,height=1,text="Grand Total", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_5 = inv_canvas_1.create_window(870, 1465, anchor="nw", window=label_5)
+        window_label_5 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_5,tags=('ailabel25'))
+
         label_5 = Label(inv_canvas_1,width=12,height=1,text="Amount Received", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_5 = inv_canvas_1.create_window(870, 1515, anchor="nw", window=label_5)
+        window_label_5 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_5,tags=('ailabel26'))
+
         label_5 = Label(inv_canvas_1,width=12,height=1,text="Balance Due", font=('arial 10'),background="#1b3857",fg="white") 
-        window_label_5 = inv_canvas_1.create_window(870, 1565, anchor="nw", window=label_5)
+        window_label_5 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_5,tags=('ailabel27'))
 
         sub_entry_1=Entry(inv_canvas_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
-        window_sub_entry_1 = inv_canvas_1.create_window(1010, 1360, anchor="nw", height=30, window=sub_entry_1)
+        window_sub_entry_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=sub_entry_1,tags=('aientry23'))
 
         tax_entry_1=Entry(inv_canvas_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
-        window_tax_entry_1 = inv_canvas_1.create_window(1010, 1410, anchor="nw", height=30, window=tax_entry_1)
+        window_tax_entry_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=tax_entry_1,tags=('aientry24'))
 
         grand_entry_1=Entry(inv_canvas_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
-        window_grand_entry_1 = inv_canvas_1.create_window(1010, 1460, anchor="nw", height=30, window=grand_entry_1)
+        window_grand_entry_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=grand_entry_1,tags=('aientry25'))
 
         amount_entry_1=Entry(inv_canvas_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
-        window_amount_entry_1 = inv_canvas_1.create_window(1010, 1510, anchor="nw", height=30, window=amount_entry_1)
+        window_amount_entry_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=amount_entry_1,tags=('aientry26'))
 
         bal_entry_1=Entry(inv_canvas_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
-        window_bal_entry_1 = inv_canvas_1.create_window(1010, 1560, anchor="nw", height=30, window=bal_entry_1)
+        window_bal_entry_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=bal_entry_1,tags=('aientry27'))
+        
 
+        ai_save_btn1=Button(inv_canvas_1,text='Save', width=15,height=2,foreground="white",background="#1b3857",font='arial 12')
+        window_ai_save_btn1 = inv_canvas_1.create_window(0, 0, anchor="nw", window=ai_save_btn1,tags=('aibutton2'))
 
-        btn1=Button(inv_canvas_1,text='Save', width=15,height=2,foreground="white",background="#1b3857",font='arial 12')
-        window_btn1 = inv_canvas_1.create_window(1050, 1625, anchor="nw", window=btn1)
+        def inv_back_1_():
+            inv_frame_1.grid_forget()
+            inv_frame.grid(row=0,column=0,sticky='nsew')
+
+        bck_btn1=Button(inv_canvas_1,text='← Back', bd=0, foreground="white",background="#2f516f",font='arial 10 bold',activebackground="#1b3857",command=inv_back_1_)
+        window_bck_btn1 = inv_canvas_1.create_window(0, 0, anchor="nw", window=bck_btn1,tags=('aibutton3'))
+
+        label_2 = Label(inv_canvas_1,width=14,height=1,text="Invoice Date:", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel7'))
+
+        label_2 = Label(inv_canvas_1,width=15,height=1,text="Due Date:", font=('arial 12'),background="#1b3857",fg="white") 
+        window_label_2 = inv_canvas_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel28'))
+
+        aid_entry_1=DateEntry(inv_canvas_1,width=40,justify=LEFT,foreground='white')
+        window_aid_entry_1 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=aid_entry_1,tags=('aidate1'))
+
+        aid_entry_2=DateEntry(inv_canvas_1,width=40,justify=LEFT,foreground='white')
+        window_aid_entry_2 = inv_canvas_1.create_window(0, 0, anchor="nw", height=30, window=aid_entry_2,tags=('aidate2'))
+
 
     def edit_invoice(event):
         inv_frame.grid_forget()
         inv_frame_edit_1 = Frame(tab3_2)
         inv_frame_edit_1.grid(row=0,column=0,sticky='nsew')
+
+        def inv_eresponsive_widgets2(event):
+            try:
+                dwidth = event.width
+                dheight = event.height
+                dcanvas = event.widget
+                
+                r1 = 25
+                x1 = dwidth/63
+                x2 = dwidth/1.021
+                y1 = dheight/14 
+                y2 = dheight/3.505
+
+                dcanvas.coords("aipoly1",x1 + r1,y1,
+                x1 + r1,y1,
+                x2 - r1,y1,
+                x2 - r1,y1,     
+                x2,y1,     
+                #--------------------
+                x2,y1 + r1,     
+                x2,y1 + r1,     
+                x2,y2 - r1,     
+                x2,y2 - r1,     
+                x2,y2,
+                #--------------------
+                x2 - r1,y2,     
+                x2 - r1,y2,     
+                x1 + r1,y2,
+                x1 + r1,y2,
+                x1,y2,
+                #--------------------
+                x1,y2 - r1,
+                x1,y2 - r1,
+                x1,y1 + r1,
+                x1,y1 + r1,
+                x1,y1,
+                )
+
+                dcanvas.coords("ailabel1",dwidth/2.45,dheight/8.24)
+                dcanvas.coords("aihline",dwidth/21,dheight/4.67,dwidth/1.055,dheight/4.67)
+
+                r2 = 25
+                x11 = dwidth/63
+                x21 = dwidth/1.021
+                y11 = dheight/2.8
+                y21 = dheight/0.36
+
+
+                dcanvas.coords("aipoly2",x11 + r2,y11,
+                x11 + r2,y11,
+                x21 - r2,y11,
+                x21 - r2,y11,     
+                x21,y11,     
+                #--------------------
+                x21,y11 + r2,     
+                x21,y11 + r2,     
+                x21,y21 - r2,     
+                x21,y21 - r2,     
+                x21,y21,
+                #--------------------
+                x21 - r2,y21,     
+                x21 - r2,y21,     
+                x11 + r2,y21,
+                x11 + r2,y21,
+                x11,y21,
+                #--------------------
+                x11,y21 - r2,
+                x11,y21 - r2,
+                x11,y11 + r2,
+                x11,y11 + r2,
+                x11,y11,
+                )
+
+                dcanvas.coords("ailabel2",dwidth/2.45,dheight/2.34)
+                dcanvas.coords("ailabel3",dwidth/22.80,dheight/1.90)
+                dcanvas.coords("ailabel4",dwidth/20.00,dheight/1.65)
+                dcanvas.coords("ailabel5",dwidth/20.00,dheight/1.37)
+                dcanvas.coords("ailabel6",dwidth/3.34,dheight/1.37)
+                dcanvas.coords("ailabel7",dwidth/21.66 ,dheight/1.12)
+                dcanvas.coords("ailabel8",dwidth/3.34,dheight/1.12)
+                dcanvas.coords("ailabel9",dwidth/19.10,dheight/0.947)
+                dcanvas.coords("ailabel10",dwidth/19.40,dheight/0.717)
+                dcanvas.coords("ailabel11",dwidth/16.50,dheight/0.638)
+                dcanvas.coords("ailabel12",dwidth/8.40,dheight/0.638)
+                dcanvas.coords("ailabel13",dwidth/3.34,dheight/0.638)
+                dcanvas.coords("ailabel14",dwidth/2.28,dheight/0.638)
+                dcanvas.coords("ailabel15",dwidth/1.73,dheight/0.638)
+                dcanvas.coords("ailabel16",dwidth/1.52,dheight/0.638)
+                dcanvas.coords("ailabel17",dwidth/1.325,dheight/0.638)
+                dcanvas.coords("ailabel18",dwidth/1.165,dheight/0.638)
+                dcanvas.coords("ailabel19",dwidth/16.50,dheight/0.604)
+                dcanvas.coords("ailabel20",dwidth/16.50,dheight/0.562)
+                dcanvas.coords("ailabel21",dwidth/16.50,dheight/0.526)
+                dcanvas.coords("ailabel22",dwidth/16.50,dheight/0.496)
+                dcanvas.coords("ailabel23",dwidth/1.53,dheight/0.45)
+                dcanvas.coords("ailabel24",dwidth/1.54,dheight/0.435)
+                dcanvas.coords("ailabel25",dwidth/1.54,dheight/0.42)
+                dcanvas.coords("ailabel26",dwidth/1.54,dheight/0.406)
+                dcanvas.coords("ailabel27",dwidth/1.54,dheight/0.392)
+                dcanvas.coords("ailabel28",dwidth/1.72,dheight/1.12)
+
+                dcanvas.coords("aientry1",dwidth/3.0,dheight/1.295)
+                dcanvas.coords("aientry2",dwidth/18.00,dheight/0.91)
+                dcanvas.coords("aientry3",dwidth/4.00,dheight/0.604)
+                dcanvas.coords("aientry4",dwidth/2.51,dheight/0.604)
+                dcanvas.coords("aientry5",dwidth/1.8,dheight/0.604)
+                dcanvas.coords("aientry6",dwidth/1.565,dheight/0.604)
+                dcanvas.coords("aientry7",dwidth/1.357,dheight/0.604)
+                dcanvas.coords("aientry8",dwidth/4.00,dheight/0.562)
+                dcanvas.coords("aientry9",dwidth/4.00,dheight/0.526)
+                dcanvas.coords("aientry10",dwidth/4.00,dheight/0.496)
+                dcanvas.coords("aientry11",dwidth/2.51,dheight/0.562)
+                dcanvas.coords("aientry12",dwidth/2.51,dheight/0.526)
+                dcanvas.coords("aientry13",dwidth/2.51,dheight/0.496)
+                dcanvas.coords("aientry14",dwidth/1.8,dheight/0.562)
+                dcanvas.coords("aientry15",dwidth/1.8,dheight/0.526)
+                dcanvas.coords("aientry16",dwidth/1.8,dheight/0.496)
+                dcanvas.coords("aientry17",dwidth/1.565,dheight/0.562)
+                dcanvas.coords("aientry18",dwidth/1.565,dheight/0.526)
+                dcanvas.coords("aientry19",dwidth/1.565,dheight/0.496)
+                dcanvas.coords("aientry20",dwidth/1.357,dheight/0.562)
+                dcanvas.coords("aientry21",dwidth/1.357,dheight/0.526)
+                dcanvas.coords("aientry22",dwidth/1.357,dheight/0.496)
+                dcanvas.coords("aientry23",dwidth/1.33,dheight/0.452)
+                dcanvas.coords("aientry24",dwidth/1.33,dheight/0.4365)
+                dcanvas.coords("aientry25",dwidth/1.33,dheight/0.4215)
+                dcanvas.coords("aientry26",dwidth/1.33,dheight/0.407)
+                dcanvas.coords("aientry27",dwidth/1.33,dheight/0.393)
+                dcanvas.coords("aientry28",dwidth/18.00,dheight/1.295)
+
+                dcanvas.coords("aicombo2",dwidth/3.00,dheight/1.074)
+                dcanvas.coords("aicombo3",dwidth/18.00,dheight/0.695)
+                dcanvas.coords("aicombo4",dwidth/10.10,dheight/0.604)
+                dcanvas.coords("aicombo5",dwidth/1.21,dheight/0.604)
+                dcanvas.coords("aicombo6",dwidth/10.10,dheight/0.562)
+                dcanvas.coords("aicombo7",dwidth/10.10,dheight/0.526)
+                dcanvas.coords("aicombo8",dwidth/10.10,dheight/0.496)
+                dcanvas.coords("aicombo9",dwidth/1.21,dheight/0.562)
+                dcanvas.coords("aicombo10",dwidth/1.21,dheight/0.526)
+                dcanvas.coords("aicombo11",dwidth/1.21,dheight/0.496)
+
+                dcanvas.coords("aibutton1",dwidth/4.74,dheight/1.295)
+                dcanvas.coords("aibutton2",dwidth/1.28,dheight/0.377)
+                dcanvas.coords("aibutton3",dwidth/23,dheight/3.415)
+
+                #-------------------------------H Lines-----------------------------------#
+                dcanvas.coords("ailine1",dwidth/21,dheight/0.645,dwidth/1.055,dheight/0.645)
+                dcanvas.coords("ailine2",dwidth/21,dheight/0.617,dwidth/1.055,dheight/0.617)
+                dcanvas.coords("ailine3",dwidth/21,dheight/0.576,dwidth/1.055,dheight/0.576)
+                dcanvas.coords("ailine4",dwidth/21,dheight/0.536,dwidth/1.055,dheight/0.536)
+                dcanvas.coords("ailine5",dwidth/21,dheight/0.506,dwidth/1.055,dheight/0.506)
+                dcanvas.coords("ailine6",dwidth/21,dheight/0.476,dwidth/1.055,dheight/0.476)
+                #-------------------------------V Lines-----------------------------------#
+                dcanvas.coords("ailine7",dwidth/21,dheight/0.645,dwidth/21,dheight/0.476)
+                dcanvas.coords("ailine8",dwidth/1.055,dheight/0.645,dwidth/1.055,dheight/0.476)
+                dcanvas.coords("ailine9",dwidth/11,dheight/0.645,dwidth/11,dheight/0.476)
+                dcanvas.coords("ailine10",dwidth/4.15,dheight/0.645,dwidth/4.15,dheight/0.476)
+                dcanvas.coords("ailine11",dwidth/2.55,dheight/0.645,dwidth/2.55,dheight/0.476)
+                dcanvas.coords("ailine12",dwidth/1.83,dheight/0.645,dwidth/1.83,dheight/0.476)
+                dcanvas.coords("ailine13",dwidth/1.58,dheight/0.645,dwidth/1.58,dheight/0.476)
+                dcanvas.coords("ailine14",dwidth/1.37,dheight/0.645,dwidth/1.37,dheight/0.476)
+                dcanvas.coords("ailine15",dwidth/1.22,dheight/0.645,dwidth/1.22,dheight/0.476)
+
+                #-------------------------------V Lines-----------------------------------#
+                dcanvas.coords("ailine16",dwidth/1.58,dheight/0.455,dwidth/1.58,dheight/0.383)
+                dcanvas.coords("ailine17",dwidth/1.348,dheight/0.455,dwidth/1.348,dheight/0.383)
+                dcanvas.coords("ailine18",dwidth/1.084,dheight/0.455,dwidth/1.084,dheight/0.383)
+                #-------------------------------H Lines-----------------------------------#
+                dcanvas.coords("ailine19",dwidth/1.58,dheight/0.455,dwidth/1.084,dheight/0.455)
+                dcanvas.coords("ailine20",dwidth/1.58,dheight/0.383,dwidth/1.084,dheight/0.383)
+                dcanvas.coords("ailine21",dwidth/1.58,dheight/0.439,dwidth/1.084,dheight/0.439)
+                dcanvas.coords("ailine22",dwidth/1.58,dheight/0.424,dwidth/1.084,dheight/0.424)
+                dcanvas.coords("ailine23",dwidth/1.58,dheight/0.41,dwidth/1.084,dheight/0.41)
+                dcanvas.coords("ailine24",dwidth/1.58,dheight/0.396,dwidth/1.084,dheight/0.396)
+            except:
+                pass
+
+            try:
+                dcanvas.coords("aidate1",dwidth/17.8,dheight/1.074)
+                dcanvas.coords("aidate2",dwidth/1.65,dheight/1.074)
+            except:
+                pass
+
+
         inv_canvas_edit_1=Canvas(inv_frame_edit_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1800))
+
+        inv_frame_edit_1.grid_columnconfigure(0,weight=1)
+        inv_frame_edit_1.grid_rowconfigure(0,weight=1)
         
         vertibar=Scrollbar(inv_frame_edit_1, orient=VERTICAL)
-        vertibar.pack(side=RIGHT,fill=Y)
+        vertibar.grid(row=0,column=1,sticky='ns')
         vertibar.config(command=inv_canvas_edit_1.yview)
 
-        inv_canvas_edit_1.config(width=1325,height=559)
+        inv_canvas_edit_1.bind("<Configure>", inv_eresponsive_widgets2)
         inv_canvas_edit_1.config(yscrollcommand=vertibar.set)
-        inv_canvas_edit_1.pack(expand=True,side=LEFT,fill=BOTH)
+        inv_canvas_edit_1.grid(row=0,column=0,sticky='nsew')
 
         if inv_comb_1.get() == 'Edit':
-            def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
-                
-                points = [x1+radius, y1,
-                        x1+radius, y1,
-                        x2-radius, y1,
-                        x2-radius, y1,
-                        x2, y1,
-                        x2, y1+radius,
-                        x2, y1+radius,
-                        x2, y2-radius,
-                        x2, y2-radius,
-                        x2, y2,
-                        x2-radius, y2,
-                        x2-radius, y2,
-                        x1+radius, y2,
-                        x1+radius, y2,
-                        x1, y2,
-                        x1, y2-radius,
-                        x1, y2-radius,
-                        x1, y1+radius,
-                        x1, y1+radius,
-                        x1, y1]
-            
-                return inv_canvas_edit_1.create_polygon(points, **kwargs, smooth=True)
-        
-            my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-            label_1 = Label(inv_canvas_edit_1,width=10,height=1,text="INVOICE", font=('arial 20'),background="#1b3857",fg="white") 
-            window_label_1 = inv_canvas_edit_1.create_window(550, 85, anchor="nw", window=label_1)
-            inv_canvas_edit_1.create_line(60, 150, 1260, 150, fill='gray',width=1)
 
-            my_rectangle = round_rectangle(20, 250, 1300, 1735, radius=20, fill="#1b3857")
+            inv_canvas_edit_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("aipoly1"))
+
+            
+            label_1 = Label(inv_canvas_edit_1,width=10,height=1,text="INVOICE", font=('arial 20'),background="#1b3857",fg="white") 
+            window_label_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_1, tags=("ailabel1"))
+
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=("aihline"))
+
+            inv_canvas_edit_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("aipoly2"))
+
             label_1 = Label(inv_canvas_edit_1,width=10,height=1,text="Fin sYs", font=('arial 20'),background="#1b3857",fg="white") 
-            window_label_1 = inv_canvas_edit_1.create_window(550, 275, anchor="nw", window=label_1)
+            window_label_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_1, tags=("ailabel2"))
 
             label_2 = Label(inv_canvas_edit_1,width=15,height=1,text="Company name", font=('arial 16'),background="#1b3857",fg="skyblue") 
-            window_label_2 = inv_canvas_edit_1.create_window(60, 330, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2, tags=("ailabel3"))
+
             label_2 = Label(inv_canvas_edit_1,width=15,height=1,text="Company email-id", font=('arial 16'),background="#1b3857",fg="skyblue") 
-            window_label_2 = inv_canvas_edit_1.create_window(68, 375, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2, tags=("ailabel4"))
 
             label_2 = Label(inv_canvas_edit_1,width=15,height=1,text="Select Customer", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(66, 450, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2, tags=("ailabel5"))
 
-            entry_cus=Entry(inv_canvas_edit_1,width=41,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_cus = inv_canvas_edit_1.create_window(78, 475, anchor="nw", height=30, window=entry_cus)
+
+            eientry_1=Entry(inv_canvas_edit_1,width=42,justify=LEFT,background='#2f516f',foreground="white")
+            window_eientry_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30,window=eientry_1,tags=('aientry28'))
+
 
             label_2 = Label(inv_canvas_edit_1,width=15,height=1,text="Email", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(400, 450, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel6'))
 
-            entry_1=Entry(inv_canvas_edit_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_1 = inv_canvas_edit_1.create_window(450, 475, anchor="nw", height=30,window=entry_1)
+            eaientry_1=Entry(inv_canvas_edit_1,width=40,justify=LEFT,background='#2f516f',foreground="white")
+            window_eaientry_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30,window=eaientry_1,tags=('aientry1'))
 
-            label_2 = Label(inv_canvas_edit_1,width=15,height=1,text="Invoice Date:", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(57, 550, anchor="nw", window=label_2)
-
-            entry_1=DateEntry(inv_canvas_edit_1,width=40,justify=LEFT,foreground='white')
-            window_entry_1 = inv_canvas_edit_1.create_window(80, 575, anchor="nw", height=30, window=entry_1)
 
             label_2 = Label(inv_canvas_edit_1,width=15,height=1,text="Terms", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(402, 550, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel8'))
+
+            ecomb_t_2 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
+            ecomb_t_2['values'] = ("Due on Receipt","NET 15","NET 30","NET 60","Add New Term",)
+            ecomb_t_2.current(0)
+            window_ecomb_t_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", width=251, height=30,window=ecomb_t_2,tags=('aicombo2'))
 
 
-            comb_t_2 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
-            comb_t_2['values'] = ("Due on Receipt","NET 15","NET 30","NET 60","Add New Term",)
-            comb_t_2.current(0)
-            window_comb_t_2 = inv_canvas_edit_1.create_window(450, 575, anchor="nw", width=251, height=30,window=comb_t_2)
+            label_2 = Label(inv_canvas_edit_1,width=6,height=1,text="Bill To:", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel9'))
+
+            
+            eai_b_entry_1=Entry(inv_canvas_edit_1,width=42,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_b_entry_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=150, window=eai_b_entry_1,tags=('aientry2'))
+
+            label_2 = Label(inv_canvas_edit_1,width=12,height=1,text="Place of supply", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel10'))
+
+            eai_p_comb_2 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
+            eai_p_comb_2['values'] = ("Kerala","Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Other Territory",)
+            eai_p_comb_2.current(0)
+            window_eai_p_comb_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", width=251, height=30,window=eai_p_comb_2,tags=('aicombo3'))
 
 
-            label_2 = Label(inv_canvas_edit_1,width=15,height=1,text="Due Date:", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(770, 550, anchor="nw", window=label_2)
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine1'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine2'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine3'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine4'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine5'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine6'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine7'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine8'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine9'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine10'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine11'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine12'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine13'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine14'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine15'))
 
-            entry_1=DateEntry(inv_canvas_edit_1,width=40,justify=LEFT,foreground='white')
-            window_entry_1 = inv_canvas_edit_1.create_window(805, 575, anchor="nw", height=30, window=entry_1)
-
-            label_2 = Label(inv_canvas_edit_1,width=15,height=1,text="Bill To:", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(35, 650, anchor="nw", window=label_2)
-
-            # text_1=Text(inv_canvas_edit_1,width=31)
-            # window_text_1 = inv_canvas_edit_1.create_window(81, 675, anchor="nw", height=150, window=text_1)
-            entry_1=Entry(inv_canvas_edit_1,width=42,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_1 = inv_canvas_edit_1.create_window(81, 675, anchor="nw", height=150, window=entry_1)
-
-            label_2 = Label(inv_canvas_edit_1,width=15,height=1,text="Place of supply", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(64, 860, anchor="nw", window=label_2)
-
-            comb_2 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
-            comb_2['values'] = ("Kerala","Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Other Territory",)
-            comb_2.current(0)
-            window_comb_2 = inv_canvas_edit_1.create_window(82, 885, anchor="nw", width=251, height=30,window=comb_2)
-
-            inv_canvas_edit_1.create_line(80, 950, 1240, 950, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(80, 1000, 1240, 1000, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(80, 1075, 1240, 1075, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(80, 950, 80, 1075, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(125, 950, 125, 1075, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(325, 950, 325, 1075, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(525, 950, 525, 1075, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(735, 950, 735, 1075, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(850, 950, 850, 1075, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(980, 950, 980, 1075, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(1100, 950, 1100, 1075, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(1240, 950, 1240, 1075, fill='gray',width=1)
 
             label_2 = Label(inv_canvas_edit_1,width=2,height=1,text="#", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(90, 970, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel11'))
+
             label_3 = Label(inv_canvas_edit_1,width=15,height=1,text="PRODUCT/SERVICE", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_3 = inv_canvas_edit_1.create_window(155, 970, anchor="nw", window=label_3)
-            label_4 = Label(inv_canvas_edit_1,width=10,height=1,text="HSN", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_4 = inv_canvas_edit_1.create_window(380, 970, anchor="nw", window=label_4)
+            window_label_3 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_3,tags=('ailabel12'))
+
+            label_4 = Label(inv_canvas_edit_1,width=4,height=1,text="HSN", font=('arial 10'),background="#1b3857",fg="white") 
+            window_label_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel13'))
+
             label_4 = Label(inv_canvas_edit_1,width=11,height=1,text="DESCRIPTION", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_4 = inv_canvas_edit_1.create_window(580, 970, anchor="nw", window=label_4)
-            label_4 = Label(inv_canvas_edit_1,width=5,height=1,text="QTY", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_4 = inv_canvas_edit_1.create_window(770, 970, anchor="nw", window=label_4)
+            window_label_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel14'))
+
+            label_4 = Label(inv_canvas_edit_1,width=4,height=1,text="QTY", font=('arial 10'),background="#1b3857",fg="white") 
+            window_label_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel15'))
+
             label_4 = Label(inv_canvas_edit_1,width=8,height=1,text="PRICE", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_4 = inv_canvas_edit_1.create_window(880, 970, anchor="nw", window=label_4)
-            label_4 = Label(inv_canvas_edit_1,width=8,height=1,text="TOTAL", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_4 = inv_canvas_edit_1.create_window(1005, 970, anchor="nw", window=label_4)
-            label_4 = Label(inv_canvas_edit_1,width=8,height=1,text="TAX (%)", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_4 = inv_canvas_edit_1.create_window(1130, 970, anchor="nw", window=label_4)
+            window_label_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel16'))
+
+            label_4 = Label(inv_canvas_edit_1,width=6,height=1,text="TOTAL", font=('arial 10'),background="#1b3857",fg="white") 
+            window_label_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel17'))
+
+            label_4 = Label(inv_canvas_edit_1,width=7,height=1,text="TAX (%)", font=('arial 10'),background="#1b3857",fg="white") 
+            window_label_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_4,tags=('ailabel18'))
 
             label_2 = Label(inv_canvas_edit_1,width=2,height=1,text="1", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(90, 1020, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_edit_1.create_window(90, 1020, anchor="nw", window=label_2,tags=('ailabel19'))
 
-            comb_3 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
-            comb_3['values'] = ("Select Product",)
-            comb_3.current(0)
-            window_comb_3 = inv_canvas_edit_1.create_window(135, 1015, anchor="nw", width=180, height=30,window=comb_3)
+            eai_comb_p_1 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
+            eai_comb_p_1['values'] = ("Select Product",)
+            eai_comb_p_1.current(0)
+            window_eai_comb_p_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", width=180, height=30,window=eai_comb_p_1,tags=('aicombo4'))
 
-            entry_1=Entry(inv_canvas_edit_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_1 = inv_canvas_edit_1.create_window(335, 1015, anchor="nw", height=30, window=entry_1)
+            eai_entry_p_1=Entry(inv_canvas_edit_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_p_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_p_1,tags=('aientry3'))
 
-            entry_1=Entry(inv_canvas_edit_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_1 = inv_canvas_edit_1.create_window(535, 1015, anchor="nw", height=30, window=entry_1)
+            eai_entry_p_1_2=Entry(inv_canvas_edit_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_p_1_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_p_1_2,tags=('aientry4'))
 
-            entry_1=Entry(inv_canvas_edit_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_1 = inv_canvas_edit_1.create_window(745, 1015, anchor="nw", height=30, window=entry_1)
+            eai_entry_p_1_3=Entry(inv_canvas_edit_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_p_1_3 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_p_1_3,tags=('aientry5'))
 
-            entry_1=Entry(inv_canvas_edit_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_1 = inv_canvas_edit_1.create_window(860, 1015, anchor="nw", height=30, window=entry_1)
+            eai_entry_p_1_4=Entry(inv_canvas_edit_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_p_1_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_p_1_4,tags=('aientry6'))
 
-            entry_1=Entry(inv_canvas_edit_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_1 = inv_canvas_edit_1.create_window(990, 1015, anchor="nw", height=30, window=entry_1)
+            eai_entry_p_1_5=Entry(inv_canvas_edit_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_p_1_5 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_p_1_5,tags=('aientry7'))
 
-            comb_4 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
-            comb_4['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
-            comb_4.current(0)
-            window_comb_4 = inv_canvas_edit_1.create_window(1110, 1015, anchor="nw", width=120, height=30,window=comb_4)
+            eai_comb_p_1_2 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
+            eai_comb_p_1_2['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
+            eai_comb_p_1_2.current(0)
+            window_eai_comb_p_1_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", width=150, height=30,window=eai_comb_p_1_2,tags=('aicombo5'))
 
-            inv_canvas_edit_1.create_line(80, 1150, 1240, 1150, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(80, 1225, 1240, 1225, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(80, 1300, 1240, 1300, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(80, 1075, 80, 1300, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(1240, 1075, 1240, 1300, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(125, 1075, 125, 1300, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(325, 1075, 325, 1300, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(525, 1075, 525, 1300, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(735, 1075, 735, 1300, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(850, 1075, 850, 1300, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(980, 1075, 980, 1300, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(1100, 1075, 1100, 1300, fill='gray',width=1)
 
             label_2 = Label(inv_canvas_edit_1,width=2,height=1,text="2", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(90, 1100, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel20'))
 
-            comb_4 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
-            comb_4['values'] = ("Select Product",)
-            comb_4.current(0)
-            window_comb_4 = inv_canvas_edit_1.create_window(135, 1095, anchor="nw", width=180, height=30,window=comb_4)
+            eai_comb_P_2 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
+            eai_comb_P_2['values'] = ("Select Product",)
+            eai_comb_P_2.current(0)
+            window_eai_comb_P_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", width=180, height=30,window=eai_comb_P_2,tags=('aicombo6'))
 
-            entry_2=Entry(inv_canvas_edit_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_2 = inv_canvas_edit_1.create_window(335, 1095, anchor="nw", height=30, window=entry_2)
+            eai_entry_p_2=Entry(inv_canvas_edit_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_p_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_p_2,tags=('aientry8'))
 
-            entry_2_1=Entry(inv_canvas_edit_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_2_1 = inv_canvas_edit_1.create_window(535, 1095, anchor="nw", height=30, window=entry_2_1)
+            eai_entry_p_2_1=Entry(inv_canvas_edit_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_p_2_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_p_2_1,tags=('aientry11'))
 
-            entry_2_2=Entry(inv_canvas_edit_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_2_2 = inv_canvas_edit_1.create_window(745, 1095, anchor="nw", height=30, window=entry_2_2)
+            eai_entry_2_2=Entry(inv_canvas_edit_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_2_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_2_2,tags=('aientry14'))
 
-            entry_2_3=Entry(inv_canvas_edit_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_2_3 = inv_canvas_edit_1.create_window(860, 1095, anchor="nw", height=30, window=entry_2_3)
+            eai_entry_2_3=Entry(inv_canvas_edit_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_2_3 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_2_3,tags=('aientry17'))
 
-            entry_2_4=Entry(inv_canvas_edit_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_2_4 = inv_canvas_edit_1.create_window(990, 1095, anchor="nw", height=30, window=entry_2_4)
+            eai_entry_2_4=Entry(inv_canvas_edit_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_2_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_2_4,tags=('aientry20'))
 
-            comb_2_5 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
-            comb_2_5['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
-            comb_2_5.current(0)
-            window_comb_2_5 = inv_canvas_edit_1.create_window(1110, 1095, anchor="nw", width=120, height=30,window=comb_2_5)
+            eai_comb_P_2_2 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
+            eai_comb_P_2_2['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
+            eai_comb_P_2_2.current(0)
+            window_eai_comb_P_2_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", width=150, height=30,window=eai_comb_P_2_2,tags=('aicombo9'))
 
 
             label_2 = Label(inv_canvas_edit_1,width=2,height=1,text="3", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(90, 1170, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel21'))
 
-            comb_5 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
-            comb_5['values'] = ("Select Product",)
-            comb_5.current(0)
-            window_comb_5 = inv_canvas_edit_1.create_window(135, 1165, anchor="nw", width=180, height=30,window=comb_5)
+            eai_comb_p_3 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
+            eai_comb_p_3['values'] = ("Select Product",)
+            eai_comb_p_3.current(0)
+            window_eai_comb_p_3 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", width=180, height=30,window=eai_comb_p_3,tags=('aicombo7'))
 
-            entry_3=Entry(inv_canvas_edit_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_3 = inv_canvas_edit_1.create_window(335, 1165, anchor="nw", height=30, window=entry_3)
+            eai_entry_3=Entry(inv_canvas_edit_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_3 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_3,tags=('aientry9'))
 
-            entry_3_1=Entry(inv_canvas_edit_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_3_1 = inv_canvas_edit_1.create_window(535, 1165, anchor="nw", height=30, window=entry_3_1)
+            eai_entry_3_1=Entry(inv_canvas_edit_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_3_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_3_1,tags=('aientry12'))
 
-            entry_3_2=Entry(inv_canvas_edit_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_3_2 = inv_canvas_edit_1.create_window(745, 1165, anchor="nw", height=30, window=entry_3_2)
+            eai_entry_3_2=Entry(inv_canvas_edit_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_3_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_3_2,tags=('aientry15'))
 
-            entry_3_3=Entry(inv_canvas_edit_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_3_3 = inv_canvas_edit_1.create_window(860, 1165, anchor="nw", height=30, window=entry_3_3)
+            eai_entry_3_3=Entry(inv_canvas_edit_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_3_3 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_3_3,tags=('aientry18'))
 
-            entry_3_4=Entry(inv_canvas_edit_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_3_4 = inv_canvas_edit_1.create_window(990, 1165, anchor="nw", height=30, window=entry_3_4)
+            eai_entry_3_4=Entry(inv_canvas_edit_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_3_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_3_4,tags=('aientry21'))
 
-            comb_3_5 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
-            comb_3_5['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
-            comb_3_5.current(0)
-            window_comb_3_5 = inv_canvas_edit_1.create_window(1110, 1165, anchor="nw", width=120, height=30,window=comb_3_5)
+            eai_comb_P_3_2 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
+            eai_comb_P_3_2['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
+            eai_comb_P_3_2.current(0)
+            window_eai_comb_P_3_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", width=150, height=30,window=eai_comb_P_3_2,tags=('aicombo10'))
 
             label_2 = Label(inv_canvas_edit_1,width=2,height=1,text="4", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_2 = inv_canvas_edit_1.create_window(90, 1245, anchor="nw", window=label_2)
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel22'))
 
-            comb_6 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
-            comb_6['values'] = ("Select Product",)
-            comb_6.current(0)
-            window_comb_6 = inv_canvas_edit_1.create_window(135, 1240, anchor="nw", width=180, height=30,window=comb_6)
+            eai_comb_p_4 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
+            eai_comb_p_4['values'] = ("Select Product",)
+            eai_comb_p_4.current(0)
+            window_eai_comb_p_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", width=180, height=30,window=eai_comb_p_4,tags=('aicombo8'))
 
-            entry_4=Entry(inv_canvas_edit_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_4 = inv_canvas_edit_1.create_window(335, 1240, anchor="nw", height=30, window=entry_4)
+            eai_entry_4=Entry(inv_canvas_edit_1,width=30,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_4,tags=('aientry10'))
 
-            entry_4_1=Entry(inv_canvas_edit_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_4_1 = inv_canvas_edit_1.create_window(535, 1240, anchor="nw", height=30, window=entry_4_1)
+            eai_entry_4_1=Entry(inv_canvas_edit_1,width=31,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_4_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_4_1,tags=('aientry13'))
 
-            entry_4_2=Entry(inv_canvas_edit_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_4_2 = inv_canvas_edit_1.create_window(745, 1240, anchor="nw", height=30, window=entry_4_2)
+            eai_entry_4_2=Entry(inv_canvas_edit_1,width=15,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_4_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_4_2,tags=('aientry16'))
 
-            entry_4_3=Entry(inv_canvas_edit_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_4_3 = inv_canvas_edit_1.create_window(860, 1240, anchor="nw", height=30, window=entry_4_3)
+            eai_entry_4_3=Entry(inv_canvas_edit_1,width=18,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_4_3 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_4_3,tags=('aientry19'))
 
-            entry_4_4=Entry(inv_canvas_edit_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_4_4 = inv_canvas_edit_1.create_window(990, 1240, anchor="nw", height=30, window=entry_4_4)
+            eai_entry_4_4=Entry(inv_canvas_edit_1,width=16,justify=LEFT,background='#2f516f',foreground="white")
+            window_eai_entry_4_4 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eai_entry_4_4,tags=('aientry22'))
 
-            comb_4_5 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
-            comb_4_5['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
-            comb_4_5.current(0)
-            window_comb_4_5 = inv_canvas_edit_1.create_window(1110, 1240, anchor="nw", width=120, height=30,window=comb_4_5)
+            eai_comb_P_4_2 = ttk.Combobox(inv_canvas_edit_1, font=('arial 10'),foreground="white")
+            eai_comb_P_4_2['values'] = ("Choose","28.0%\n GST(28%)","18.0%\n GST(18%)","12.0%\n GST(12%)","06.0%\n GST(06%)","05.0%\n GST(05%)","03.0%\n GST(03%)","0.25%\n GST(0.25%)","0.0%\n GST(0%)","Exempt GST(0%)","Out of Scope(0%)",)
+            eai_comb_P_4_2.current(0)
+            window_eai_comb_P_4_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", width=150, height=30,window=eai_comb_P_4_2,tags=('aicombo11'))
 
-            inv_canvas_edit_1.create_line(850, 1350, 1240, 1350, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(850, 1400, 1240, 1400, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(850, 1450, 1240, 1450, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(850, 1500, 1240, 1500, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(850, 1550, 1240, 1550, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(850, 1600, 1240, 1600, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(850, 1350, 850, 1600, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(1000, 1350, 1000, 1600, fill='gray',width=1)
-            inv_canvas_edit_1.create_line(1240, 1350, 1240, 1600, fill='gray',width=1)
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine16'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine17'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine18'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine19'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine20'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine21'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine22'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine23'))
+            inv_canvas_edit_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('ailine24'))
+            
 
-            label_5 = Label(inv_canvas_edit_1,width=12,height=1,text="Sub Total", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_5 = inv_canvas_edit_1.create_window(870, 1365, anchor="nw", window=label_5)
+            label_5 = Label(inv_canvas_edit_1,width=10,height=1,text="Sub Total", font=('arial 10'),background="#1b3857",fg="white") 
+            window_label_5 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_5,tags=('ailabel23'))
+
             label_5 = Label(inv_canvas_edit_1,width=12,height=1,text="Tax Amount", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_5 = inv_canvas_edit_1.create_window(870, 1415, anchor="nw", window=label_5)
+            window_label_5 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_5,tags=('ailabel24'))
+
             label_5 = Label(inv_canvas_edit_1,width=12,height=1,text="Grand Total", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_5 = inv_canvas_edit_1.create_window(870, 1465, anchor="nw", window=label_5)
+            window_label_5 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_5,tags=('ailabel25'))
+
             label_5 = Label(inv_canvas_edit_1,width=12,height=1,text="Amount Received", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_5 = inv_canvas_edit_1.create_window(870, 1515, anchor="nw", window=label_5)
+            window_label_5 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_5,tags=('ailabel26'))
+
             label_5 = Label(inv_canvas_edit_1,width=12,height=1,text="Balance Due", font=('arial 10'),background="#1b3857",fg="white") 
-            window_label_5 = inv_canvas_edit_1.create_window(870, 1565, anchor="nw", window=label_5)
+            window_label_5 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_5,tags=('ailabel27'))
 
-            sub_entry_1=Entry(inv_canvas_edit_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
-            window_sub_entry_1 = inv_canvas_edit_1.create_window(1010, 1360, anchor="nw", height=30, window=sub_entry_1)
+            esub_entry_1=Entry(inv_canvas_edit_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
+            window_esub_entry_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=esub_entry_1,tags=('aientry23'))
 
-            tax_entry_1=Entry(inv_canvas_edit_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
-            window_tax_entry_1 = inv_canvas_edit_1.create_window(1010, 1410, anchor="nw", height=30, window=tax_entry_1)
+            etax_entry_1=Entry(inv_canvas_edit_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
+            window_etax_entry_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=etax_entry_1,tags=('aientry24'))
 
-            grand_entry_1=Entry(inv_canvas_edit_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
-            window_grand_entry_1 = inv_canvas_edit_1.create_window(1010, 1460, anchor="nw", height=30, window=grand_entry_1)
+            egrand_entry_1=Entry(inv_canvas_edit_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
+            window_egrand_entry_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=egrand_entry_1,tags=('aientry25'))
 
-            amount_entry_1=Entry(inv_canvas_edit_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
-            window_amount_entry_1 = inv_canvas_edit_1.create_window(1010, 1510, anchor="nw", height=30, window=amount_entry_1)
+            eamount_entry_1=Entry(inv_canvas_edit_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
+            window_eamount_entry_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eamount_entry_1,tags=('aientry26'))
 
-            bal_entry_1=Entry(inv_canvas_edit_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
-            window_bal_entry_1 = inv_canvas_edit_1.create_window(1010, 1560, anchor="nw", height=30, window=bal_entry_1)
+            ebal_entry_1=Entry(inv_canvas_edit_1,width=36,justify=LEFT,background='#2f516f',foreground="white")
+            window_ebal_entry_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=ebal_entry_1,tags=('aientry27'))
+            
 
+            eai_save_btn1=Button(inv_canvas_edit_1,text='Save', width=15,height=2,foreground="white",background="#1b3857",font='arial 12')
+            window_eai_save_btn1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=eai_save_btn1,tags=('aibutton2'))
 
-            btn1=Button(inv_canvas_edit_1,text='Save', width=15,height=2,foreground="white",background="#1b3857",font='arial 12')
-            window_btn1 = inv_canvas_edit_1.create_window(1050, 1625, anchor="nw", window=btn1)
+            def einv_back_1_():
+                inv_frame_edit_1.grid_forget()
+                inv_frame.grid(row=0,column=0,sticky='nsew')
 
+            eibck_btn1=Button(inv_canvas_edit_1,text='← Back', bd=0, foreground="white",background="#2f516f",font='arial 10 bold',activebackground="#1b3857",command=einv_back_1_)
+            window_eibck_btn1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=eibck_btn1,tags=('aibutton3'))
+
+            label_2 = Label(inv_canvas_edit_1,width=14,height=1,text="Invoice Date:", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel7'))
+
+            label_2 = Label(inv_canvas_edit_1,width=15,height=1,text="Due Date:", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", window=label_2,tags=('ailabel28'))
+
+            eaid_entry_1=DateEntry(inv_canvas_edit_1,width=40,justify=LEFT,foreground='white')
+            window_eaid_entry_1 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eaid_entry_1,tags=('aidate1'))
+
+            eaid_entry_2=DateEntry(inv_canvas_edit_1,width=40,justify=LEFT,foreground='white')
+            window_eaid_entry_2 = inv_canvas_edit_1.create_window(0, 0, anchor="nw", height=30, window=eaid_entry_2,tags=('aidate2'))
         else:
             pass
+            
         
     # Define the style for combobox widget
     # styl= ttk.Style()
@@ -1520,6 +2004,7 @@ def main_sign_in():
             dcanvas.coords("accheck2",dwidth/19.0,dheight/0.546)
 
             dcanvas.coords("acbutton1",dwidth/2.5,dheight/0.5)
+            dcanvas.coords("acbutton3",dwidth/23,dheight/3.415)
 
 
         cus_canvas_1=Canvas(cus_frame_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1600))
@@ -1701,6 +2186,13 @@ def main_sign_in():
         chkbtn2.select()
         window_chkbtn_2 = cus_canvas_1.create_window(0, 0, anchor="nw", window=chkbtn2,tags=("accheck2"))
 
+        def ac_back_1_():
+            cus_frame_1.grid_forget()
+            cus_frame.grid(row=0,column=0,sticky='nsew')
+
+        ac_bck_btn1=Button(cus_canvas_1,text='← Back', bd=0, foreground="white",background="#2f516f",font='arial 10 bold',activebackground="#1b3857",command=ac_back_1_)
+        window_ac_bck_btn1 = cus_canvas_1.create_window(0, 0, anchor="nw", window=ac_bck_btn1,tags=('acbutton3'))
+
         cus_btn2=Button(cus_canvas_1,text='Submit Form', width=25,height=2,foreground="white",background="#1b3857",font='arial 12')
         window_cus_btn2 = cus_canvas_1.create_window(0, 0, anchor="nw", window=cus_btn2,tags=("acbutton1"))
 
@@ -1836,6 +2328,7 @@ def main_sign_in():
             dcanvas.coords("accheck2",dwidth/19.0,dheight/0.546)
 
             dcanvas.coords("acbutton1",dwidth/2.5,dheight/0.5)
+            dcanvas.coords("acbutton3",dwidth/23,dheight/3.415)
 
 
         cus_ecanvas_1=Canvas(cus_eframe_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1600))
@@ -1853,7 +2346,7 @@ def main_sign_in():
         cus_ecanvas_1.grid(row=0,column=0,sticky='nsew')
 
         
-        if cus_comb_1.get() == 'Edit':
+        if ecus_comb_1.get() == 'Edit':
             print('hai')
 
             cus_ecanvas_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("acpoly1"))
@@ -2020,6 +2513,13 @@ def main_sign_in():
             echkbtn2.select()
             window_echkbtn_2 = cus_ecanvas_1.create_window(0, 0, anchor="nw", window=echkbtn2,tags=("accheck2"))
 
+            def ec_back_1_():
+                cus_eframe_1.grid_forget()
+                cus_frame.grid(row=0,column=0,sticky='nsew')
+
+            ec_bck_btn1=Button(cus_ecanvas_1,text='← Back', bd=0, foreground="white",background="#2f516f",font='arial 10 bold',activebackground="#1b3857",command=ec_back_1_)
+            window_ec_bck_btn1 = cus_ecanvas_1.create_window(0, 0, anchor="nw", window=ec_bck_btn1,tags=('acbutton3'))
+
             ecus_btn2=Button(cus_ecanvas_1,text='Submit Form', width=25,height=2,foreground="white",background="#1b3857",font='arial 12')
             window_ecus_btn2 = cus_ecanvas_1.create_window(0, 0, anchor="nw", window=ecus_btn2,tags=("acbutton1"))
         else:
@@ -2030,291 +2530,717 @@ def main_sign_in():
     # style.theme_use('clam')
     # style.configure("TCombobox", fieldbackground= "#2f516f", background= "#2f516f")
 
-    cus_comb_1 = ttk.Combobox(cus_canvas,)
-    cus_comb_1['values'] = ['Actions','Edit','Delete']
+    ecus_comb_1 = ttk.Combobox(cus_canvas,)
+    ecus_comb_1['values'] = ['Actions','Edit','Delete']
     #cus_comb_1.current(0)
-    cus_comb_1.bind('<<ComboboxSelected>>',edit_customer)
-    window_cus_comb_1 = cus_canvas.create_window(0, 0, anchor="nw", width=110,height=30,window=cus_comb_1, tags=("ccombo1"))
+    ecus_comb_1.bind('<<ComboboxSelected>>',edit_customer)
+    window_ecus_comb_1 = cus_canvas.create_window(0, 0, anchor="nw", width=110,height=30,window=ecus_comb_1, tags=("ccombo1"))
 
     # btn1=Button(cus_canvas,text='Add Customer', width=20,height=2,foreground="white",background="#1b3857",font='arial 12',command=add_customer)
     # window_btn1 = cus_canvas.create_window(0, 0, anchor="nw", window=btn1, tags=("cbutton1"))
 
     #---------------------------Product & Services------------------------#
+    tab3_4.grid_columnconfigure(0,weight=1)
+    tab3_4.grid_rowconfigure(0,weight=1)
+
     pro_frame = Frame(tab3_4)
     pro_frame.grid(row=0,column=0,sticky='nsew')
-    canvas=Canvas(pro_frame, bg='#2f516f', width=1325, height=600, scrollregion=(0,0,700,1000))
+
+    def pro_responsive_widgets(event):
+        dwidth = event.width
+        dheight = event.height
+        dcanvas = event.widget
+
+        r1 = 25
+        x1 = dwidth/63
+        x2 = dwidth/1.021
+        y1 = dheight/14 
+        y2 = dheight/3.505
+
+        dcanvas.coords("ppoly1",x1 + r1,y1,
+        x1 + r1,y1,
+        x2 - r1,y1,
+        x2 - r1,y1,     
+        x2,y1,     
+        #--------------------
+        x2,y1 + r1,     
+        x2,y1 + r1,     
+        x2,y2 - r1,     
+        x2,y2 - r1,     
+        x2,y2,
+        #--------------------
+        x2 - r1,y2,     
+        x2 - r1,y2,     
+        x1 + r1,y2,
+        x1 + r1,y2,
+        x1,y2,
+        #--------------------
+        x1,y2 - r1,
+        x1,y2 - r1,
+        x1,y1 + r1,
+        x1,y1 + r1,
+        x1,y1,
+        )
+
+        dcanvas.coords("phline",dwidth/21,dheight/4.67,dwidth/1.055,dheight/4.67)
+        dcanvas.coords("plabel1",dwidth/2.75,dheight/8.00)
+
+        r2 = 25
+        x11 = dwidth/63
+        x21 = dwidth/1.021
+        y11 = dheight/2.8
+        y21 = dheight/0.850
+
+
+        dcanvas.coords("ppoly2",x11 + r2,y11,
+        x11 + r2,y11,
+        x21 - r2,y11,
+        x21 - r2,y11,     
+        x21,y11,     
+        #--------------------
+        x21,y11 + r2,     
+        x21,y11 + r2,     
+        x21,y21 - r2,     
+        x21,y21 - r2,     
+        x21,y21,
+        #--------------------
+        x21 - r2,y21,     
+        x21 - r2,y21,     
+        x11 + r2,y21,
+        x11 + r2,y21,
+        x11,y21,
+        #--------------------
+        x11,y21 - r2,
+        x11,y21 - r2,
+        x11,y11 + r2,
+        x11,y11 + r2,
+        x11,y11,
+        )
+
+        dcanvas.coords("pline1", dwidth/22.00, dheight/1.24, dwidth/1.060, dheight/1.24)
+        dcanvas.coords("pline2", dwidth/22.00, dheight/1.13, dwidth/1.060, dheight/1.13)
+        dcanvas.coords("pline3", dwidth/22.00, dheight/1.015, dwidth/1.060, dheight/1.015)
+        dcanvas.coords("pline4", dwidth/22.00, dheight/1.24, dwidth/22.00, dheight/1.015)
+        dcanvas.coords("pline5", dwidth/1.060, dheight/1.24, dwidth/1.060, dheight/1.015)
+        dcanvas.coords("pline6", dwidth/5.00, dheight/1.24, dwidth/5.00, dheight/1.015)
+        dcanvas.coords("pline7", dwidth/2.50, dheight/1.24, dwidth/2.50, dheight/1.015)
+        dcanvas.coords("pline8", dwidth/1.80, dheight/1.24, dwidth/1.80, dheight/1.015)
+        dcanvas.coords("pline9", dwidth/1.40, dheight/1.24, dwidth/1.40, dheight/1.015)
+        dcanvas.coords("pline10", dwidth/1.20, dheight/1.24, dwidth/1.20, dheight/1.015)
+
+        dcanvas.coords("pimage1",dwidth/5.29,dheight/2.15)
+        dcanvas.coords("pimage2",dwidth/2.05,dheight/2.15)
+
+        dcanvas.coords("plabel2",dwidth/5.60,dheight/1.60)
+        dcanvas.coords("plabel3",dwidth/2.09,dheight/1.60)
+        dcanvas.coords("plabel4",dwidth/10.55,dheight/1.21)
+        dcanvas.coords("plabel5",dwidth/3.60,dheight/1.21)
+        dcanvas.coords("plabel6",dwidth/2.15,dheight/1.21)
+        dcanvas.coords("plabel7",dwidth/1.63,dheight/1.21)
+        dcanvas.coords("plabel8",dwidth/1.35,dheight/1.21)
+        dcanvas.coords("plabel9",dwidth/1.17,dheight/1.21)
+
+        dcanvas.coords("pcombo1",dwidth/1.18,dheight/1.10)
+        dcanvas.coords("pbutton1",dwidth/1.28,dheight/1.45)
+
+    pro_canvas=Canvas(pro_frame, bg='#2f516f', width=1325, height=600, scrollregion=(0,0,700,1000))
+
+    pro_frame.grid_rowconfigure(0,weight=1)
+    pro_frame.grid_columnconfigure(0,weight=1)
 
     vertibar=Scrollbar(pro_frame, orient=VERTICAL)
-    vertibar.pack(side=RIGHT,fill=Y)
-    vertibar.config(command=canvas.yview)
-    canvas.config(width=1325,height=559)
-
-    canvas.config(yscrollcommand=vertibar.set)
-    canvas.pack(expand=True,side=LEFT,fill=BOTH)
-
-    def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
-            
-        points = [x1+radius, y1,
-                x1+radius, y1,
-                x2-radius, y1,
-                x2-radius, y1,
-                x2, y1,
-                x2, y1+radius,
-                x2, y1+radius,
-                x2, y2-radius,
-                x2, y2-radius,
-                x2, y2,
-                x2-radius, y2,
-                x2-radius, y2,
-                x1+radius, y2,
-                x1+radius, y2,
-                x1, y2,
-                x1, y2-radius,
-                x1, y2-radius,
-                x1, y1+radius,
-                x1, y1+radius,
-                x1, y1]
+    vertibar.grid(row=0,column=1,sticky='ns')
+    vertibar.config(command=pro_canvas.yview)
     
-        return canvas.create_polygon(points, **kwargs, smooth=True)
-    
-    my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-    label_1 = Label(canvas,width=23,height=1,text="PRODUCT AND SERVICES", font=('arial 25'),background="#1b3857",fg="white") 
-    window_label_1 = canvas.create_window(480, 85, anchor="nw", window=label_1)
-    canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
+    pro_canvas.bind("<Configure>", pro_responsive_widgets)
+    pro_canvas.config(yscrollcommand=vertibar.set)
+    pro_canvas.grid(row=0,column=0,sticky='nsew')
 
-    my_rectangle_1 = round_rectangle(20, 250, 1300, 800, radius=20, fill="#1b3857")
+    
+    pro_canvas.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("ppoly1"))
+    
+    label_1 = Label(pro_canvas,width=23,height=1,text="PRODUCT AND SERVICES", font=('arial 25'),background="#1b3857",fg="white") 
+    window_label_1 = pro_canvas.create_window(480, 85, anchor="nw", window=label_1, tags=("plabel1"))
+
+    pro_canvas.create_line(0,0,0,0,fill='gray',width=1,tags=("phline"))
+
+    pro_canvas.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("ppoly2"))
+
 
     image_1 = Image.open("images/lowstock.png")
     resize_image = image_1.resize((90,90))
     image_1 = ImageTk.PhotoImage(resize_image)
-    btlogo = Label(canvas, width=90, height=90, background="#1b3857", image = image_1) 
-    window_image = canvas.create_window(250, 280, anchor="nw", window=btlogo)
+    btlogo = Label(pro_canvas, width=90, height=90, background="#1b3857", image = image_1) 
+    window_image = pro_canvas.create_window(0, 0, anchor="nw", window=btlogo,tags=('pimage1'))
     btlogo.photo = image_1
 
-    label_2 = Label(canvas,width=15,height=1,text="LOW STOCK : ", font=('arial 18'),background="#1b3857",fg="white") 
-    window_label_2 = canvas.create_window(230, 380, anchor="nw", window=label_2)
+    label_2 = Label(pro_canvas,width=14,height=1,text="LOW STOCK : ", font=('arial 18'),background="#1b3857",fg="white") 
+    window_label_2 = pro_canvas.create_window(0, 0, anchor="nw", window=label_2,tags=('plabel2'))
 
     image_2 = Image.open("images/outofstock.png")
     resize_image_1 = image_2.resize((90,90))
     image_2 = ImageTk.PhotoImage(resize_image_1)
-    btlogo_1 = Label(canvas, width=90, height=90, background="#1b3857", image = image_2) 
-    window_image_1 = canvas.create_window(650, 280, anchor="nw", window=btlogo_1)
+    btlogo_1 = Label(pro_canvas, width=90, height=90, background="#1b3857", image = image_2) 
+    window_image_1 = pro_canvas.create_window(0, 0, anchor="nw", window=btlogo_1,tags=('pimage2'))
     btlogo_1.photo = image_2
 
-    label_2 = Label(canvas,width=15,height=1,text="OUT OF STOCK : ", font=('arial 18'),background="#1b3857",fg="white") 
-    window_label_2 = canvas.create_window(640, 380, anchor="nw", window=label_2)
+    label_2 = Label(pro_canvas,width=15,height=1,text="OUT OF STOCK : ", font=('arial 18'),background="#1b3857",fg="white") 
+    window_label_2 = pro_canvas.create_window(0, 0, anchor="nw", window=label_2,tags=('plabel3'))
 
 
-    canvas.create_line(60, 500, 1260, 500, fill='gray',width=1)
-    canvas.create_line(60, 500, 60, 550, fill='gray',width=1)
-    canvas.create_line(280, 500, 280, 550, fill='gray',width=1)
-    canvas.create_line(640, 500, 640, 550, fill='gray',width=1)
-    canvas.create_line(800, 500, 800, 550, fill='gray',width=1)
-    canvas.create_line(970, 500, 970, 550, fill='gray',width=1)
-    canvas.create_line(1120, 500, 1120, 550, fill='gray',width=1)
-    canvas.create_line(1260, 500, 1260, 550, fill='gray',width=1)
+    pro_canvas.create_line(0, 0, 0, 0, fill='gray',width=1,tags=('pline1'))
+    pro_canvas.create_line(0, 0, 0, 0, fill='gray',width=1,tags=('pline2'))
+    pro_canvas.create_line(0, 0, 0, 0, fill='gray',width=1,tags=('pline3'))
+    pro_canvas.create_line(0, 0, 0, 0, fill='gray',width=1,tags=('pline4'))
+    pro_canvas.create_line(0, 0, 0, 0, fill='gray',width=1,tags=('pline5'))
+    pro_canvas.create_line(0, 0, 0, 0, fill='gray',width=1,tags=('pline6'))
+    pro_canvas.create_line(0, 0, 0, 0, fill='gray',width=1,tags=('pline7'))
+    pro_canvas.create_line(0, 0, 0, 0, fill='gray',width=1,tags=('pline8'))
+    pro_canvas.create_line(0, 0, 0, 0, fill='gray',width=1,tags=('pline9'))
+    pro_canvas.create_line(0, 0, 0, 0, fill='gray',width=1,tags=('pline10'))
 
-    label_2 = Label(canvas,width=10,height=1,text="TYPE", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_2 = canvas.create_window(125, 515, anchor="nw", window=label_2)
-    label_3 = Label(canvas,width=11,height=1,text="NAME", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_3 = canvas.create_window(410, 515, anchor="nw", window=label_3)
-    label_4 = Label(canvas,width=11,height=1,text="SKU", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(680, 515, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=8,height=1,text="HSN/SAC", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(850, 515, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=11,height=1,text="QUANTITY", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(1000, 515, anchor="nw", window=label_4)
-    label_4 = Label(canvas,width=11,height=1,text="ACTION", font=('arial 10'),background="#1b3857",fg="white") 
-    window_label_4 = canvas.create_window(1140, 515, anchor="nw", window=label_4)
 
-    canvas.create_line(60, 550, 1260, 550, fill='gray',width=1)
-    canvas.create_line(60, 550, 60, 600, fill='gray',width=1)
-    canvas.create_line(280, 550, 280, 600, fill='gray',width=1)
-    canvas.create_line(640, 550, 640, 600, fill='gray',width=1)
-    canvas.create_line(800, 550, 800, 600, fill='gray',width=1)
-    canvas.create_line(970, 550, 970, 600, fill='gray',width=1)
-    canvas.create_line(1120, 550, 1120, 600, fill='gray',width=1)
-    canvas.create_line(1260, 500, 1260, 600, fill='gray',width=1)
+    label_2 = Label(pro_canvas,width=9,height=1,text="TYPE", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_2 = pro_canvas.create_window(0, 0, anchor="nw", window=label_2,tags=('plabel4'))
 
+    label_3 = Label(pro_canvas,width=5,height=1,text="NAME", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_3 = pro_canvas.create_window(0, 0, anchor="nw", window=label_3,tags=('plabel5'))
+
+    label_4 = Label(pro_canvas,width=5,height=1,text="SKU", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = pro_canvas.create_window(0, 0, anchor="nw", window=label_4,tags=('plabel6'))
+
+    label_4 = Label(pro_canvas,width=8,height=1,text="HSN/SAC", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = pro_canvas.create_window(0, 0, anchor="nw", window=label_4,tags=('plabel7'))
+
+    label_4 = Label(pro_canvas,width=11,height=1,text="QUANTITY", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = pro_canvas.create_window(0, 0, anchor="nw", window=label_4,tags=('plabel8'))
+
+    label_4 = Label(pro_canvas,width=11,height=1,text="ACTION", font=('arial 10'),background="#1b3857",fg="white") 
+    window_label_4 = pro_canvas.create_window(0, 0, anchor="nw", window=label_4,tags=('plabel9'))
+
+   
     # Define the style for combobox widget
     # style= ttk.Style(canvas)
     # style.theme_use('clam')
     # style.configure("TCombobox", fieldbackground= "#2f516f", background= "#2f516f")
 
-    cus_comb_1 = ttk.Combobox(canvas,font=('arial 10'),foreground="white")
+    cus_comb_1 = ttk.Combobox(pro_canvas,font=('arial 10'),foreground="white")
     cus_comb_1['values'] = ("Actions","Edit","Delete")
     cus_comb_1.current(0)
-    window_cus_comb_1 = canvas.create_window(1135, 560, anchor="nw", width=110,height=30,window=cus_comb_1)
+    window_cus_comb_1 = pro_canvas.create_window(1135, 560, anchor="nw", width=110,height=30,window=cus_comb_1,tags=('pcombo1'))
 
-
-    canvas.create_line(60, 600, 1260, 600, fill='gray',width=1)
 
     def add_product():
         pro_frame.grid_forget()
         pro_frame_1 = Frame(tab3_4)
         pro_frame_1.grid(row=0,column=0,sticky='nsew')
-        canvas=Canvas(pro_frame_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1000))
+
+        def pro_responsive_widgets_1(event):
+            dwidth = event.width
+            dheight = event.height
+            dcanvas = event.widget
+            
+            r1 = 25
+            x1 = dwidth/63
+            x2 = dwidth/1.021
+            y1 = dheight/14 
+            y2 = dheight/3.505
+
+            dcanvas.coords("appoly1",x1 + r1,y1,
+            x1 + r1,y1,
+            x2 - r1,y1,
+            x2 - r1,y1,     
+            x2,y1,     
+            #--------------------
+            x2,y1 + r1,     
+            x2,y1 + r1,     
+            x2,y2 - r1,     
+            x2,y2 - r1,     
+            x2,y2,
+            #--------------------
+            x2 - r1,y2,     
+            x2 - r1,y2,     
+            x1 + r1,y2,
+            x1 + r1,y2,
+            x1,y2,
+            #--------------------
+            x1,y2 - r1,
+            x1,y2 - r1,
+            x1,y1 + r1,
+            x1,y1 + r1,
+            x1,y1,
+            )
+
+            dcanvas.coords("aplabel1",dwidth/3,dheight/8.24)
+            dcanvas.coords("aphline",dwidth/21,dheight/4.67,dwidth/1.055,dheight/4.67)
+
+            r2 = 25
+            x11 = dwidth/63
+            x21 = dwidth/1.021
+            y11 = dheight/2.8
+            y21 = dheight/0.60
+
+
+            dcanvas.coords("appoly2",x11 + r2,y11,
+            x11 + r2,y11,
+            x21 - r2,y11,
+            x21 - r2,y11,     
+            x21,y11,     
+            #--------------------
+            x21,y11 + r2,     
+            x21,y11 + r2,     
+            x21,y21 - r2,     
+            x21,y21 - r2,     
+            x21,y21,
+            #--------------------
+            x21 - r2,y21,     
+            x21 - r2,y21,     
+            x11 + r2,y21,
+            x11 + r2,y21,
+            x11,y21,
+            #--------------------
+            x11,y21 - r2,
+            x11,y21 - r2,
+            x11,y11 + r2,
+            x11,y11 + r2,
+            x11,y11,
+            )
+
+            r2 = 25
+            x11 = dwidth/7
+            x21 = dwidth/2.07
+            y11 = dheight/2.0
+            y21 = dheight/1.1
+
+
+            dcanvas.coords("appoly3",x11 + r2,y11,
+            x11 + r2,y11,
+            x21 - r2,y11,
+            x21 - r2,y11,     
+            x21,y11,     
+            #--------------------
+            x21,y11 + r2,     
+            x21,y11 + r2,     
+            x21,y21 - r2,     
+            x21,y21 - r2,     
+            x21,y21,
+            #--------------------
+            x21 - r2,y21,     
+            x21 - r2,y21,     
+            x11 + r2,y21,
+            x11 + r2,y21,
+            x11,y21,
+            #--------------------
+            x11,y21 - r2,
+            x11,y21 - r2,
+            x11,y11 + r2,
+            x11,y11 + r2,
+            x11,y11,
+            )
+
+            dcanvas.coords("aplabel2",dwidth/3.9,dheight/1.75)
+            dcanvas.coords("aplabel3",dwidth/6.30,dheight/1.54)
+            dcanvas.coords("apbutton1",dwidth/4.1,dheight/1.30)
+
+            r2 = 25
+            x11 = dwidth/1.93
+            x21 = dwidth/1.15
+            y11 = dheight/2.0
+            y21 = dheight/1.1
+
+
+            dcanvas.coords("appoly4",x11 + r2,y11,
+            x11 + r2,y11,
+            x21 - r2,y11,
+            x21 - r2,y11,     
+            x21,y11,     
+            #--------------------
+            x21,y11 + r2,     
+            x21,y11 + r2,     
+            x21,y21 - r2,     
+            x21,y21 - r2,     
+            x21,y21,
+            #--------------------
+            x21 - r2,y21,     
+            x21 - r2,y21,     
+            x11 + r2,y21,
+            x11 + r2,y21,
+            x11,y21,
+            #--------------------
+            x11,y21 - r2,
+            x11,y21 - r2,
+            x11,y11 + r2,
+            x11,y11 + r2,
+            x11,y11,
+            )
+
+            dcanvas.coords("aplabel4",dwidth/1.58,dheight/1.75)
+            dcanvas.coords("aplabel5",dwidth/1.85,dheight/1.54)
+            dcanvas.coords("apbutton2",dwidth/1.6,dheight/1.30)
+
+            r2 = 25
+            x11 = dwidth/7
+            x21 = dwidth/2.07
+            y11 = dheight/1.0
+            y21 = dheight/0.719
+
+
+            dcanvas.coords("appoly5",x11 + r2,y11,
+            x11 + r2,y11,
+            x21 - r2,y11,
+            x21 - r2,y11,     
+            x21,y11,     
+            #--------------------
+            x21,y11 + r2,     
+            x21,y11 + r2,     
+            x21,y21 - r2,     
+            x21,y21 - r2,     
+            x21,y21,
+            #--------------------
+            x21 - r2,y21,     
+            x21 - r2,y21,     
+            x11 + r2,y21,
+            x11 + r2,y21,
+            x11,y21,
+            #--------------------
+            x11,y21 - r2,
+            x11,y21 - r2,
+            x11,y11 + r2,
+            x11,y11 + r2,
+            x11,y11,
+            )
+
+            dcanvas.coords("aplabel6",dwidth/3.9,dheight/0.95)
+            dcanvas.coords("aplabel7",dwidth/6.30,dheight/0.88)
+            dcanvas.coords("apbutton3",dwidth/4.1,dheight/0.80)
+
+            r2 = 25
+            x11 = dwidth/1.93
+            x21 = dwidth/1.15
+            y11 = dheight/1.0
+            y21 = dheight/0.719
+
+
+            dcanvas.coords("appoly6",x11 + r2,y11,
+            x11 + r2,y11,
+            x21 - r2,y11,
+            x21 - r2,y11,     
+            x21,y11,     
+            #--------------------
+            x21,y11 + r2,     
+            x21,y11 + r2,     
+            x21,y21 - r2,     
+            x21,y21 - r2,     
+            x21,y21,
+            #--------------------
+            x21 - r2,y21,     
+            x21 - r2,y21,     
+            x11 + r2,y21,
+            x11 + r2,y21,
+            x11,y21,
+            #--------------------
+            x11,y21 - r2,
+            x11,y21 - r2,
+            x11,y11 + r2,
+            x11,y11 + r2,
+            x11,y11,
+            )
+
+            dcanvas.coords("aplabel8",dwidth/1.58,dheight/0.95)
+            dcanvas.coords("aplabel9",dwidth/1.85,dheight/0.88)
+            dcanvas.coords("apbutton4",dwidth/1.6,dheight/0.80)
+            dcanvas.coords("apbutton5",dwidth/23,dheight/3.415)
+
+
+        p_canvas_1=Canvas(pro_frame_1, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,1000))
+
+        pro_frame_1.grid_columnconfigure(0,weight=1)
+        pro_frame_1.grid_rowconfigure(0,weight=1)
         
         vertibar=Scrollbar(pro_frame_1, orient=VERTICAL)
-        vertibar.pack(side=RIGHT,fill=Y)
-        vertibar.config(command=canvas.yview)
+        vertibar.grid(row=0,column=1,sticky='ns')
+        vertibar.config(command=p_canvas_1.yview)
 
-        canvas.config(width=1325,height=559)
-        canvas.config(yscrollcommand=vertibar.set)
-        canvas.pack(expand=True,side=LEFT,fill=BOTH)
-        def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
-            
-            points = [x1+radius, y1,
-                    x1+radius, y1,
-                    x2-radius, y1,
-                    x2-radius, y1,
-                    x2, y1,
-                    x2, y1+radius,
-                    x2, y1+radius,
-                    x2, y2-radius,
-                    x2, y2-radius,
-                    x2, y2,
-                    x2-radius, y2,
-                    x2-radius, y2,
-                    x1+radius, y2,
-                    x1+radius, y2,
-                    x1, y2,
-                    x1, y2-radius,
-                    x1, y2-radius,
-                    x1, y1+radius,
-                    x1, y1+radius,
-                    x1, y1]
+        p_canvas_1.bind("<Configure>", pro_responsive_widgets_1)
+        p_canvas_1.config(yscrollcommand=vertibar.set)
+        p_canvas_1.grid(row=0,column=0,sticky='nsew')
         
-            return canvas.create_polygon(points, **kwargs, smooth=True)
+        
+        p_canvas_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("appoly1"))
 
-        my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-        label_1 = Label(canvas,width=30,height=1,text="PRODUCT / SERVICE INFORMATION", font=('arial 20'),background="#1b3857",fg="white") 
-        window_label_1 = canvas.create_window(480, 85, anchor="nw", window=label_1)
-        canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
+        label_1 = Label(p_canvas_1,width=30,height=1,text="PRODUCT / SERVICE INFORMATION", font=('arial 20'),background="#1b3857",fg="white") 
+        window_label_1 = p_canvas_1.create_window(0, 0, anchor="nw", window=label_1, tags=("aplabel1"))
 
-        my_rectangle = round_rectangle(20, 250, 1300, 900, radius=20, fill="#1b3857")
+        p_canvas_1.create_line(0, 0, 0, 0, fill='gray',width=1, tags=("aphline"))
 
-        my_rectangle = round_rectangle(200, 300, 650, 550, radius=20, fill="#2f516f")
+        p_canvas_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=("appoly2"))
 
-        label_1 = Label(canvas,width=10,height=1,text="Inventory", font=('arial 20'),background="#2f516f",fg="white") 
-        window_label_1 = canvas.create_window(340, 350, anchor="nw", window=label_1)
+        p_canvas_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#2f516f",tags=("appoly3"))
 
-        label_1 = Label(canvas,width=45,height=2,text="Inventory is the goods available for sale and raw materials \nused to produce goods available for sale.", font=('arial 12'),background="#2f516f",fg="white") 
-        window_label_1 = canvas.create_window(220, 400, anchor="nw", window=label_1)
+        label_1 = Label(p_canvas_1,width=10,height=1,text="Inventory", font=('arial 20'),background="#2f516f",fg="white") 
+        window_label_1 = p_canvas_1.create_window(0, 0, anchor="nw", window=label_1,tags=('aplabel2'))
+
+        label_1 = Label(p_canvas_1,width=45,height=2,text="Inventory is the goods available for sale and raw materials \nused to produce goods available for sale.", font=('arial 12'),background="#2f516f",fg="white") 
+        window_label_1 = p_canvas_1.create_window(0, 0, anchor="nw", window=label_1,tags=('aplabel3'))
 
         def inv_add_item():
             pro_frame_1.grid_forget()
             pro_frame_2 = Frame(tab3_4)
             pro_frame_2.grid(row=0,column=0,sticky='nsew')
-            canvas=Canvas(pro_frame_2, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,2050))
+
+            def pro_responsive_widgets_2(event):
+                dwidth = event.width
+                dheight = event.height
+                dcanvas = event.widget
             
+                r1 = 25
+                x1 = dwidth/63
+                x2 = dwidth/1.021
+                y1 = dheight/14 
+                y2 = dheight/3.505
+
+                dcanvas.coords("ippoly1",x1 + r1,y1,
+                x1 + r1,y1,
+                x2 - r1,y1,
+                x2 - r1,y1,     
+                x2,y1,     
+                #--------------------
+                x2,y1 + r1,     
+                x2,y1 + r1,     
+                x2,y2 - r1,     
+                x2,y2 - r1,     
+                x2,y2,
+                #--------------------
+                x2 - r1,y2,     
+                x2 - r1,y2,     
+                x1 + r1,y2,
+                x1 + r1,y2,
+                x1,y2,
+                #--------------------
+                x1,y2 - r1,
+                x1,y2 - r1,
+                x1,y1 + r1,
+                x1,y1 + r1,
+                x1,y1,
+                )
+
+                dcanvas.coords("iplabel1",dwidth/3,dheight/8.24)
+                dcanvas.coords("iphline",dwidth/21,dheight/4.67,dwidth/1.055,dheight/4.67)
+
+                r2 = 25
+                x11 = dwidth/63
+                x21 = dwidth/1.021
+                y11 = dheight/2.8
+                y21 = dheight/0.29
+
+
+                dcanvas.coords("ippoly2",x11 + r2,y11,
+                x11 + r2,y11,
+                x21 - r2,y11,
+                x21 - r2,y11,     
+                x21,y11,     
+                #--------------------
+                x21,y11 + r2,     
+                x21,y11 + r2,     
+                x21,y21 - r2,     
+                x21,y21 - r2,     
+                x21,y21,
+                #--------------------
+                x21 - r2,y21,     
+                x21 - r2,y21,     
+                x11 + r2,y21,
+                x11 + r2,y21,
+                x11,y21,
+                #--------------------
+                x11,y21 - r2,
+                x11,y21 - r2,
+                x11,y11 + r2,
+                x11,y11 + r2,
+                x11,y11,
+                )
+
+                r2 = 25
+                x11 = dwidth/24
+                x21 = dwidth/1.050
+                y11 = dheight/2.1
+                y21 = dheight/1.35
+
+
+                dcanvas.coords("ippoly3",x11 + r2,y11,
+                x11 + r2,y11,
+                x21 - r2,y11,
+                x21 - r2,y11,     
+                x21,y11,     
+                #--------------------
+                x21,y11 + r2,     
+                x21,y11 + r2,     
+                x21,y21 - r2,     
+                x21,y21 - r2,     
+                x21,y21,
+                #--------------------
+                x21 - r2,y21,     
+                x21 - r2,y21,     
+                x11 + r2,y21,
+                x11 + r2,y21,
+                x11,y21,
+                #--------------------
+                x11,y21 - r2,
+                x11,y21 - r2,
+                x11,y11 + r2,
+                x11,y11 + r2,
+                x11,y11,
+                )
+
+                dcanvas.coords("iplabel2",dwidth/2.5,dheight/1.77)
+                dcanvas.coords("ipbutton1",dwidth/1.8,dheight/1.77)
+
+                dcanvas.coords("iplabel3",dwidth/23.2,dheight/1.23)
+                dcanvas.coords("iplabel4",dwidth/23.3,dheight/1.02)
+                dcanvas.coords("iplabel5",dwidth/1.9,dheight/1.02)
+                dcanvas.coords("iplabel6",dwidth/1.9,dheight/0.92)
+                dcanvas.coords("iplabel7",dwidth/27,dheight/0.865)
+                dcanvas.coords("iplabel8",dwidth/1.915,dheight/0.865)
+                dcanvas.coords("iplabel9",dwidth/50,dheight/0.76)
+                dcanvas.coords("iplabel10",dwidth/2.95,dheight/0.76)
+                dcanvas.coords("iplabel11",dwidth/1.54,dheight/0.76)
+                dcanvas.coords("iplabel12",dwidth/38,dheight/0.675)
+                dcanvas.coords("iplabel13",dwidth/26.8,dheight/0.606)
+                dcanvas.coords("iplabel14",dwidth/28.3,dheight/0.538)
+                dcanvas.coords("iplabel15",dwidth/1.9,dheight/0.538)
+                dcanvas.coords("iplabel16",dwidth/28.4,dheight/0.485)
+                dcanvas.coords("iplabel17",dwidth/29.3,dheight/0.438)
+                dcanvas.coords("iplabel18",dwidth/28,dheight/0.401)
+                dcanvas.coords("iplabel19",dwidth/1.91,dheight/0.401)
+                dcanvas.coords("iplabel20",dwidth/28,dheight/0.37)
+                dcanvas.coords("iplabel21",dwidth/26,dheight/0.35)
+                dcanvas.coords("iplabel22",dwidth/1.9,dheight/0.35)
+
+                dcanvas.coords("ipentry1",dwidth/23.2,dheight/1.165)
+                dcanvas.coords("ipentry2",dwidth/23.2,dheight/0.975)
+                dcanvas.coords("ipentry3",dwidth/1.9,dheight/0.975)
+                dcanvas.coords("ipentry4",dwidth/1.9,dheight/0.83)
+                dcanvas.coords("ipentry5",dwidth/23.2,dheight/0.73)
+                dcanvas.coords("ipentry6",dwidth/1.52,dheight/0.73)
+                dcanvas.coords("ipentry7",dwidth/23.2,dheight/0.59)
+                dcanvas.coords("ipentry8",dwidth/23.2,dheight/0.525)
+                dcanvas.coords("ipentry9",dwidth/23.2,dheight/0.43)
+                dcanvas.coords("ipentry10",dwidth/23.2,dheight/0.394)
+                dcanvas.coords("ipentry11",dwidth/23.2,dheight/0.344)
+
+                dcanvas.coords("ipcombo1",dwidth/23.2,dheight/0.83)
+                dcanvas.coords("ipcombo2",dwidth/23.2,dheight/0.654)
+                dcanvas.coords("ipcombo3",dwidth/1.9,dheight/0.525)
+                dcanvas.coords("ipcombo4",dwidth/23.2,dheight/0.474)
+                dcanvas.coords("ipcombo5",dwidth/1.89,dheight/0.394)
+                dcanvas.coords("ipcombo6",dwidth/23.2,dheight/0.364)
+                dcanvas.coords("ipcombo7",dwidth/1.89,dheight/0.344)
+
+                dcanvas.coords("ipcbutton1",dwidth/23.2,dheight/0.51)
+                dcanvas.coords("ipcbutton2",dwidth/23.2,dheight/0.385)
+
+                dcanvas.coords("ipbutton2",dwidth/2.45,dheight/0.654)
+                dcanvas.coords("ipbutton3",dwidth/2.45,dheight/0.474)
+                dcanvas.coords("ipbutton4",dwidth/2.45,dheight/0.364)
+                dcanvas.coords("ipbutton5",dwidth/2.38,dheight/0.325)
+
+                dcanvas.coords("iphline1",dwidth/21,dheight/0.448,dwidth/1.055,dheight/0.448)
+
+                try:
+                    dcanvas.coords("ipdate1",dwidth/2.9,dheight/0.73)
+                except:
+                    pass
+
+
+            p_canvas_2=Canvas(pro_frame_2, bg='#2f516f', width=953, height=600, scrollregion=(0,0,700,2050))
+
+            pro_frame_2.grid_columnconfigure(0,weight=1)
+            pro_frame_2.grid_rowconfigure(0,weight=1)
+        
             vertibar=Scrollbar(pro_frame_2, orient=VERTICAL)
-            vertibar.pack(side=RIGHT,fill=Y)
-            vertibar.config(command=canvas.yview)
+            vertibar.grid(row=0,column=1,sticky='ns')
+            vertibar.config(command=p_canvas_2.yview)
 
-            canvas.config(width=1325,height=559)
-            canvas.config(yscrollcommand=vertibar.set)
-            canvas.pack(expand=True,side=LEFT,fill=BOTH)
-            def round_rectangle(x1, y1, x2, y2, radius=25, **kwargs):
-                
-                points = [x1+radius, y1,
-                        x1+radius, y1,
-                        x2-radius, y1,
-                        x2-radius, y1,
-                        x2, y1,
-                        x2, y1+radius,
-                        x2, y1+radius,
-                        x2, y2-radius,
-                        x2, y2-radius,
-                        x2, y2,
-                        x2-radius, y2,
-                        x2-radius, y2,
-                        x1+radius, y2,
-                        x1+radius, y2,
-                        x1, y2,
-                        x1, y2-radius,
-                        x1, y2-radius,
-                        x1, y1+radius,
-                        x1, y1+radius,
-                        x1, y1]
-            
-                return canvas.create_polygon(points, **kwargs, smooth=True)
+            p_canvas_2.bind("<Configure>", pro_responsive_widgets_2)
+            p_canvas_2.config(yscrollcommand=vertibar.set)
+            p_canvas_2.grid(row=0,column=0,sticky='nsew')
 
-            my_rectangle = round_rectangle(20, 50, 1300, 200, radius=20, fill="#1b3857")
-            label_1 = Label(canvas,width=30,height=1,text="PRODUCT / SERVICE INFORMATION", font=('arial 20'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(470, 85, anchor="nw", window=label_1)
-            canvas.create_line(60, 150, 1260, 150, fill='gray',width=1)
 
-            my_rectangle = round_rectangle(20, 250, 1300, 2000, radius=20, fill="#1b3857")
+            p_canvas_2.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=('ippoly1'))
 
-            my_rectangle = round_rectangle(50, 300, 1270, 450, radius=20, fill="#2f516f")
-            label_1 = Label(canvas,width=10,height=2,text="INVENTORY", font=('arial 20'),background="#2f516f",fg="white") 
-            window_label_1 = canvas.create_window(475, 350, anchor="nw", window=label_1)
-            btn_item_1=Button(canvas,text='Choose Type', width=15,height=1,foreground="white",background="#2f516f",font='arial 20',  command=add_product)
-            window_btn_item_1 = canvas.create_window(750, 350, anchor="nw", window=btn_item_1)
+            label_1 = Label(p_canvas_2,width=30,height=1,text="PRODUCT / SERVICE INFORMATION", font=('arial 20'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=('iplabel1'))
 
-            label_1 = Label(canvas,width=5,height=1,text="Name", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(51, 500, anchor="nw", window=label_1)
+            p_canvas_2.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('iphline'))
 
-            entry_inv_item_1=Entry(canvas,width=200,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_1 = canvas.create_window(55, 530, anchor="nw", height=30,window=entry_inv_item_1)
+            p_canvas_2.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#1b3857",tags=('ippoly2'))
 
-            label_1 = Label(canvas,width=5,height=1,text="SKU", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(51, 600, anchor="nw", window=label_1)
+            p_canvas_2.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#2f516f",tags=('ippoly3'))
+
+            label_1 = Label(p_canvas_2,width=10,height=2,text="INVENTORY", font=('arial 20'),background="#2f516f",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=('iplabel2'))
+
+            btn_item_1=Button(p_canvas_2,text='Choose Type', width=15,height=1,foreground="white",background="#2f516f",font='arial 20',  command=add_product)
+            window_btn_item_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=btn_item_1, tags=('ipbutton1'))
+
+            label_1 = Label(p_canvas_2,width=5,height=1,text="Name", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=('iplabel3'))
+
+            entry_inv_item_1=Entry(p_canvas_2,width=200,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_entry_inv_item_1 = p_canvas_2.create_window(0, 0, anchor="nw", height=30,window=entry_inv_item_1, tags=('ipentry1'))
+
+            label_1 = Label(p_canvas_2,width=4,height=1,text="SKU", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=('iplabel4'))
 
             str_inv_item_1 = StringVar()
-            entry_inv_item_2=Entry(canvas,width=90,justify=LEFT,background='#2f516f',foreground="white",textvariable=str_inv_item_1)
+            entry_inv_item_2=Entry(p_canvas_2,width=90,justify=LEFT,background='#2f516f',foreground="white",textvariable=str_inv_item_1)
             str_inv_item_1.set('  Eg: N41554')
-            window_entry_entry_inv_item_2 = canvas.create_window(55, 630, anchor="nw", height=30,window=entry_inv_item_2)
+            window_entry_entry_inv_item_2 = p_canvas_2.create_window(0, 0, anchor="nw", height=30,window=entry_inv_item_2, tags=('ipentry2'))
 
-            label_1 = Label(canvas,width=9,height=1,text="HSN Code", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(710, 600, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=9,height=1,text="HSN Code", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=('iplabel5'))
 
-            entry_inv_item_2=Entry(canvas,width=90,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_2 = canvas.create_window(710, 630, anchor="nw", height=30,window=entry_inv_item_2)
+            entry_inv_item_2=Entry(p_canvas_2,width=90,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_entry_inv_item_2 = p_canvas_2.create_window(0, 0, anchor="nw", height=30,window=entry_inv_item_2, tags=("ipentry3"))
 
-            label_1 = Label(canvas,width=30,height=1,text="Not sure about HSN Code..? Click here", font=('arial 12'),background="#1b3857",fg="skyblue") 
-            window_label_1 = canvas.create_window(710, 660, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=30,height=1,text="Not sure about HSN Code..? Click here", font=('arial 12'),background="#1b3857",fg="skyblue") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=('iplabel6'))
 
-            label_1 = Label(canvas,width=5,height=1,text="Unit", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(48, 710, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=5,height=1,text="Unit", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1, tags=('iplabel7'))
 
-            comb_inv_item_1 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+            comb_inv_item_1 = ttk.Combobox(p_canvas_2, font=('arial 10'),foreground="white")
             comb_inv_item_1['values'] = ("Choose...","BAG Bags","BAL Bale BOU","BDL Bundles","BKL Buckles","BOX Box","BTL Bottles","CAN Cans","CTN Cartons","CCM Cubic centimeters","CBM Cubic meters","CMS Centimeters","DRM Drums","DOZ Dozens","GGK Great gross GYD","GRS GrossGMS","KME Kilometre","KGS Kilograms","KLR Kilo litre","MTS Metric ton","MLT Mili litre","MTR Meters","NOS Numbers","PAC Packs","PCS Pieces","PRS Pairs","QTL Quintal","ROL Rolls","SQY Square Yards","SET Sets","SQF Square feet","SQM Square meters","TBS Tablets","TUB Tubes","TGM Ten Gross","THD Thousands","TON Tonnes","UNT Units","UGS US Gallons","YDS Yards",)
             comb_inv_item_1.current(0)
-            window_comb_inv_item_1 = canvas.create_window(55, 740, anchor="nw", width=540, height=30,window=comb_inv_item_1)
+            window_comb_inv_item_1 = p_canvas_2.create_window(0, 0, anchor="nw", width=540, height=30,window=comb_inv_item_1, tags=('ipcombo1'))
 
-            label_1 = Label(canvas,width=9,height=1,text="Category", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(705, 710, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=9,height=1,text="Category", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel8'))
 
-            entry_inv_item_3=Entry(canvas,width=90,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_3 = canvas.create_window(710, 740, anchor="nw", height=30,window=entry_inv_item_3)
+            entry_inv_item_3=Entry(p_canvas_2,width=90,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_entry_inv_item_3 = p_canvas_2.create_window(0, 0, anchor="nw", height=30,window=entry_inv_item_3,tags=('ipentry4'))
 
-            label_1 = Label(canvas,width=22,height=1,text="Initial quantity on hand", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(30, 810, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=24,height=1,text="Initial quantity on hand", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel9'))
 
-            entry_inv_item_4=Entry(canvas,width=60,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_4 = canvas.create_window(55, 840, anchor="nw", height=30,window=entry_inv_item_4)
+            entry_inv_item_4=Entry(p_canvas_2,width=60,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_entry_inv_item_4 = p_canvas_2.create_window(0, 0, anchor="nw", height=30,window=entry_inv_item_4,tags=('ipentry5'))
 
-            label_1 = Label(canvas,width=10,height=1,text="As of date", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(450, 810, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=10,height=1,text="As of date", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel10'))
+  
+            label_1 = Label(p_canvas_2,width=14,height=1,text="Low stock alert", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel11'))
 
-            entry_inv_item_5=DateEntry(canvas,width=60,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_5 = canvas.create_window(460, 840, anchor="nw", height=30,window=entry_inv_item_5)
+            entry_inv_item_6=Entry(p_canvas_2,width=60,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_entry_inv_item_6 = p_canvas_2.create_window(0, 0, anchor="nw", height=30,window=entry_inv_item_6,tags=('ipentry6'))
 
-            label_1 = Label(canvas,width=14,height=1,text="Low stock alert", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(875, 810, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=22,height=1,text="Inventory asset account", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(35, 910, anchor="nw", window=label_1,tags=('iplabel12'))
 
-            entry_inv_item_6=Entry(canvas,width=60,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_6 = canvas.create_window(885, 840, anchor="nw", height=30,window=entry_inv_item_6)
-
-            label_1 = Label(canvas,width=22,height=1,text="Inventory asset account", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(35, 910, anchor="nw", window=label_1)
-
-            comb_inv_item_2 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+            comb_inv_item_2 = ttk.Combobox(p_canvas_2, font=('arial 10'),foreground="white")
             comb_inv_item_2['values'] = ("Inventory Asset",)
             comb_inv_item_2.current(0)
-            window_comb_inv_item_2 = canvas.create_window(55, 940, anchor="nw", width=480, height=30,window=comb_inv_item_2)
+            window_comb_inv_item_2 = p_canvas_2.create_window(0, 0, anchor="nw", width=480, height=30,window=comb_inv_item_2,tags=('ipcombo2'))
 
             def inv_acc_create_1():
                 pro_frame_2.grid_forget()
@@ -2419,41 +3345,41 @@ def main_sign_in():
 
                 
 
-            asset_btn=Button(canvas,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=inv_acc_create_1)
-            window_asset_btn = canvas.create_window(545, 940, anchor="nw", window=asset_btn)
+            asset_btn=Button(p_canvas_2,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=inv_acc_create_1)
+            window_asset_btn = p_canvas_2.create_window(0, 0, anchor="nw", window=asset_btn,tags=('ipbutton2'))
 
-            label_1 = Label(canvas,width=10,height=1,text="Description", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(51, 1010, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=10,height=1,text="Description", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel13'))
 
-            entry_inv_item_7=Entry(canvas,width=200,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_7 = canvas.create_window(55, 1040, anchor="nw", height=60,window=entry_inv_item_7)
+            entry_inv_item_7=Entry(p_canvas_2,width=200,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_entry_inv_item_7 = p_canvas_2.create_window(0, 0, anchor="nw", height=60,window=entry_inv_item_7,tags=('ipentry7'))
 
-            label_1 = Label(canvas,width=15,height=1,text="Sales price/rate", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(45, 1140, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=15,height=1,text="Sales price/rate", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel14'))
             
-            entry_inv_item_8=Entry(canvas,width=90,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_8 = canvas.create_window(55, 1170, anchor="nw", height=30,window=entry_inv_item_8)
+            entry_inv_item_8=Entry(p_canvas_2,width=90,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_entry_inv_item_8 = p_canvas_2.create_window(0, 0, anchor="nw", height=30,window=entry_inv_item_8,tags=('ipentry8'))
 
             chk_str_inv_item = StringVar()
-            chkbtn_inv_item_1 = Checkbutton(canvas, text = "Inclusive of tax", variable = chk_str_inv_item, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
+            chkbtn_inv_item_1 = Checkbutton(p_canvas_2, text = "Inclusive of tax", variable = chk_str_inv_item, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             chkbtn_inv_item_1.select()
-            window_chkbtn_inv_item_1 = canvas.create_window(55, 1205, anchor="nw", window=chkbtn_inv_item_1)
+            window_chkbtn_inv_item_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=chkbtn_inv_item_1,tags=('ipcbutton1'))
 
-            label_1 = Label(canvas,width=4,height=1,text="Tax", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(703, 1140, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=4,height=1,text="Tax", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel15'))
 
-            comb_inv_item_3 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+            comb_inv_item_3 = ttk.Combobox(p_canvas_2, font=('arial 10'),foreground="white")
             comb_inv_item_3['values'] = ("Choose...","28.0% GST (28%)","28.0% IGST (28%)","18.0% GST (18%)","18.0% IGST (18%)","15.0% ST (100%)","14.5% ST (100%)","14.00% ST (100%)","14.0% VAT (100%)","12.36% ST (100%)","12.0% GST (12%)","12.0% IGST (12%)","6.0% GST (6%)","6.0% IGST (6%)","5.0% GST (5%)","5.0% IGST (5%)","5.0% VAT (100%)","4.0% VAT (100%)","3.0% GST (3%)","3.0% IGST (3%)","2.0% CST (100%)","0.25% GST (O.25%)","0.25% IGST (0.25%)","0% GST (0%)","0% IGST (0%)","Exempt GST (0%)","Exempt IGST (0%)","Out of Scope(0%)",)
             comb_inv_item_3.current(0)
-            window_comb_inv_item_3 = canvas.create_window(710, 1170, anchor="nw", width=540, height=30,window=comb_inv_item_3)
+            window_comb_inv_item_3 = p_canvas_2.create_window(0, 0, anchor="nw", width=540, height=30,window=comb_inv_item_3,tags=('ipcombo3'))
 
-            label_1 = Label(canvas,width=15,height=1,text="Income account", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(41, 1270, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=15,height=1,text="Income account", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel16'))
 
-            comb_inv_item_4 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+            comb_inv_item_4 = ttk.Combobox(p_canvas_2, font=('arial 10'),foreground="white")
             comb_inv_item_4['values'] = ("Choose...","Billable Expense Income","Product Sales","Sales","Sales-Hardware","Sales-Software","Sales-Support and Maintanance","Sales of Product Income","Uncategorised Income",)
             comb_inv_item_4.current(0)
-            window_comb_inv_item_4 = canvas.create_window(55, 1300, anchor="nw", width=480, height=30,window=comb_inv_item_4)
+            window_comb_inv_item_4 = p_canvas_2.create_window(0, 0, anchor="nw", width=480, height=30,window=comb_inv_item_4,tags=('ipcombo4'))
 
             def inv_inc_acc_1():
                 pro_frame_2.grid_forget()
@@ -2557,43 +3483,43 @@ def main_sign_in():
                 window_inv_sub_btn_2_1 = canvas.create_window(685, 800, anchor="nw", window=inv_sub_btn_2_1)
 
 
-            account_btn=Button(canvas,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=inv_inc_acc_1)
-            window_account_btn = canvas.create_window(545, 1300, anchor="nw", window=account_btn)
+            account_btn=Button(p_canvas_2,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=inv_inc_acc_1)
+            window_account_btn = p_canvas_2.create_window(0, 0, anchor="nw", window=account_btn,tags=('ipbutton3'))
 
-            canvas.create_line(55, 1375, 1260, 1375, fill='gray',width=1)
+            p_canvas_2.create_line(0, 0, 0, 0, fill='gray',width=1, tags=('iphline1'))
 
-            label_1 = Label(canvas,width=25,height=1,text="Purchasing information", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(26, 1400, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=22,height=1,text="Purchasing information", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel17'))
 
-            entry_inv_item_9=Entry(canvas,width=200,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_9 = canvas.create_window(55, 1430, anchor="nw", height=60,window=entry_inv_item_9)
+            entry_inv_item_9=Entry(p_canvas_2,width=200,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_entry_inv_item_9 = p_canvas_2.create_window(0, 0, anchor="nw", height=60,window=entry_inv_item_9,tags=('ipentry9'))
 
-            label_1 = Label(canvas,width=5,height=1,text="Cost", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(50, 1530, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=5,height=1,text="Cost", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel18'))
             
-            entry_inv_item_10=Entry(canvas,width=90,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_10 = canvas.create_window(55, 1560, anchor="nw", height=30,window=entry_inv_item_10)
+            entry_inv_item_10=Entry(p_canvas_2,width=90,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_entry_inv_item_10 = p_canvas_2.create_window(0, 0, anchor="nw", height=30,window=entry_inv_item_10,tags=('ipentry10'))
 
             chk_str_inv_item_1 = StringVar()
-            chkbtn_inv_item_2 = Checkbutton(canvas, text = "Inclusive of purchase tax", variable = chk_str_inv_item_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
+            chkbtn_inv_item_2 = Checkbutton(p_canvas_2, text = "Inclusive of purchase tax", variable = chk_str_inv_item_1, onvalue = 1, offvalue = 0, font=("arial", 12),background="#1b3857",foreground="white",selectcolor="#2f516f")
             chkbtn_inv_item_2.select()
-            window_chkbtn_inv_item_2 = canvas.create_window(55, 1600, anchor="nw", window=chkbtn_inv_item_2)
+            window_chkbtn_inv_item_2 = p_canvas_2.create_window(0, 0, anchor="nw", window=chkbtn_inv_item_2,tags=('ipcbutton2'))
 
-            label_1 = Label(canvas,width=12,height=1,text="Purchase tax", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(700, 1530, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=12,height=1,text="Purchase tax", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(700, 1530, anchor="nw", window=label_1,tags=('iplabel19'))
 
-            comb_inv_item_5 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+            comb_inv_item_5 = ttk.Combobox(p_canvas_2, font=('arial 10'),foreground="white")
             comb_inv_item_5['values'] = ("Choose...","28.0% GST (28%)","28.0% IGST (28%)","18.0% GST (18%)","18.0% IGST (18%)","15.0% ST (100%)","14.5% ST (100%)","14.00% ST (100%)","14.0% VAT (100%)","12.36% ST (100%)","12.0% GST (12%)","12.0% IGST (12%)","6.0% GST (6%)","6.0% IGST (6%)","5.0% GST (5%)","5.0% IGST (5%)","5.0% VAT (100%)","4.0% VAT (100%)","3.0% GST (3%)","3.0% IGST (3%)","2.0% CST (100%)","0.25% GST (O.25%)","0.25% IGST (0.25%)","0% GST (0%)","0% IGST (0%)","Exempt GST (0%)","Exempt IGST (0%)","Out of Scope(0%)",)
             comb_inv_item_5.current(0)
-            window_comb_inv_item_5 = canvas.create_window(710, 1560, anchor="nw", width=540, height=30,window=comb_inv_item_5)
+            window_comb_inv_item_5 = p_canvas_2.create_window(0, 0, anchor="nw", width=540, height=30,window=comb_inv_item_5,tags=('ipcombo5'))
 
-            label_1 = Label(canvas,width=15,height=1,text="Expense account", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(47, 1660, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=15,height=1,text="Expense account", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel20'))
 
-            comb_inv_item_6 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+            comb_inv_item_6 = ttk.Combobox(p_canvas_2, font=('arial 10'),foreground="white")
             comb_inv_item_6['values'] = ("Cost of sales",)
             comb_inv_item_6.current(0)
-            window_comb_inv_item_6 = canvas.create_window(55, 1690, anchor="nw", width=480, height=30,window=comb_inv_item_6)
+            window_comb_inv_item_6 = p_canvas_2.create_window(0, 0, anchor="nw", width=480, height=30,window=comb_inv_item_6,tags=('ipcombo6'))
 
             def inv_exp_acc_1():
                 pro_frame_2.grid_forget()
@@ -2697,40 +3623,42 @@ def main_sign_in():
                 window_inv_sub_btn_3_1 = canvas.create_window(685, 800, anchor="nw", window=inv_sub_btn_3_1)
 
 
-            expense_btn=Button(canvas,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=inv_exp_acc_1)
-            window_expense_btn = canvas.create_window(545, 1690, anchor="nw", window=expense_btn)
+            expense_btn=Button(p_canvas_2,text='+', width=5,height=1,foreground="white",background="#1b3857",font='arial 12',command=inv_exp_acc_1)
+            window_expense_btn = p_canvas_2.create_window(0, 0, anchor="nw", window=expense_btn,tags=('ipbutton4'))
 
-            label_1 = Label(canvas,width=15,height=1,text="Reverse Charge %", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(52, 1760, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=15,height=1,text="Reverse Charge %", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel21'))
 
             str_inv_item_2 = StringVar()
-            entry_inv_item_11=Entry(canvas,width=90,justify=LEFT,background='#2f516f',foreground="white",textvariable=str_inv_item_2)
+            entry_inv_item_11=Entry(p_canvas_2,width=90,justify=LEFT,background='#2f516f',foreground="white",textvariable=str_inv_item_2)
             str_inv_item_2.set(' 0')
-            window_entry_entry_inv_item_11 = canvas.create_window(55, 1790, anchor="nw", height=30,window=entry_inv_item_11)
+            window_entry_entry_inv_item_11 = p_canvas_2.create_window(0, 0, anchor="nw", height=30,window=entry_inv_item_11,tags=('ipentry11'))
 
-            label_1 = Label(canvas,width=15,height=1,text="Preferred Supplier", font=('arial 12'),background="#1b3857",fg="white") 
-            window_label_1 = canvas.create_window(707, 1760, anchor="nw", window=label_1)
+            label_1 = Label(p_canvas_2,width=15,height=1,text="Preferred Supplier", font=('arial 12'),background="#1b3857",fg="white") 
+            window_label_1 = p_canvas_2.create_window(0, 0, anchor="nw", window=label_1,tags=('iplabel22'))
 
-            comb_inv_item_7 = ttk.Combobox(canvas, font=('arial 10'),foreground="white")
+            comb_inv_item_7 = ttk.Combobox(p_canvas_2, font=('arial 10'),foreground="white")
             comb_inv_item_7['values'] = ("Select Supplier",)
             comb_inv_item_7.current(0)
-            window_comb_inv_item_7 = canvas.create_window(710, 1790, anchor="nw", width=540, height=30,window=comb_inv_item_7)
+            window_comb_inv_item_7 = p_canvas_2.create_window(0, 0, anchor="nw", width=540, height=30,window=comb_inv_item_7,tags=('ipcombo7'))
 
-            inv_sub_btn1=Button(canvas,text='SUBMIT', width=20,height=2,foreground="white",background="#1b3857",font='arial 12')
-            window_inv_sub_btn1 = canvas.create_window(575, 1900, anchor="nw", window=inv_sub_btn1)
+            inv_sub_btn1=Button(p_canvas_2,text='SUBMIT', width=20,height=2,foreground="white",background="#1b3857",font='arial 12')
+            window_inv_sub_btn1 = p_canvas_2.create_window(0, 0, anchor="nw", window=inv_sub_btn1,tags=('ipbutton5'))
+
+            entry_inv_item_5=DateEntry(p_canvas_2,width=60,justify=LEFT,background='#2f516f',foreground="white")
+            window_entry_entry_inv_item_5 = p_canvas_2.create_window(0, 0, anchor="nw", height=30,window=entry_inv_item_5,tags=('ipdate1'))
 
 
+        p_btn_1=Button(p_canvas_1,text='Add Item', width=20,height=1,foreground="white",background="blue",font='arial 12',command=inv_add_item)
+        window_p_btn_1 = p_canvas_1.create_window(0, 0, anchor="nw", window=p_btn_1,tags=('apbutton1'))
 
-        btn_1=Button(canvas,text='Add Item', width=20,height=1,foreground="white",background="blue",font='arial 12',command=inv_add_item)
-        window_btn_1 = canvas.create_window(330, 470, anchor="nw", window=btn_1)
+        p_canvas_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#2f516f",tags=("appoly4"))
 
-        my_rectangle = round_rectangle(700, 300, 1150, 550, radius=20, fill="#2f516f")
+        label_1 = Label(p_canvas_1,width=11,height=1,text="Non-Inventory", font=('arial 20'),background="#2f516f",fg="white") 
+        window_label_1 = p_canvas_1.create_window(0, 0, anchor="nw", window=label_1,tags=('aplabel4'))
 
-        label_1 = Label(canvas,width=11,height=1,text="Non-Inventory", font=('arial 20'),background="#2f516f",fg="white") 
-        window_label_1 = canvas.create_window(835, 350, anchor="nw", window=label_1)
-
-        label_1 = Label(canvas,width=46,height=2,text="A non-inventory is a type of product that is procured, sold, \nconsumed in production but we do not keep inventories for it.", font=('arial 12'),background="#2f516f",fg="white") 
-        window_label_1 = canvas.create_window(720, 400, anchor="nw", window=label_1)
+        label_1 = Label(p_canvas_1,width=46,height=2,text="A non-inventory is a type of product that is procured, sold, \nconsumed in production but we do not keep inventories for it.", font=('arial 12'),background="#2f516f",fg="white") 
+        window_label_1 = p_canvas_1.create_window(0, 0, anchor="nw", window=label_1,tags=('aplabel5'))
 
         def non_add_item():
             pro_frame_1.grid_forget()
@@ -2787,7 +3715,7 @@ def main_sign_in():
             window_label_1 = canvas.create_window(51, 500, anchor="nw", window=label_1)
 
             entry_non_item_1=Entry(canvas,width=200,justify=LEFT,background='#2f516f',foreground="white")
-            window_entry_entry_inv_item_1 = canvas.create_window(55, 530, anchor="nw", height=30,window=entry_non_item_1)
+            window_entry_non_item_1 = canvas.create_window(55, 530, anchor="nw", height=30,window=entry_non_item_1)
 
             label_1 = Label(canvas,width=5,height=1,text="SKU", font=('arial 12'),background="#1b3857",fg="white") 
             window_label_1 = canvas.create_window(51, 600, anchor="nw", window=label_1)
@@ -3133,16 +4061,16 @@ def main_sign_in():
             non_sub_btn1=Button(canvas,text='SUBMIT', width=20,height=2,foreground="white",background="#1b3857",font='arial 12')
             window_non_sub_btn1 = canvas.create_window(575, 1800, anchor="nw", window=non_sub_btn1)
 
-        btn_2=Button(canvas,text='Add Item', width=20,height=1,foreground="white",background="blue",font='arial 12',command=non_add_item)
-        window_btn_2 = canvas.create_window(830, 470, anchor="nw", window=btn_2)
+        p_btn_2=Button(p_canvas_1,text='Add Item', width=20,height=1,foreground="white",background="blue",font='arial 12',command=non_add_item)
+        window_p_btn_2 = p_canvas_1.create_window(0, 0, anchor="nw", window=p_btn_2,tags=('apbutton2'))
 
-        my_rectangle = round_rectangle(200, 600, 650, 850, radius=20, fill="#2f516f")
+        p_canvas_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#2f516f",tags=("appoly5"))
 
-        label_1 = Label(canvas,width=10,height=1,text="Services", font=('arial 20'),background="#2f516f",fg="white") 
-        window_label_1 = canvas.create_window(340, 650, anchor="nw", window=label_1)
+        label_1 = Label(p_canvas_1,width=10,height=1,text="Services", font=('arial 20'),background="#2f516f",fg="white") 
+        window_label_1 = p_canvas_1.create_window(0, 0, anchor="nw", window=label_1,tags=('aplabel6'))
 
-        label_1 = Label(canvas,width=45,height=2,text="A service is a transaction in which no physical goods are \ntransferred from the seller to the buyer.", font=('arial 12'),background="#2f516f",fg="white") 
-        window_label_1 = canvas.create_window(220, 700, anchor="nw", window=label_1)
+        label_1 = Label(p_canvas_1,width=45,height=2,text="A service is a transaction in which no physical goods are \ntransferred from the seller to the buyer.", font=('arial 12'),background="#2f516f",fg="white") 
+        window_label_1 = p_canvas_1.create_window(0, 0, anchor="nw", window=label_1,tags=('aplabel7'))
 
         def ser_add_item():
             pro_frame_1.grid_forget()
@@ -3562,16 +4490,16 @@ def main_sign_in():
             ser_sub_btn1=Button(canvas,text='SUBMIT', width=20,height=2,foreground="white",background="#1b3857",font='arial 12')
             window_ser_sub_btn1 = canvas.create_window(575, 1800, anchor="nw", window=ser_sub_btn1)
 
-        btn_3=Button(canvas,text='Add Item', width=20,height=1,foreground="white",background="blue",font='arial 12',command=ser_add_item)
-        window_btn_3 = canvas.create_window(330, 770, anchor="nw", window=btn_3)
+        p_btn_3=Button(p_canvas_1,text='Add Item', width=20,height=1,foreground="white",background="blue",font='arial 12',command=ser_add_item)
+        window_p_btn_3 = p_canvas_1.create_window(0, 0, anchor="nw", window=p_btn_3,tags=('apbutton3'))
 
-        my_rectangle = round_rectangle(700, 600, 1150, 850, radius=20, fill="#2f516f")
+        p_canvas_1.create_polygon(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,smooth=True,fill="#2f516f",tags=("appoly6"))
 
-        label_1 = Label(canvas,width=10,height=1,text="Bundle", font=('arial 20'),background="#2f516f",fg="white") 
-        window_label_1 = canvas.create_window(845, 650, anchor="nw", window=label_1)
+        label_1 = Label(p_canvas_1,width=10,height=1,text="Bundle", font=('arial 20'),background="#2f516f",fg="white") 
+        window_label_1 = p_canvas_1.create_window(0, 0, anchor="nw", window=label_1,tags=('aplabel8'))
 
-        label_1 = Label(canvas,width=46,height=2,text="A bundle is a group of software programs or hardware \ndevices that are grouped together and sold as one.", font=('arial 12'),background="#2f516f",fg="white") 
-        window_label_1 = canvas.create_window(720, 700, anchor="nw", window=label_1)
+        label_1 = Label(p_canvas_1,width=46,height=2,text="A bundle is a group of software programs or hardware \ndevices that are grouped together and sold as one.", font=('arial 12'),background="#2f516f",fg="white") 
+        window_label_1 = p_canvas_1.create_window(0, 0, anchor="nw", window=label_1,tags=('aplabel9'))
 
         def bun_add_item():
             pro_frame_1.grid_forget()
@@ -3820,12 +4748,19 @@ def main_sign_in():
             window_bun_sub_btn1 = canvas.create_window(575, 1200, anchor="nw", window=bun_sub_btn1)
 
 
-        btn_4=Button(canvas,text='Add Item', width=20,height=1,foreground="white",background="blue",font='arial 12',command=bun_add_item)
-        window_btn_4 = canvas.create_window(830, 770, anchor="nw", window=btn_4)
+        p_btn_4=Button(p_canvas_1,text='Add Item', width=20,height=1,foreground="white",background="blue",font='arial 12',command=bun_add_item)
+        window_p_btn_4 = p_canvas_1.create_window(0, 0, anchor="nw", window=p_btn_4,tags=('apbutton4'))
+
+        def pro_back_1():
+            pro_frame_1.grid_forget()
+            pro_frame.grid(row=0,column=0,sticky='nsew')
+
+        pbck_btn1=Button(p_canvas_1,text='← Back', bd=0, foreground="white",background="#2f516f",font='arial 10 bold',activebackground="#1b3857",command=pro_back_1)
+        window_pbck_btn1 = p_canvas_1.create_window(0, 0, anchor="nw", window=pbck_btn1,tags=('apbutton5'))
 
 
-    btn1=Button(canvas,text='Add Products', width=20,height=2,foreground="white",background="#1b3857",font='arial 12',command=add_product)
-    window_btn1 = canvas.create_window(1050, 430, anchor="nw", window=btn1)
+    pbtn1=Button(pro_canvas,text='Add Products', width=20,height=2,foreground="white",background="#1b3857",font='arial 12',command=add_product)
+    window_pbtn1 = pro_canvas.create_window(1050, 430, anchor="nw", window=pbtn1,tags=('pbutton1'))
 
     
 
